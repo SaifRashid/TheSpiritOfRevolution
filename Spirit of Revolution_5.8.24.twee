@@ -1,0 +1,688 @@
+:: StoryTitle
+THE SPIRIT OF REVOLUTION
+
+
+:: StoryData
+{
+  "ifid": "879803DE-AB34-41C4-A9FC-710E9EDBEB44",
+  "format": "SugarCube",
+  "format-version": "2.36.1",
+  "start": "Title Page",
+  "tag-colors": {
+    "popUp": "green"
+  },
+  "zoom": 0.6
+}
+
+
+:: Begin Doctor Journey {"position":"1500,400","size":"200,200"}
+
+
+
+:: Begin Farm Wife Journey {"position":"1700,1600","size":"200,200"}
+
+
+
+:: Begin Laundress Journey {"position":"1500,1000","size":"200,200"}
+<<if $readingLvl is "HL">>
+	You are in New London with her brother, a medicine man of the Eastern Pequot. You are selling splint baskets made of ash and decorated with designs she brushed on.   You are also looking for work. You have come to the tavern to see if the owner needs help in the kitchen or laundry. You have two children ages 5 and 7. You’re afraid if the tavern owner knows you have children he won’t hire you, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
+
+Decision: Should you tell the tavern owner you have children? 
+<<button "Yes, tell the owner">>
+    <<set $player.tellTavernOwner to 1>>
+    <<set $player.goldCoins += 1>>
+	<<goto "Tavern Owner Dialogue">>
+<</button>>
+
+<<button "No, don't tell the owner">>
+    <<set $player.tellTavernOwner to 0>>
+    <<set $player.silverCoins += 1>>
+    <<goto "Tavern Owner Dialogue">>
+<</button>>
+
+<<elseif $readingLvl is "LL">>
+You are in New London with your brother. His job is healing sick people. He knows a lot about medicine. You are selling baskets that he made. You have gone to the tavern, a place where people can eat and drink and even stay overnight. You want to ask the owner if he needs a cook or a woman who does laundry. You have two children ages 5 and 7. You are afraid you won’t be hired if the tavern knows, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
+
+Decision: Are you going to tell the tavern owner you have children?
+
+<<button "Yes, tell the owner">>
+    <<set $player.goldCoins += 1>>
+	<<goto "Tavern Owner Dialogue">>
+<</button>>
+
+<<button "No, don't tell the owner">>
+    <<set $player.silverCoins += 1>>
+    <<goto "Tavern Owner Dialogue">>
+<</button>>
+<<endif>>
+[[|Tavern Owner Dialogue]]
+
+
+:: Begin Shopkeeper Journey {"position":"1400,2800","size":"200,200"}
+
+
+
+:: Begin Soldier Journey {"position":"1400,3400","size":"200,200"}
+
+
+
+:: Begin Spy Journey {"position":"1400,2200","size":"200,200"}
+
+
+
+:: Boston {"position":"2200,900","size":"100,100"}
+Welcome to Boston!
+
+
+:: Bunker Hill {"position":"2000,900","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children.  One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
+
+Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
+
+<<button "Eastern Pequot Reservation">>
+    <<set $player.childDecision2 to 0>>
+    <<set $player.copperCoins -= 1>>
+	<<goto "Drop kids off">>
+<</button>>
+
+<<button "Leave them in New London">>
+    <<set $player.childDecision2 to 1>>
+    <<set $player.goldCoins -= 1>>
+	<<goto "Drop kids off">>
+<</button>>
+
+
+<<elseif $readingLvl is "LL">>
+You have finished working for the tavern owner in New London. You are going to follow other Pequot and Mohegan soldiers to Boston.  Everybody thinks there will be a fight with the British soldiers. You hope to make money there by doing laundry, sewing, or cooking. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be captured by the use of force and sold into slavery. Your late husband, Tobie, was captured in Senegambia and enslaved. Your children look like him. They will be safe from being enslaved on the Eastern Pequot reservation because you are a free person. But the children will have to live with her old grandmother, who is very weak, and the children are very active. You could leave the children with your Pequot friends in New London, but your friends must work. They are not always able to watch the children. You don’t want to take the children to Boston. 
+
+Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
+
+<<button "Eastern Pequot Reservation">>
+    <<set $player.childDecision2 to 0>>
+    <<set $player.copperCoins -= 1>>
+	<<goto "Drop kids off">>
+<</button>>
+
+<<button "Leave them in New London">>
+    <<set $player.childDecision2 to 1>>
+    <<set $player.goldCoins -= 1>>
+	<<goto "Drop kids off">>
+<</button>>
+
+
+<<endif>>
+[[|Drop kids off]]
+
+
+:: Curriculum {"position":"200,600","size":"100,100"}
+<h1> Curriculum Resources </h1>
+
+Connecticut State Department of Education and Connecticut’s Five Eastern Woodland Tribes’ Curriculum Materials for Teachers:
+https://portal.ct.gov/SDE/Publications/Teaching-Native-American-Studies
+
+
+
+:: Doctor {"position":"1000,750","size":"100,100"}
+Name: Cuff Williams
+Racial/Ethnic background: West African
+Schooling: apprenticed to an apothecary (pharmacist) and to a medical doctor
+Civilian occupation: doctor’s assistant
+Military Affiliation: 8th Regiment (Huntington)
+Lives at: Hartford
+
+
+:: Drop kids off {"position":"2000,1100","size":"100,100"}
+<<if $player.childDecision2 is 0>>
+You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose a copper coin). You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
+
+<<elseif $player.childDecision2 is 0>>
+You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
+
+<<endif>>
+<<button "Click here to continue">>
+       <<goto "Boston">>
+<</button>>
+[[|Boston]]
+
+
+:: Farm Wife {"position":"900,875","size":"100,100"}
+<img @src="setup.ImagePath+'FarmWife.jpg'" height="400">
+
+Name: Rebecca Hoyt
+Racial/Ethnic background: Anglo-European, English
+Civilian occupation: sells butter, onions and other garden produce, in addition to her duties as a housewife.
+Religion: Anglican
+Military Affiliations: husband joined the King’s provincial troops; teenage son wants to enlist in the 7th Regiment (Webb).
+Lives at: Ridgefield
+
+
+:: Greetings {"position":"1500,1600","size":"100,100"}
+<h1>The Beginnings of your Journey</h1>
+Welcome, $player.name!<br>
+Your current player class is $player.job.<br>
+That means you start with $player.totalCoins coins. $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. 
+
+It’s Thursday evening, April 20, 1775, and a breathless postal express rider has appeared in New London with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Massachusetts Committee of Safety, about a battle that took place in Lexington on April 19th. The rider stopped his horse in “Green’s Alley” at the shop of the printer, Timothy Green. Green emerged from his shop and greeted the rider, who handed him a copy of Palmer’s “Lexington Alarm.”. A crowd began to gather around to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4]
+
+<img @src="setup.ImagePath+'IsaacBissell.png'" height="400">
+
+[A woodcut alleged to be Isaac Bissell riding to CT. Bissell seems not to have been an actual emissary to New London.]
+
+<<button "Begin your Journey">>
+	<<if $player.job is "Laundress">>
+		<<goto "Begin Laundress Journey">>
+        [[|Begin Laundress Journey]]
+        
+    <<elseif $player.job is "Farm Wife">>
+		<<goto "Begin Farm Wife Journey">>
+        [[|Begin Farm Wife Journey]]
+        
+    <<elseif $player.job is "Doctor">>
+		<<goto "Begin Doctor Journey">>
+        [[|Begin Doctor Journey]]
+        
+    <<elseif $player.job is "Soldier">>
+		<<goto "Begin Soldier Journey">>
+        [[|Begin Soldier Journey]]
+        
+    <<elseif $player.job is "Spy">>
+		<<goto "Begin Spy Journey">>
+        [[|Begin Spy Journey]]
+        
+    <<elseif $player.job is "Shopkeeper">>
+		<<goto "Begin Shopkeeper Journey">>
+        [[|Begin Shopkeeper Journey]]
+     <<endif>>
+<</button>>
+
+
+
+:: Laundress {"position":"650,1000","size":"100,100"}
+<img @src="setup.ImagePath+'Laundress.jpg'" height="400">
+
+Name: Sarah Nonesuch
+Racial/Ethnic background: Eastern Pequot
+Civilian occupation: basketmaker, domestic servant
+Religion: unchurched, traditional Indigenous
+Military Affiliation: camp follower with the 2nd Regiment (Spencer)
+Lives at: North Stonington
+
+
+:: Play the Beta {"position":"500,200","size":"100,100"}
+<title>game</title><h2>You're going on the spirit of revolution adventure</h2>
+<<button "Click here to start the simulation">>
+	<<goto "Start the simulation">>
+<</button>>
+
+<h4>If this is your first time playing, you can read the instructions [[here|instructions]]</h4>
+
+[[|Start the simulation]]
+
+
+
+:: Set Player Variable {"position":"1100,600","size":"100,100"}
+/%----------------------------------------------------------%/
+/%---------- PLAYER DOES NOT SEE ANY OF THE BELOW ----------%/
+/%----------------------------------------------------------%/
+/%---------- Based on their role ----------%/
+/%---------- Set all coins to standard----------%/
+<<set $player.totalCoins to 100>>
+<<set $player.goldCoins to 30>>
+<<set $player.silverCoins to 30>>
+<<set $player.copperCoins to 40>>
+
+/%----------- Player Simulation Choices -----------%/
+<<set $player.tellTavernOwner to 0>>
+<<set $player.ChildrenDecision to 0>>
+<<set $player.childDecision2 to 0>>
+
+
+
+
+
+
+
+/%----------- Move On -----------%/
+<<goto "Greetings">>
+[[|Greetings]]
+
+
+:: Shopkeeper {"position":"450,750","size":"100,100"}
+Name: Dinah Johnson
+Racial/Ethnic background: West African/Caribbean
+Civilian occupation: household servant
+Religion: Quaker
+Military Affiliation: Noncombatant, no direct ties to any military unit
+Lives at: New London
+
+
+:: Soldier {"position":"800,1000","size":"100,100"}
+Name: Solomon Shantup
+Racial/Ethnic background: Tunxis-Mohegan
+Schooling: He studied at Moor's Indian Charity School in Lebanon from 1764 to 1765; in April of 1775, he was studying at Joseph Johnson’s school in Farmington.
+Civilian occupation: Farmhand
+Religion: Congregationalist
+Military Affiliation: enlists in New London with the 6th Regiment, 3rd Company (Parsons)
+Lives at: Tunxis lands in Farmington
+
+
+:: Spy {"position":"550,875","size":"100,100"}
+Name: Samuel Tomlinson
+Racial/Ethnic background: Anglo-European
+Schooling: Yale College
+Civilian occupation: school teacher
+Military Affiliation: 3rd Regiment (Putnam)
+Religion: Congregationalist
+Lives at: Ashford
+
+
+:: Start the simulation {"position":"800,200","size":"100,100"}
+Choose your reading level!
+
+<<button "9th grade and up, click here!">>
+    <<set $readingLvl to "HL">>
+    <<goto "charCreate">>
+<</button>>
+
+<<button "5th-8th grade, click here!">>
+    <<set $readingLvl to "LL">>
+    <<goto "charCreate">>
+<</button>>
+
+[[|charCreate]]
+
+
+:: StoryInit {"position":"0,800","size":"100,100"}
+
+
+
+:: Tavern Owner Dialogue {"position":"1800,900","size":"100,100"}
+<<if $player.tellTavernOwner is 0>>
+	<p> You do not tell the owner. He hires you for one month (get paid one silver coin). Now you have $player.silverCoins silver coins. </p>
+    Decision: 1) Should you just pay someone to take care of the children 
+	or 2) should you take them home to the Eastern Pequot reservation?
+
+            <<button "pay someone">>
+                <<set $player.ChildrenDecision to 0>>
+                <<set $player.silverCoins -= 1>>
+                <<goto "children Dilemma">>
+            <</button>>
+
+            <<button "take them home">>
+                <<set $player.ChildrenDecision to 1>>
+                <<set $player.copperCoins -= 1>>
+                <<goto "children Dilemma">>
+            <</button>>
+
+<<elseif $player.tellTavernOwner is 1>>
+	<p> You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid one gold coin). You now have $player.goldCoins gold coins.</p>
+   <<button "Click here to continue">>
+                <<goto "Bunker Hill">>
+     <</button>>
+<<endif>>
+
+[[|children Dilemma]]
+[[|Bunker Hill]]
+
+
+:: Title Page {"position":"100,200","size":"100,100"}
+<html>
+<head>
+<title>THE SPIRIT OF REVOLUTION</title>
+</head>
+<body>
+<h1>THE SPIRIT OF REVOLUTION!</h1>
+<p>The goal of this simulation is to navigate your chosen character through the years of the Revolutionary War, following the Connecticut Line of the Continental Army. From the standard starting route in New London, you begin as a character in eighteenth-century Connecticut and either travel with the Connecticut Line or interact with members of the Line. Your goal is to have your character make decisions to successfully “survive the war” in whatever capacity your role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made the most critical decision of this first phase of the game.
+</p>
+</body>
+</html>
+<<button "Click here to play the Beta">>
+	<<goto "Play the Beta">>
+<</button>>
+
+
+
+<<nobr>>
+<<button "About the Creators">>
+	<<goto "creators">>
+<</button>>
+
+<<button "About the Partners">>
+	<<goto "partners">>
+<</button>>
+
+<<button "About the Donors">>
+	<<goto "donors">>
+<</button>>
+
+<<button "Curriculum">>
+	<<goto "Curriculum">>
+<</button>>
+<</nobr>>
+
+[[|Play the Beta]]
+[[|creators]]
+[[|partners]]
+[[|donors]] 
+[[|Curriculum]]  
+
+
+
+:: charCreate {"position":"700,500","size":"200,200"}
+<h1> About Yourself </h1>
+<<nobr>>
+<div style="overflow-7:auto;">
+<table style="width: 100%;" class="charactertable">
+<tr style="height: 80%; width: 100%;">
+<td>
+/%------------------------------------------------------%/
+/%---------- Initialize Player ----------%/
+/%------------------------------------------------------%/
+
+<<set $player to {}>>
+<script>
+	$.wiki('<<replace "#JobInfo">><<include "Spy">><</replace>>');
+	$.wiki('<<replace "#JobInfo">><<include "Farm Wife">><</replace>>');
+	$.wiki('<<replace "#JobInfo">><<include "Shopkeeper">><</replace>>');
+	$.wiki('<<replace "#JobInfo">><<include "Doctor">><</replace>>');
+	$.wiki('<<replace "#JobInfo">><<include "Laundress">><</replace>>');
+    $.wiki('<<replace "#JobInfo">><<include "Soldier">><</replace>>');
+</script>
+
+/%--------------------------------------------%/
+/%---------- Personal Info Input ----------%/
+/%--------------------------------------------%/
+Your Name:
+<input id= "player" type="text" onfocus="focusFunction('player')" onfocusout="blurFunction('player')" value="Solomon Shantup">
+
+/%---------- Job Form ----------%/
+<<nobr>>
+<form>
+  <br><br>
+  Your Role:<br>
+  <input type="radio" name="job" id="job_3" onclick="if(this.checked){jobNameFunction('Solomon Shantup')}" checked> Soldier<br>
+  <input type="radio" name="job" id="job_4" onclick="if(this.checked){jobNameFunction('Rebecca Hoyt')}"> Farm Wife<br>
+  <input type="radio" name="job" id="job_2" onclick="if(this.checked){jobNameFunction('Samuel Tomlinson')}"> Spy<br>
+  <input type="radio" name="job" id="job_1" onclick="if(this.checked){jobNameFunction('Dinah Johnson')}"> Shopkeeper<br>
+   <input type="radio" name="job" id="job_5" onclick="if(this.checked){jobNameFunction('Cuff Williams')}"> Doctor<br>
+   <input type="radio" name="job" id="job_6" onclick="if(this.checked){jobNameFunction('Sarah Nonesuch')}"> Laundress<br>
+</form>
+/%---------- Job Form Scripts ----------%/
+<script>
+function jobNameFunction(name) {
+	document.getElementById("player").value = name;
+	if(document.getElementById("job_3").checked) {
+		$.wiki('<<replace "#JobInfo">><<include "Soldier">><</replace>>');
+	} else if (document.getElementById("job_2").checked) {
+			$.wiki('<<replace "#JobInfo">><<include "Spy">><</replace>>');
+	} else if (document.getElementById("job_1").checked) {
+		$.wiki('<<replace "#JobInfo">><<include "Shopkeeper">><</replace>>');
+	} else if (document.getElementById("job_4").checked) {
+		$.wiki('<<replace "#JobInfo">><<include "Farm Wife">><</replace>>');
+	} else if (document.getElementById("job_5").checked) {
+		$.wiki('<<replace "#JobInfo">><<include "Doctor">><</replace>>');
+	} else if (document.getElementById("job_6").checked) {
+		$.wiki('<<replace "#JobInfo">><<include "Laundress">><</replace>>');
+	};
+};
+function jobFunction() {
+	if(document.getElementById("job_1").checked) {
+		return 'Shopkeeper'
+	} else if (document.getElementById("job_2").checked) {
+		return 'Spy'
+	} else if (document.getElementById("job_3").checked) {
+		return 'Soldier'
+	} else if (document.getElementById("job_4").checked) {
+		return 'Farm Wife'
+	} else if (document.getElementById("job_5").checked) {
+		return 'Doctor'
+	} else if (document.getElementById("job_6").checked) {
+		return 'Laundress'
+	};
+}
+</script>
+<</nobr>>
+/%----------- Scripts for Name Inputs ----------%/
+<script>
+function nameSetFunction(id) {
+	var x = document.getElementById(id).value;
+	return x;
+};
+function focusFunction(id) {
+	var x = document.getElementById(id).value;
+	if (x === 'Dinah Johnson' || x === 'Samuel Tomlinson' || x === 'Solomon Shantup' || x === 'Rebecca Hoyt' || x === 'Cuff Williams' || x === 'Sarah Nonesuch') {
+		var textcontrol = document.getElementById(id);
+        textcontrol.value = "";
+    }
+};
+function blurFunction(id) {
+	var x = document.getElementById(id).value;
+	if(document.getElementById("job_1").checked) {
+		var y = 'Dinah Johnson'
+	} else if (document.getElementById("job_2").checked) {
+		var y = 'Samuel Tomlinson'
+	} else if (document.getElementById("job_3").checked) {
+		var y = 'Solomon Shantup'
+	} else if (document.getElementById("job_4").checked) {
+		var y = 'Rebecca Hoyt'
+	} else if (document.getElementById("job_5").checked) {
+		var y = 'Cuff Williams'
+	} else if (document.getElementById("job_6").checked) {
+		var y = 'Sarah Nonesuch'
+	};
+	if (x == "") {
+		var textcontrol = document.getElementById(id);
+        textcontrol.value = y;
+    }
+};
+function blurFunction_f(id, initial) {
+	var x = document.getElementById(id).value;
+	if (x == "") {
+		var textcontrol = document.getElementById(id);
+        textcontrol.value = initial;
+    }
+};
+</script>
+/%-------------------------------------------%/
+/%----------- Link to Next Passage ----------%/
+/%-------------------------------------------%/
+<br><br> 
+<span id="initialDestination">
+<<button "Submit">>
+	<<set $player.name = nameSetFunction('player')>>
+	<<set $player.job = jobFunction()>>
+	<<goto "Set Player Variable">>
+<</button>>
+</span>
+/%----------------------------------%/
+/%----------- Dummy Links ----------%/
+/%----------------------------------%/
+/%[[|Set Player Variable]]
+[[|Shopkeeper]]
+[[|Spy]]
+[[|Soldier]]
+[[|Farm Wife]]
+[[|Doctor]] 
+[[|Laundress]]%/
+
+
+/%-------------------------------%/
+/%----------- Job Info ----------%/
+/%-------------------------------%/
+</td>
+<td>
+<span id="JobInfo"><<include "Soldier">></span>
+</td>
+</tr>
+</table>
+</div>
+<</nobr>>
+
+
+:: children Dilemma {"position":"1800,1100","size":"100,100"}
+<<if $player.ChildrenDecision == 0>>
+	<p> You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.</p>
+<<elseif $player.ChildrenDecision == 1>>
+     <p> You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.</p>
+<<endif>>
+<<button "Click here to continue">>
+       <<goto "Bunker Hill">>
+<</button>>
+[[|Bunker Hill]] 
+
+
+:: creators {"position":"0,400","size":"100,100"}
+<h1>Meet the creators of The Spirit Of Revolution!</h1>
+
+Kathy Hermes
+
+Olga Veselova
+
+
+:: donors {"position":"200,400","size":"100,100"}
+<h1> Donors to the Spirit of Revolution </h1>
+<b> Gifts of $1,000-$10,000 </b>
+Elaine R. Knowlton*
+
+<b>Gifts of $600–$999</b>
+
+<b>Gifts of $500–$599</b>
+Kenneth Johnson*
+
+<b>Gifts of $300–$499</b>
+
+<b>Gifts of $200–$299</b>
+Tim and Lynn Fahy*
+Katherine W. Green*
+Natalie Harbeson*
+Marcia Lattimore*
+Robert E. Morris Jr.*
+David Theroux*
+
+<b>Gifts of $100–$199</b>
+David Babington*
+Katherine Basto*
+Ralph C. Bloom*
+Carol Bruce*
+Briann Greenfield*
+Kimball and Dorothy Hunt*
+Anne H. Isbister*
+The Lerch Family*
+Roselle Macdonald*
+Hank McDonald*
+Harry Meyer*
+Harold Panciera*
+Martha Ritter*
+Nina Ruckes*
+Paul H. Serenbetz*
+Jack and Suzanne Shannahan*
+Mark Shenkman*
+H. Catherine W. Skinner*
+Deborah Stack*
+Nancy H. Steenburg*
+Joan Twiggs*
+Sylvia Webb*
+Kendall Wiggin*
+Terri Wilson* (Avon)
+Don Winkley*
+Ingrid E. Wood*
+Mary Young*
+
+<b>Gifts of $5–$99 </b>
+Beth Anderson*
+Moe Armstrong*
+Lorraine Balint*
+James Butler*
+John Caporale*
+Patricia Clark*
+Elizabeth Demir*
+David and Deborah Downes*
+Donna Eriksen*
+Mark Gerity*
+Kathryn Hanlon*
+Paul Hart*
+Lorraine Inzerra*
+Nancy Kline*
+M. Elizabeth Mahan*
+Doris and Robert J. Martinchek*
+Robert McGuinness*
+Bruce and Mary Jane Monahan*
+Richard J. Morey*
+Joan Morgan
+Stephen Morris*
+Henrietta Mountz*
+W. Parker*
+John Pieper*
+Joseph Pierz*
+Bill Powers*
+Dawn Scoullar-Gerk*
+Patricia Vibert*
+
+
+
+:: instructions {"position":"500,400","size":"100,100"}
+/%----------Insert PDF of instructions
+Pdf file needs to be added to the link: <a href="https://spirirtofrevolution.com/instructions.pdf" target="_blank">here.</a>%/
+
+<h1>THE SPIRIT OF REVOLUTION INSTRUCTIONS--Draft </h1>
+(Note: we need to fill out some of the details)
+Here are some basic instructions–thank you for playing!
+<b>Goal of the Simulation</b>
+
+The goal of this simulation is to navigate your chosen character through the years of the Revolutionary War, following the Connecticut Line of the Continental Army. From the standard starting route in New London, you begin as a character in eighteenth-century Connecticut and either travel with the Connecticut Line or interact with members of the Line. Your goal is to have your character make decisions to successfully “survive the war” in whatever capacity your role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made a the most critical decision of this first phase of the game.
+
+<b>Universal or common goal:</b>
+Make a decision about where your loyalties lie and how you want
+to continue into 1777. By Dec. 31, 1776, each character will also need to arrive at an individual place or reached a status.
+[Must determine each end place or status]
+
+[Review goals]
+
+<b>Each individual’s goals by the end of 1776:</b>
+<b>Soldier</b>: must try to physically survive. Challenges are to have enough to eat, to keep warm and dry, to avoid being wounded, to have enough arms and amm unition for fighting.
+<b>Spy</b>: must try to gather information and deliver it. Challenges are to determine one’s loyalties early on, to gain the trust of individuals with knowledge, and to provide that information to the right parties while staying safe.
+<b>Doctor</b>: must treat the wounded on the battlefield and after. Challenges are to avoid being hurt or killed himself, to find appropriate medicine and use proper methods for treating wounds and illnesses.
+<b>Farm Wife</b>: she has decided not to join her husband with the army and instead stay with her children and keep them safe and work the farm. Challenges are to keep the farm sustainable, to get along with her neighbors who do not lean towards loyalty to the King, as she does, and to deal with a teenage son who is trying to decide whether to enlist with the CTLine.
+<b>Shopkeeper</b>: her husband is a mariner on voyages to the West Indies, where he journeys as part of a supply chain. As a neutral shopkeeper, she has access to information–and a challenge is deciding what she should do with it? Should she get the info to Gen. George Washington or to Gen. Thomas Gage?
+<b>Laundress</b>: wants to be with her husband and making sure he is safe and taken care of. They want to save enough money to purchase a house or farm after the war. Challenges are to keep the troops in clean clothes, keep other cloth materials clean including medical supplies and officers table linen. Must also avoid being wounded if the encampment is too close to the field of battle.
+
+<b>The educational goal</b>of this project is to introduce users to the cultural, social, political, economic, and military history of the American Revolution. While the Connecticut Line forms the central focus of the simulation; the stories, routes, objectives, and historical narratives aim to present the events surrounding the Connecticut Line as a multifaceted experience in which people interacted with the Line for a variety of purposes and with critical decisions to make.
+
+
+<b>Making Decisions</b>
+In this simulation, your decisions will help determine your journey through the American Revolution. You will have to balance factors like your finances, health, and how you spend your time in different locations–by going to taverns, town meetings, or markets, battlefields, etc. Each of these factors will affect the choices available to you and your ability to survive the war. Your decisions in the simulation (choice of role, places visited, wealth, choices in events between locations) will all determine your score at the end of the simulation.
+
+<b>Scoring</b>
+The Spirit of Revolution is not a competitive game. Users’ individual score reflects what they choose to focus on and discover during each stage of the Revolution. After you choose your role, you will have the option of three character-specific secondary challenges to choose from. You do not need to complete these challenges but doing so will provide you with some extra points at the end of the simulation. This is meant to provide users with specific goals outside of simply surviving and to encourage them to explore the American Revolution as represented in the simulation. 
+[What’s the measure? What circumstances gain or lose points?]
+100 coins (you can spend coins to help you–e.g. get somewhere faster by buying a ferry trip; buying medical care to help you heal faster, 30 gold, 30 silver, 40 copper coins).
+Dec. 31, 1776: each character has to be “back” someplace or reach some destination and the number of points you accumulate is the WIN.
+
+<b>Time System</b>
+Time in this simulation is represented by the seasons of the year. This is to reflect how Americans in the eighteenth century understood the passage of time and the parts of the day. At each seasonal marker, the player should have completed an individual goal. Phase 1 of the game ends Dec. 31, 1776, and each user’s character should have arrived at a destination place or status.
+
+
+:: partners {"position":"0,600","size":"100,100"}
+<h1>Partners of The Spirit of Revolution</h1>
+
+...
+
+
+:: StoryScript [script]
+/*if (document.location.href.toLowerCase().includes("/temp/") || document.location.href.toLowerCase().includes("/private/") || hasOwnProperty.call(window, "storyFormat")) {
+	// Change this to the path where the HTML file is
+	// located if you want to run this from inside Twine.
+	setup.Path = "C:/Documents/Twine/Stories/";  
+  // Running inside Twine application
+} else { 
+	setup.Path = "";  // Running in a browser
+}*/
+setup.Path = "C:/Documents/Twine/Stories/"; //remove when publishing to browser and uncomment above code; should have C:/Users/yourname in the file path/Documents/Twine/Stories/
+setup.ImagePath = setup.Path + "images/";
+
+:: StoryStylesheet [stylesheet]
+body {
+	/*color: #eee;*/
+	background-color: blue;
+}
