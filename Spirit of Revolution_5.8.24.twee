@@ -20,7 +20,44 @@ THE SPIRIT OF REVOLUTION
 
 
 :: Begin Farm Wife Journey {"position":"1700,1600","size":"200,200"}
+<<if $readingLvl is "HL">>
+	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal at the tavern, which consists of a salted shad, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal. 
+    
+    You came by boat, and though Long Island Sound was rougher than you had anticipated, it was better than the 5 days it would have taken had you come overland. Your husband sailed on the sloop Martha in February to oversee the delivery of some livestock to the West Indies, and you hope you can find out some news about his return. 
 
+A crowd comes into the tavern. Everyone is talking excitedly about a confrontation that occurred two days ago between British soldiers and colonists on Lexington Green. George joins the crowd and talks to several of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. You are appalled that he would be disloyal to the King. 
+
+
+Decision: Do you 1) talk to your son now about his plans or 2) wait for his father to return from the West Indies? 
+
+<<button "Yes, you talk to your son now about his plans.">>
+    <<set $player.tellSon to 1>>
+    <<set $player.silverCoins += 1>>
+	<<goto "Son's Dialogue">>
+<</button>>
+
+<<button "No, wait for his father to return from the West Indies.">>
+    <<set $player.tellwait to 0>>
+    <<set $player.copperCoins -= 1>>
+    <<goto "Son's Dialogue">>
+<</button>>
+
+<<elseif $readingLvl is "LL">>
+You walk into the tavern feeling a little scared and nervous. You're not used to being in places like this by yourself. You see your oldest son, George, sitting at a table. He waves and asks you to come over. He brought a big wagon full of things from your farm to sell in New London. He brought dairy products, flax, and wool. You and George sit down to eat at the tavern. You have fish, peas, and vegetables with butter. You are grateful for the meal. 
+
+Decision: Do you 1) talk to your son now about his plans or 2) wait for his father to return from the West Indies? 
+
+<<button "Yes, you talk to your son now about his plans.">>
+    <<set $player.silverCoins += 1>>
+	<<goto "Son's Dialogue">>
+<</button>>
+
+<<button "No, wait for his father to return from the West Indies.">>
+    <<set $player.copperCoins -1= 1>>
+    <<goto "Son's Dialogue">>
+<</button>>
+<<endif>>
+[[Son's Dialogue]]
 
 
 :: Begin Laundress Journey {"position":"1500,1000","size":"200,200"}
@@ -124,12 +161,13 @@ https://portal.ct.gov/SDE/Publications/Teaching-Native-American-Studies
 
 
 :: Doctor {"position":"1000,750","size":"100,100"}
-Name: Cuff Williams
-Racial/Ethnic background: West African
-Schooling: apprenticed to an apothecary (pharmacist) and to a medical doctor
-Civilian occupation: doctor’s assistant
-Military Affiliation: 8th Regiment (Huntington)
-Lives at: Hartford
+Your name is Cato Williams. Your maternal grandmother came from Barbados, an island in the Caribbean, and because her husband fought in King George's War and saved an officer's life, the couple were manumitted and given land by the person who had enslaved them in Hartford. Your mother was born free in Connecticut. Your father was brought to Hartford as a boy from a tropical region of West African known as Senegambia. He was a very skilled blacksmith, and he was able to buy his freedom for 100 pounds money. 
+
+Your parents wanted you to succeed so they apprenticed you to an apothecary (pharmacist), and later you apprenticed yourself to a medical doctor. During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was later 
+During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was  was appointed by Congress in 1777 to serve as surgeon general of the Continental Army's Eastern Department.
+
+Money: 30 Gold, 30 Silver, 40 Copper
+
 
 
 :: Drop kids off {"position":"2000,1100","size":"100,100"}
@@ -149,12 +187,14 @@ You leave them in New London with your Pequot friends (lose a gold coin). You no
 :: Farm Wife {"position":"900,875","size":"100,100"}
 <img @src="setup.ImagePath+'FarmWife.jpg'" height="400">
 
-Name: Rebecca Hoyt
-Racial/Ethnic background: Anglo-European, English
-Civilian occupation: sells butter, onions and other garden produce, in addition to her duties as a housewife.
-Religion: Anglican
-Military Affiliations: husband joined the King’s provincial troops; teenage son wants to enlist in the 7th Regiment (Webb).
-Lives at: Ridgefield
+Your name is Rebecca Hoyt and you are of Dutch and English descent. Some of your ancestors were among the first settlers of New Amsterdam, while others were among the first English settlers of the New Haven Colony that later merged with the Connecticut Colony. Originally most of your ancestors were Puritans and Calvinists, but in the 1740s your parents joined the Church of England, also known as the Anglican Church.
+
+Your husband is a prosperous farmer and you live in Ridgefield in Fairfield County. In addition to your duties as a housewife and a mother, and to help your husband, you sell the butter you churn and the onions you grow, along with other garden produce. You take great pride in your herb garden. 
+
+Money: 30 Gold, 30 Silver, 40 Copper
+
+[Note for later: Military Affiliations: husband joined the King’s provincial troops; teenage son wants to enlist in the 7th Regiment (Webb).]
+
 
 
 :: Greetings {"position":"1500,1600","size":"100,100"}
@@ -201,12 +241,9 @@ It’s Thursday evening, April 20, 1775, and a breathless postal express rider h
 :: Laundress {"position":"650,1000","size":"100,100"}
 <img @src="setup.ImagePath+'Laundress.jpg'" height="400">
 
-Name: Sarah Nonesuch
-Racial/Ethnic background: Eastern Pequot
-Civilian occupation: basketmaker, domestic servant
-Religion: unchurched, traditional Indigenous
-Military Affiliation: camp follower with the 2nd Regiment (Spencer)
-Lives at: North Stonington
+Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
+
+Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Play the Beta {"position":"500,200","size":"100,100"}
@@ -249,32 +286,59 @@ Lives at: North Stonington
 
 
 :: Shopkeeper {"position":"450,750","size":"100,100"}
-Name: Dinah Johnson
-Racial/Ethnic background: West African/Caribbean
-Civilian occupation: household servant
-Religion: Quaker
-Military Affiliation: Noncombatant, no direct ties to any military unit
-Lives at: New London
+Name: Your name is Dinah Johnson. 
+
+Your mother's parents came from West Africa, from a village near Juffure in Senegambia. Your maternal grandparents were taken from their homes and sold to white men who put them on a ship called The Speedwell that went across the ocean. This is called the Middle Passage. They disembarked in New London in 1761.  Your mother was purchased and enslaved by a Quaker family that later freed her, because their faith was against slavery. 
+
+Your father's parents came from Jamaica. A long time ago his grandparents had also come from Africa, and were taken first to the Cabbage Tree Plantation in Antigua, owned by two Hartford men named Samuel Wyllys and Richard Lord. Then your grandparents were sold to a white family in Port Royal in Jamaica. Your father got a job on a Connecticut ship in Port Royal and came to New London when he was 14. He was a carter and when he married your mother, she opened a little shop in the house they shared. When she passed away, you took over her shop. Your parents were very successful in their businesses, and they taught you how to read and write so you could keep your account books.
+
+Your parents were Quakers and you are too. You are a pacifist, meaning you do not support fighing or waging war. 
+
+You inherited your parents' house in New London.
+Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Soldier {"position":"800,1000","size":"100,100"}
-Name: Solomon Shantup
-Racial/Ethnic background: Tunxis-Mohegan
-Schooling: He studied at Moor's Indian Charity School in Lebanon from 1764 to 1765; in April of 1775, he was studying at Joseph Johnson’s school in Farmington.
-Civilian occupation: Farmhand
-Religion: Congregationalist
-Military Affiliation: enlists in New London with the 6th Regiment, 3rd Company (Parsons)
+Your name is Solomon Shantup and your mother is a Tunxis woman and your father is Mohegan. Your older brother and sister studied at Moor's Indian Charity School in Lebanon from 1764 to 1765. In 1773 you were a student at Joseph Johnson’s school in Farmington. Your parents had a large land lot among the Tunxis and were famous for their well-kept orchards and cider production. In addition to attending school and working for your parents, you sometimes worked as a farmhand for Elisha Wampey and Cornelius Indian on their land in Farmington. You belonged to the Congregationalist Church in New Hartford, where your mother and her sisters also worshipped. While visiting your relatives on the Mohegan reservation, you enlisted in New London with the 6th Regiment, 3rd Company under Colonel Samuel Holden Parsons. 
 Lives at: Tunxis lands in Farmington
+Money: 30 Gold, 30 Silver, 40 Copper
+
+
+:: Son's Dialogue {"position":"1750,1825","size":"100,100"}
+<<if $readingLvl is "HL">>
+<<if $player.tellSon is +1>>
+	<p> 1)	You talk to your son and tell him that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) Now you have $player.silverCoins silver coins. </p>
+    
+            
+<<elseif $player.tellwait is -1>>
+	<p> 2)	You decide to wait for your husband to return. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.)
+You now have $player.copperCoins copper coins.</p>
+   <<button "Click here to continue">>
+                <<goto "Bunker Hill">>
+     <</button>>
+<<endif>>
+
+[[|Bunker Hill]]
+
+<<if $readingLvl is "LL">>
+<<if $player.tellSon is +1>>
+	<p> 1)	You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.)  Now you have $player.silverCoins silver coins. </p>
+    
+            
+<<elseif $player.tellwait is -1>>
+	<p> 2)	You decide to wait for your husband to return. You don’t like giving any opinions about what happened at Lexington. (Lose a copper coin.) 
+You now have $player.copperCoins copper coins.</p>
+<<button "Click here to continue">>
+       <<goto "Bunker Hill">>
+<</button>>
+[[|Bunker Hill]] 
 
 
 :: Spy {"position":"550,875","size":"100,100"}
-Name: Samuel Tomlinson
-Racial/Ethnic background: Anglo-European
-Schooling: Yale College
-Civilian occupation: school teacher
-Military Affiliation: 3rd Regiment (Putnam)
-Religion: Congregationalist
-Lives at: Ashford
+Your name is Samuel Tomlinson and you are of English descent. Your great-grandfather was a graduate of Harvard College, but your father is a graduate of Yale College and you followed in his footsteps. You were raised in Ashford, Connecticut, on a large farm, but your father was a gentleman who employed other people to oversee the day-to-day farmwork. You can't decide if you want to study or go into the Congregational ministry, so for now you have taken a position as a school teacher. During the war you serve with the 3rd Regiment under General Israel Putnam. 
+
+Money: 30 Gold, 30 Silver, 40 Copper
+
 
 
 :: Start the simulation {"position":"800,200","size":"100,100"}
@@ -329,11 +393,11 @@ Choose your reading level!
 :: Title Page {"position":"100,200","size":"100,100"}
 <html>
 <head>
-<title>THE SPIRIT OF REVOLUTION</title>
+<title>THE SPIRIT OF REVOLUTION: The Connecticut Line Explored!</title>
 </head>
 <body>
 <h1>THE SPIRIT OF REVOLUTION!</h1>
-<p>The goal of this simulation is to navigate your chosen character through the years of the Revolutionary War, following the Connecticut Line of the Continental Army. From the standard starting route in New London, you begin as a character in eighteenth-century Connecticut and either travel with the Connecticut Line or interact with members of the Line. Your goal is to have your character make decisions to successfully “survive the war” in whatever capacity your role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made the most critical decision of this first phase of the game.
+<p>The goal of this game is to guide your chosen character through the years of the Revolutionary War, following the soldiers from Connecticut in the Continental Army. You will begin the game in New London, Connecticut, in 1775.  Your character may travel with the Connecticut soldiers; may meet soldiers, officers, government officials, and others as they travel through your town; or may have a family member serving in the American or British army. Your goal is to help your character make choices to safely live through the war, no matter what his or her role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made very important decisions for the future of your character. That completes Part I of the game.
 </p>
 </body>
 </html>
@@ -535,89 +599,113 @@ function blurFunction_f(id, initial) {
 :: creators {"position":"0,400","size":"100,100"}
 <h1>Meet the creators of The Spirit Of Revolution!</h1>
 
-Kathy Hermes
+This game was made possible by a grant from Connecticut Humanities.
 
-Olga Veselova
+Kathy Hermes, Publisher and Executive Director, Connecticut Explored, Inc.
+Professor Emerita, Central Connecticut State University
+
+Story writers: 
+Lu Cacace, CCSU, BSEd, 2024
+
+Researcher: 
+Tavvia Jefferson, CCSU, BA, 2016
+Teacher, Windsor High School
+
+Coding: Olga Veselova, CCSU, BSc. 2024
+
+High School Curriculum:
+Katrina Council, 
+
+<h1> Advisory Board </h1>
+
+Juan Coronado, Associate Professor, CCSU History Department
+Dennis Culliton, former Executive Director, Witness Stones
+Cornelia Dayton, 
+David Naumec, Senior Historian & Field Director for Heritage Consultants, LLC
+Camesha Scruggs, Assistant CCSU History Department, Public History Program, and Africana Center
+Amrys Williams, Executive Director, Connecticut League of Museums
+
+
+
+
+
+
 
 
 :: donors {"position":"200,400","size":"100,100"}
 <h1> Donors to the Spirit of Revolution </h1>
-<b> Gifts of $1,000-$10,000 </b>
-Elaine R. Knowlton*
+<b> Gifts over $1,000 </b>
+Elaine R. Knowlton
 
-<b>Gifts of $600–$999</b>
-
-<b>Gifts of $500–$599</b>
-Kenneth Johnson*
-
-<b>Gifts of $300–$499</b>
+<b>Gifts of $500–$999</b>
+Kenneth Johnson
 
 <b>Gifts of $200–$299</b>
-Tim and Lynn Fahy*
-Katherine W. Green*
-Natalie Harbeson*
-Marcia Lattimore*
-Robert E. Morris Jr.*
-David Theroux*
+Tim and Lynn Fahy
+Katherine W. Green
+Natalie Harbeson
+Marcia Lattimore
+Robert E. Morris Jr.
+David Theroux
 
 <b>Gifts of $100–$199</b>
-David Babington*
-Katherine Basto*
-Ralph C. Bloom*
-Carol Bruce*
-Briann Greenfield*
-Kimball and Dorothy Hunt*
-Anne H. Isbister*
-The Lerch Family*
-Roselle Macdonald*
-Hank McDonald*
-Harry Meyer*
-Harold Panciera*
-Martha Ritter*
-Nina Ruckes*
-Paul H. Serenbetz*
-Jack and Suzanne Shannahan*
-Mark Shenkman*
-H. Catherine W. Skinner*
-Deborah Stack*
-Nancy H. Steenburg*
-Joan Twiggs*
-Sylvia Webb*
-Kendall Wiggin*
-Terri Wilson* (Avon)
-Don Winkley*
-Ingrid E. Wood*
-Mary Young*
+David Babington
+Katherine Basto
+Ralph C. Bloom
+Carol Bruce
+Briann Greenfield
+Kimball and Dorothy Hunt
+Anne H. Isbister
+The Lerch Family
+Roselle Macdonald
+Hank McDonald
+Harry Meyer
+Harold Panciera
+Martha Ritter
+Nina Ruckes
+Paul H. Serenbetz
+Jack and Suzanne Shannahan
+Mark Shenkman
+H. Catherine W. Skinner
+Deborah Stack
+Nancy H. Steenburg
+Joan Twiggs
+Sylvia Webb
+Kendall Wiggin
+Terri Wilson (Avon)
+Don Winkley
+Ingrid E. Wood
+Mary Young
 
 <b>Gifts of $5–$99 </b>
-Beth Anderson*
-Moe Armstrong*
-Lorraine Balint*
-James Butler*
-John Caporale*
-Patricia Clark*
-Elizabeth Demir*
-David and Deborah Downes*
-Donna Eriksen*
-Mark Gerity*
-Kathryn Hanlon*
-Paul Hart*
-Lorraine Inzerra*
-Nancy Kline*
-M. Elizabeth Mahan*
-Doris and Robert J. Martinchek*
-Robert McGuinness*
-Bruce and Mary Jane Monahan*
-Richard J. Morey*
+Beth Anderson
+Moe Armstrong
+Lorraine Balint
+James Butler
+John Caporale
+Patricia Clark
+Elizabeth Demir
+David and Deborah Downes
+Donna Eriksen
+Mark Gerity
+Kathryn Hanlon
+Paul Hart
+Lorraine Inzerra
+Nancy Kline
+M. Elizabeth Mahan
+Doris and Robert J. Martinchek
+Robert McGuinness
+Bruce and Mary Jane Monahan
+Richard J. Morey
 Joan Morgan
-Stephen Morris*
-Henrietta Mountz*
-W. Parker*
-John Pieper*
-Joseph Pierz*
-Bill Powers*
-Dawn Scoullar-Gerk*
-Patricia Vibert*
+Stephen Morris
+Henrietta Mountz
+W. Parker
+John Pieper
+Joseph Pierz
+Bill Powers
+Dawn Scoullar-Gerk
+Patricia Vibert
 
 
 
@@ -678,7 +766,7 @@ Time in this simulation is represented by the seasons of the year. This is to re
 } else { 
 	setup.Path = "";  // Running in a browser
 }*/
-setup.Path = "C:/Documents/Twine/Stories/"; //remove when publishing to browser and uncomment above code; should have C:/Users/yourname in the file path/Documents/Twine/Stories/
+setup.Path = "C:/Documents/Twine/Stories/"; //remove when publishing to browser and uncomment above code
 setup.ImagePath = setup.Path + "images/";
 
 :: StoryStylesheet [stylesheet]
