@@ -6,7 +6,7 @@ THE SPIRIT OF REVOLUTION
 {
   "ifid": "879803DE-AB34-41C4-A9FC-710E9EDBEB44",
   "format": "SugarCube",
-  "format-version": "2.36.1",
+  "format-version": "2.37.3",
   "start": "Title Page",
   "tag-colors": {
     "popUp": "green"
@@ -37,7 +37,7 @@ Decision: Do you 1) talk to your son now about his plans or 2) wait for his fath
 <</button>>
 
 <<button "No, wait for his father to return from the West Indies.">>
-    <<set $player.tellwait to 0>>
+    <<set $player.tellwait to 1>>
     <<set $player.copperCoins -= 1>>
     <<goto "Son's Dialogue">>
 <</button>>
@@ -53,10 +53,10 @@ Decision: Do you 1) talk to your son now about his plans or 2) wait for his fath
 <</button>>
 
 <<button "No, wait for his father to return from the West Indies.">>
-    <<set $player.copperCoins -1= 1>>
+    <<set $player.copperCoins -= 1>>
     <<goto "Son's Dialogue">>
 <</button>>
-<<endif>>
+<</if>>
 [[Son's Dialogue]]
 
 
@@ -113,7 +113,7 @@ Welcome to Boston!
 
 :: Bunker Hill {"position":"2000,900","size":"100,100"}
 <<if $readingLvl is "HL">>
-	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children.  One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
+	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
 
 Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
 
@@ -131,7 +131,7 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 
 
 <<elseif $readingLvl is "LL">>
-You have finished working for the tavern owner in New London. You are going to follow other Pequot and Mohegan soldiers to Boston.  Everybody thinks there will be a fight with the British soldiers. You hope to make money there by doing laundry, sewing, or cooking. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be captured by the use of force and sold into slavery. Your late husband, Tobie, was captured in Senegambia and enslaved. Your children look like him. They will be safe from being enslaved on the Eastern Pequot reservation because you are a free person. But the children will have to live with her old grandmother, who is very weak, and the children are very active. You could leave the children with your Pequot friends in New London, but your friends must work. They are not always able to watch the children. You don’t want to take the children to Boston. 
+You have finished working for the tavern owner in New London. You are going to follow other Pequot and Mohegan soldiers to Boston. Everybody thinks there will be a fight with the British soldiers. You hope to make money there by doing laundry, sewing, or cooking. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be captured by the use of force and sold into slavery. Your late husband, Tobie, was captured in Senegambia and enslaved. Your children look like him. They will be safe from being enslaved on the Eastern Pequot reservation because you are a free person. But the children will have to live with her old grandmother, who is very weak, and the children are very active. You could leave the children with your Pequot friends in New London, but your friends must work. They are not always able to watch the children. You don’t want to take the children to Boston. 
 
 Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
 
@@ -159,15 +159,13 @@ Connecticut State Department of Education and Connecticut’s Five Eastern Woodl
 https://portal.ct.gov/SDE/Publications/Teaching-Native-American-Studies
 
 
-
 :: Doctor {"position":"1000,750","size":"100,100"}
 Your name is Cato Williams. Your maternal grandmother came from Barbados, an island in the Caribbean, and because her husband fought in King George's War and saved an officer's life, the couple were manumitted and given land by the person who had enslaved them in Hartford. Your mother was born free in Connecticut. Your father was brought to Hartford as a boy from a tropical region of West African known as Senegambia. He was a very skilled blacksmith, and he was able to buy his freedom for 100 pounds money. 
 
 Your parents wanted you to succeed so they apprenticed you to an apothecary (pharmacist), and later you apprenticed yourself to a medical doctor. During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was later 
-During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was  was appointed by Congress in 1777 to serve as surgeon general of the Continental Army's Eastern Department.
+During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was appointed by Congress in 1777 to serve as surgeon general of the Continental Army's Eastern Department.
 
 Money: 30 Gold, 30 Silver, 40 Copper
-
 
 
 :: Drop kids off {"position":"2000,1100","size":"100,100"}
@@ -196,14 +194,13 @@ Money: 30 Gold, 30 Silver, 40 Copper
 [Note for later: Military Affiliations: husband joined the King’s provincial troops; teenage son wants to enlist in the 7th Regiment (Webb).]
 
 
-
 :: Greetings {"position":"1500,1600","size":"100,100"}
 <h1>The Beginnings of your Journey</h1>
 Welcome, $player.name!<br>
 Your current player class is $player.job.<br>
 That means you start with $player.totalCoins coins. $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. 
 
-It’s Thursday evening, April 20, 1775, and a breathless postal express rider has appeared in New London with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Massachusetts Committee of Safety, about a battle that took place in Lexington on April 19th. The rider stopped his horse in “Green’s Alley” at the shop of the printer, Timothy Green. Green emerged from his shop and greeted the rider, who handed him a copy of Palmer’s “Lexington Alarm.”. A crowd began to gather around to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4]
+It’s Thursday evening, April 20, 1775, and a breathless postal express rider has appeared in New London with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Massachusetts Committee of Safety, about a battle that took place in Lexington on April 19th. The rider stopped his horse in “Green’s Alley” at the shop of the printer, Timothy Green. Green emerged from his shop and greeted the rider, who handed him a copy of Palmer’s “Lexington Alarm.”. A crowd began to gather around to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4 ]
 
 <img @src="setup.ImagePath+'IsaacBissell.png'" height="400">
 
@@ -237,9 +234,8 @@ It’s Thursday evening, April 20, 1775, and a breathless postal express rider h
 <</button>>
 
 
-
 :: Laundress {"position":"650,1000","size":"100,100"}
-<img @src="setup.ImagePath+'Laundress.jpg'" height="400">
+<img @src="setup.ImagePath+'Laundress.png'" height="400">
 
 Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
 
@@ -255,7 +251,6 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <h4>If this is your first time playing, you can read the instructions [[here|instructions]]</h4>
 
 [[|Start the simulation]]
-
 
 
 :: Set Player Variable {"position":"1100,600","size":"100,100"}
@@ -288,7 +283,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 :: Shopkeeper {"position":"450,750","size":"100,100"}
 Name: Your name is Dinah Johnson. 
 
-Your mother's parents came from West Africa, from a village near Juffure in Senegambia. Your maternal grandparents were taken from their homes and sold to white men who put them on a ship called The Speedwell that went across the ocean. This is called the Middle Passage. They disembarked in New London in 1761.  Your mother was purchased and enslaved by a Quaker family that later freed her, because their faith was against slavery. 
+Your mother's parents came from West Africa, from a village near Juffure in Senegambia. Your maternal grandparents were taken from their homes and sold to white men who put them on a ship called The Speedwell that went across the ocean. This is called the Middle Passage. They disembarked in New London in 1761. Your mother was purchased and enslaved by a Quaker family that later freed her, because their faith was against slavery. 
 
 Your father's parents came from Jamaica. A long time ago his grandparents had also come from Africa, and were taken first to the Cabbage Tree Plantation in Antigua, owned by two Hartford men named Samuel Wyllys and Richard Lord. Then your grandparents were sold to a white family in Port Royal in Jamaica. Your father got a job on a Connecticut ship in Port Royal and came to New London when he was 14. He was a carter and when he married your mother, she opened a little shop in the house they shared. When she passed away, you took over her shop. Your parents were very successful in their businesses, and they taught you how to read and write so you could keep your account books.
 
@@ -306,39 +301,41 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 :: Son's Dialogue {"position":"1750,1825","size":"100,100"}
 <<if $readingLvl is "HL">>
-<<if $player.tellSon is +1>>
+<<if $player.tellSon is 1>>
 	<p> 1)	You talk to your son and tell him that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) Now you have $player.silverCoins silver coins. </p>
     
             
-<<elseif $player.tellwait is -1>>
+<<elseif $player.tellwait is 1>>
 	<p> 2)	You decide to wait for your husband to return. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.)
 You now have $player.copperCoins copper coins.</p>
    <<button "Click here to continue">>
                 <<goto "Bunker Hill">>
      <</button>>
 <<endif>>
+<<endif>>
 
 [[|Bunker Hill]]
 
 <<if $readingLvl is "LL">>
-<<if $player.tellSon is +1>>
-	<p> 1)	You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.)  Now you have $player.silverCoins silver coins. </p>
+<<if $player.tellSon is 1>>
+	<p> 1)	You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) Now you have $player.silverCoins silver coins. </p>
     
             
-<<elseif $player.tellwait is -1>>
+<<elseif $player.tellwait is 1>>
 	<p> 2)	You decide to wait for your husband to return. You don’t like giving any opinions about what happened at Lexington. (Lose a copper coin.) 
 You now have $player.copperCoins copper coins.</p>
 <<button "Click here to continue">>
        <<goto "Bunker Hill">>
 <</button>>
-[[|Bunker Hill]] 
+<<endif>>
+<<endif>>
+[[|Bunker Hill]]
 
 
 :: Spy {"position":"550,875","size":"100,100"}
 Your name is Samuel Tomlinson and you are of English descent. Your great-grandfather was a graduate of Harvard College, but your father is a graduate of Yale College and you followed in his footsteps. You were raised in Ashford, Connecticut, on a large farm, but your father was a gentleman who employed other people to oversee the day-to-day farmwork. You can't decide if you want to study or go into the Congregational ministry, so for now you have taken a position as a school teacher. During the war you serve with the 3rd Regiment under General Israel Putnam. 
 
 Money: 30 Gold, 30 Silver, 40 Copper
-
 
 
 :: Start the simulation {"position":"800,200","size":"100,100"}
@@ -397,7 +394,7 @@ Choose your reading level!
 </head>
 <body>
 <h1>THE SPIRIT OF REVOLUTION!</h1>
-<p>The goal of this game is to guide your chosen character through the years of the Revolutionary War, following the soldiers from Connecticut in the Continental Army. You will begin the game in New London, Connecticut, in 1775.  Your character may travel with the Connecticut soldiers; may meet soldiers, officers, government officials, and others as they travel through your town; or may have a family member serving in the American or British army. Your goal is to help your character make choices to safely live through the war, no matter what his or her role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made very important decisions for the future of your character. That completes Part I of the game.
+<p>The goal of this game is to guide your chosen character through the years of the Revolutionary War, following the soldiers from Connecticut in the Continental Army. You will begin the game in New London, Connecticut, in 1775. Your character may travel with the Connecticut soldiers; may meet soldiers, officers, government officials, and others as they travel through your town; or may have a family member serving in the American or British army. Your goal is to help your character make choices to safely live through the war, no matter what his or her role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made very important decisions for the future of your character. That completes Part I of the game.
 </p>
 </body>
 </html>
@@ -429,8 +426,7 @@ Choose your reading level!
 [[|creators]]
 [[|partners]]
 [[|donors]] 
-[[|Curriculum]]  
-
+[[|Curriculum]]
 
 
 :: charCreate {"position":"700,500","size":"200,200"}
@@ -593,7 +589,7 @@ function blurFunction_f(id, initial) {
 <<button "Click here to continue">>
        <<goto "Bunker Hill">>
 <</button>>
-[[|Bunker Hill]] 
+[[|Bunker Hill]]
 
 
 :: creators {"position":"0,400","size":"100,100"}
@@ -624,12 +620,6 @@ Cornelia Dayton,
 David Naumec, Senior Historian & Field Director for Heritage Consultants, LLC
 Camesha Scruggs, Assistant CCSU History Department, Public History Program, and Africana Center
 Amrys Williams, Executive Director, Connecticut League of Museums
-
-
-
-
-
-
 
 
 :: donors {"position":"200,400","size":"100,100"}
@@ -708,7 +698,6 @@ Dawn Scoullar-Gerk
 Patricia Vibert
 
 
-
 :: instructions {"position":"500,400","size":"100,100"}
 /%----------Insert PDF of instructions
 Pdf file needs to be added to the link: <a href="https://spirirtofrevolution.com/instructions.pdf" target="_blank">here.</a>%/
@@ -766,11 +755,11 @@ Time in this simulation is represented by the seasons of the year. This is to re
 } else { 
 	setup.Path = "";  // Running in a browser
 }*/
-setup.Path = "C:/Documents/Twine/Stories/"; //remove when publishing to browser and uncomment above code
+setup.Path = "../Stories/"; //remove when publishing to browser and uncomment above code
 setup.ImagePath = setup.Path + "images/";
 
 :: StoryStylesheet [stylesheet]
 body {
 	/*color: #eee;*/
-	background-color: blue;
+	background-color: dodgerblue;
 }
