@@ -56,7 +56,7 @@ Decision: Do you 1) talk to your son now about his plans or 2) wait for his fath
     <<set $player.copperCoins -= 1>>
     <<goto "Son's Dialogue">>
 <</button>>
-<</if>>
+<<endif>>
 [[Son's Dialogue]]
 
 
@@ -308,10 +308,11 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<elseif $player.tellwait is 1>>
 	<p> 2)	You decide to wait for your husband to return. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.)
 You now have $player.copperCoins copper coins.</p>
-   <<button "Click here to continue">>
-                <<goto "Bunker Hill">>
-     <</button>>
-<<endif>>
+<<endif>>   
+<<button "Click here to continue">>
+     <<goto "Bunker Hill">>
+<</button>>
+
 <<endif>>
 
 [[|Bunker Hill]]
@@ -352,6 +353,10 @@ Choose your reading level!
 <</button>>
 
 [[|charCreate]]
+
+
+:: StoryCaption {"position":"100,0","size":"100,100"}
+<img @src="setup.ImagePath+'1979.124.8.obv.noscale gold.jpeg'" height="15"> 100
 
 
 :: StoryInit {"position":"0,800","size":"100,100"}
