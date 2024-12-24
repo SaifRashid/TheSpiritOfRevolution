@@ -21,77 +21,91 @@ THE SPIRIT OF REVOLUTION
 
 :: Begin Farm Wife Journey {"position":"2100,1400","size":"200,200"}
 <<if $readingLvl is "HL">>
-	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal at the tavern, which consists of a salted shad, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal. 
-    
-    You came by boat, and though Long Island Sound was rougher than you had anticipated, it was better than the 5 days it would have taken had you come overland. Your husband sailed on the sloop Martha in February to oversee the delivery of some livestock to the West Indies, and you hope you can find out some news about his return. 
+	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal, which consists of a salted shad, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal.
 
-A crowd comes into the tavern. Everyone is talking excitedly about a confrontation that occurred two days ago between British soldiers and colonists on Lexington Green. George joins the crowd and talks to several of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. You are appalled that he would be disloyal to the King. 
+	You came by boat, and though Long Island Sound was rougher than you had anticipated, it was better than the five days it would have taken had you come overland. Your husband sailed on the sloop Martha in February to oversee the delivery of some livestock to the West Indies, and you hope you can find out some news about his return.
+
+	A crowd enters the tavern. Everyone is talking excitedly about a confrontation between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to several of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. You are appalled that he would be disloyal to the king!
 
 
-Decision: Do you 1) talk to your son now about his plans or 2) wait for his father to return from the West Indies? 
+	Decision: Do you 1) talk to your son about his plans immediately, or 2) wait to confront him until his father returns from the West Indies? 
 
-<<button "Yes, you talk to your son now about his plans.">>
-    <<set $player.tellSon to 1>>
-    <<set $player.silverCoins += 1>>
-	<<goto "Son's Dialogue">>
-<</button>>
+  <<button "Yes, you talk to your son now about his plans">>
+      <<set $player.tellSon to 1>>
+      <<set $player.silverCoins += 1>>
+      <<goto "Son's Dialogue">>
+  <</button>>
 
-<<button "No, wait for his father to return from the West Indies.">>
-    <<set $player.tellwait to 1>>
-    <<set $player.copperCoins -= 1>>
-    <<goto "Son's Dialogue">>
-<</button>>
+  <<button "No, wait for his father to return from the West Indies">>
+      <<set $player.tellWait to 1>>
+      <<set $player.copperCoins -= 1>>
+      <<goto "Son's Dialogue">>
+  <</button>>
 
 <<elseif $readingLvl is "LL">>
-You walk into the tavern feeling a little scared and nervous. You're not used to being in places like this by yourself. You see your oldest son, George, sitting at a table. He waves and asks you to come over. He brought a big wagon full of things from your farm to sell in New London. He brought dairy products, flax, and wool. You and George sit down to eat at the tavern. You have fish, peas, and vegetables with butter. You are grateful for the meal. 
+	You nervously enter the tavern. You aren’t used to going into such places alone. You see your oldest son, George, seated at a table. He waves his hand and invites you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal. You eat fish, peas, and vegetables with butter. You’re thankful for the meal.
+    
+    You came by boat, and though Long Island Sound was rougher than you had expected, it was better than the five days it would have taken had you come overland. Your husband sailed on the ship Martha in February to deliver some farm animals to the West Indies, and you hope you can find out some news about his return.
+    
+    A crowd comes into the tavern. Everyone is talking excitedly about a fight between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to a few of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. (A militia is a group of armed citizens.) You are shocked that he would be against the king!
 
-Decision: Do you 1) talk to your son now about his plans or 2) wait for his father to return from the West Indies? 
 
-<<button "Yes, you talk to your son now about his plans.">>
-    <<set $player.silverCoins += 1>>
-	<<goto "Son's Dialogue">>
-<</button>>
+	Decision: Do you 1) talk to your son about his plans right away, or 2) wait to talk to him until his father returns from the West Indies? 
 
-<<button "No, wait for his father to return from the West Indies.">>
-    <<set $player.copperCoins -= 1>>
-    <<goto "Son's Dialogue">>
-<</button>>
+  <<button "Yes, you talk to your son now about his plans.">>
+      <<set $player.tellSon to 1>>
+      <<set $player.silverCoins += 1>>
+      <<goto "Son's Dialogue">>
+  <</button>>
+
+  <<button "No, wait for his father to return from the West Indies.">>
+      <<set $player.tellWait to 1>>
+      <<set $player.copperCoins -= 1>>
+      <<goto "Son's Dialogue">>
+  <</button>>
 <<endif>>
-[[Son's Dialogue]]
+
+[[|Son's Dialogue]]
 
 
 :: Begin Laundress Journey {"position":"2100,800","size":"200,200"}
 <<if $readingLvl is "HL">>
 	You are in New London with her brother, a medicine man of the Eastern Pequot. You are selling splint baskets made of ash and decorated with designs she brushed on.   You are also looking for work. You have come to the tavern to see if the owner needs help in the kitchen or laundry. You have two children ages 5 and 7. You’re afraid if the tavern owner knows you have children he won’t hire you, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
 
-Decision: Should you tell the tavern owner you have children? 
-<<button "Yes, tell the owner">>
-    <<set $player.tellTavernOwner to 1>>
-    <<set $player.goldCoins += 1>>
-	<<goto "Tavern Owner Dialogue">>
-<</button>>
 
-<<button "No, don't tell the owner">>
-    <<set $player.tellTavernOwner to 0>>
-    <<set $player.silverCoins += 1>>
-    <<goto "Tavern Owner Dialogue">>
-<</button>>
+	Decision: Should you tell the tavern owner you have children? 
+
+  <<button "Yes, tell the owner">>
+      <<set $player.tellTavernOwner to 1>>
+      <<set $player.goldCoins += 1>>
+      <<goto "Tavern Owner Dialogue">>
+  <</button>>
+
+  <<button "No, don't tell the owner">>
+      <<set $player.tellTavernOwner to 0>>
+      <<set $player.silverCoins += 1>>
+      <<goto "Tavern Owner Dialogue">>
+  <</button>>
 
 <<elseif $readingLvl is "LL">>
-You are in New London with your brother. His job is healing sick people. He knows a lot about medicine. You are selling baskets that he made. You have gone to the tavern, a place where people can eat and drink and even stay overnight. You want to ask the owner if he needs a cook or a woman who does laundry. You have two children ages 5 and 7. You are afraid you won’t be hired if the tavern knows, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
+	You are in New London with your brother. His job is healing sick people. He knows a lot about medicine. You are selling baskets that he made. You have gone to the tavern, a place where people can eat and drink and even stay overnight. You want to ask the owner if he needs a cook or a woman who does laundry. You have two children ages 5 and 7. You are afraid you won’t be hired if the tavern knows, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
 
-Decision: Are you going to tell the tavern owner you have children?
 
-<<button "Yes, tell the owner">>
-    <<set $player.goldCoins += 1>>
-	<<goto "Tavern Owner Dialogue">>
-<</button>>
+	Decision: Are you going to tell the tavern owner you have children?
 
-<<button "No, don't tell the owner">>
-    <<set $player.silverCoins += 1>>
-    <<goto "Tavern Owner Dialogue">>
-<</button>>
+  <<button "Yes, tell the owner">>
+      <<set $player.tellTavernOwner to 1>>
+      <<set $player.goldCoins += 1>>
+      <<goto "Tavern Owner Dialogue">>
+  <</button>>
+
+  <<button "No, don't tell the owner">>
+      <<set $player.tellTavernOwner to 0>>
+      <<set $player.silverCoins += 1>>
+      <<goto "Tavern Owner Dialogue">>
+  <</button>>
 <<endif>>
+
 [[|Tavern Owner Dialogue]]
 
 
@@ -111,11 +125,106 @@ Decision: Are you going to tell the tavern owner you have children?
 Welcome to Boston!
 
 
-:: Bunker Hill {"position":"2600,700","size":"100,100"}
+:: Boston Farm Wife {"position":"3000,1450","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You have arrived in Boston after your journey. Getting into the city proved difficult. Following the conflict at Lexington and Concord, the city was under siege from the royal army. You have rented a bed at the Green Dragon. You have heard that taverns like this are hotspots for militia meetings, so you wait patiently at night hoping your son shows up.
+    
+    On your fourth night in Boston, a familiar voice is heard walking into the tavern. George walks in, with a small group of boys about his age. After he sits down, you walk up to him and tell him you wish to speak with him.
+    
+    Pulled away from the noise of the tavern, you tell George that his father has decided to stay in New York to join the king’s army. You pull out the letter and show him, urging him to pull away from these militiamen.
+    
+    
+    Decision: Will you 1) continue to pressure George to come home with you and stay out of this fight or 2) will you ask him to try and help convince your husband to leave the army? You can only imagine it’s a matter of time before more troops are needed in Boston.
+    
+    <<button "Pressure George to come home">>
+    	<<set $player.pressureGeorge to 1>>
+        <<set $player.silverCoins -= 1>>
+        <<goto "George's Decision">>
+	<</button>>
+    
+    <<button "Ask him to convince your husband">>
+    	<<set $player.pressureGeorge to 0>>
+        <<set $player.silverCoins += 1>>
+        <<goto "George's Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	After your tough trip to Boston, getting into the city was even tougher. British soldiers stand at every street corner, on every dock, in the faces of all the people of Boston. You learn things have been like this since the fights up north at Lexington and Concord. You have rented a bed at the Green Dragon tavern, in hopes that George will walk in one night. This tavern is often busy with other militiamen.
+    
+    On your fourth night, a familiar voice rings in your ear as the door opens. George walks in with a group of boys all similar in age to him. After he sits down, you approach him and tell him you want to talk to him.
+    
+    He follows you to a quiet spot, and you take out the letter from your husband about him staying to join the king’s army and show it to George. He looks up at you, waiting.
+    
+    
+    Decision: Should you 1) beg George to leave the militia and come back home or 2) ask him to join you in finding his father to get him to leave the army?
+    
+    <<button "Beg George to leave and come home">>
+    	<<set $player.pressureGeorge to 1>>
+        <<set $player.silverCoins -= 1>>
+        <<goto "George's Decision">>
+	<</button>>
+    
+    <<button "Ask him to join you in finding his father">>
+    	<<set $player.pressureGeorge to 0>>
+        <<set $player.silverCoins += 1>>
+        <<goto "George's Decision">>
+	<</button>>
+<<endif>>
+
+[[|George's Decision]] 
+
+
+:: Bunker Hill Farm Wife {"position":"2600,1450","size":"100,100"}
+<<if $readingLvl is "HL">>
+	George has left New London and gone to Massachusetts to support the militia against the British redcoats. You remain in New London until April 20 , when you get word that your husband is returning to New York and then going to Ridgefield. You go by coach to New Haven to see your sister. When you arrive, she tells you a letter from your husband has been delivered. The letter says he is remaining in New York to join the king’s troops there.
+    
+    You need to find George to tell him that his father is joining the king’s troops and urge him to support the king. You aren’t exactly sure where he is in Massachusetts. You are worried about how much money you have left. 
+    
+    
+    Decision: Do you 1) take a ship from New Haven to Boston to get there more quickly but pay higher prices in Boston for lodging, or 2) do you go by coach and stay at inns along the way to save money?
+    
+    <<button "Take a ship to Boston">>
+    	<<set $player.takeShip to 1>>
+        <<set $player.goldCoins -= 2>>
+        <<goto "Travel Decision">>
+	<</button>>
+    
+    <<button "Travel by coach to Boston">>
+    	<<set $player.takeShip to 0>>
+        <<set $player.goldCoins -= 1>>
+        <<goto "Travel Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	George has left for Massachusetts while you stay in New London until April 20 , waiting for news of your husband’s return to New York. In the meantime, you go to New Haven by coach to see your sister. While there, you get word from your husband that he will not return to Ridgefield but will stay in New York to join the king’s troops.
+    
+    You must find George and tell him his father is going to join the king’s army. You have to convince him to support the king! But you have never been to Boston and do not even know where it is! Travel will require a lot of money, and you are worried you won’t have enough.
+    
+    
+    Decision: Should you 1) take a ship from New Haven to Boston, which will get you there faster but costs more money and means you’ll need to pay more to stay in Boston, or 2) travel by coach, staying at inns along the way, which takes much longer but will save you money?
+    
+    <<button "Take a ship to Boston">>
+    	<<set $player.takeShip to 1>>
+        <<set $player.goldCoins -= 1>>
+        <<goto "Travel Decision">>
+	<</button>>
+    
+    <<button "Travel by coach to Boston">>
+    	<<set $player.takeShip to 0>>
+        <<set $player.goldCoins -= 1>>
+        <<set $player.copperCoins -= 5>>
+        <<goto "Travel Decision">>
+	<</button>>
+<<endif>>    
+
+[[|Travel Decision]] 
+
+
+:: Bunker Hill Laundress {"position":"2600,700","size":"100,100"}
 <<if $readingLvl is "HL">>
 	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
 
-Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
+	Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
 
 <<button "Eastern Pequot Reservation">>
     <<set $player.childDecision2 to 0>>
@@ -149,6 +258,7 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 
 
 <<endif>>
+
 [[|Drop kids off]]
 
 
@@ -160,6 +270,8 @@ https://portal.ct.gov/SDE/Publications/Teaching-Native-American-Studies
 
 
 :: Doctor {"position":"1050,650","size":"100,100"}
+<img @src="setup.ImagePath+'The Doctor/The Doctor.jpeg'" height="400">
+
 Your name is Cato Williams. Your maternal grandmother came from Barbados, an island in the Caribbean, and because her husband fought in King George's War and saved an officer's life, the couple were manumitted and given land by the person who had enslaved them in Hartford. Your mother was born free in Connecticut. Your father was brought to Hartford as a boy from a tropical region of West African known as Senegambia. He was a very skilled blacksmith, and he was able to buy his freedom for 100 pounds money. 
 
 Your parents wanted you to succeed so they apprenticed you to an apothecary (pharmacist), and later you apprenticed yourself to a medical doctor. During the revolutionary war you served in the 8th Regiment under Colonel Jedediah Huntington from Norwich, and through him you met Dr. Philip Turner, who was later 
@@ -170,20 +282,19 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 :: Drop kids off {"position":"2600,900","size":"100,100"}
 <<if $player.childDecision2 is 0>>
-You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose a copper coin). You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
-
+	You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose a copper coin). You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
 <<elseif $player.childDecision2 is 0>>
-You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
-
+	You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
 <<endif>>
 <<button "Click here to continue">>
        <<goto "Boston">>
 <</button>>
+
 [[|Boston]]
 
 
 :: Farm Wife {"position":"950,775","size":"100,100"}
-<img @src="setup.ImagePath+'FarmWife.jpg'" height="400">
+<img @src="setup.ImagePath+'The Farm Wife/Farm Wife.png'" height="400">
 
 Your name is Rebecca Hoyt and you are of Dutch and English descent. Some of your ancestors were among the first settlers of New Amsterdam, while others were among the first English settlers of the New Haven Colony that later merged with the Connecticut Colony. Originally most of your ancestors were Puritans and Calvinists, but in the 1740s your parents joined the Church of England, also known as the Anglican Church.
 
@@ -194,15 +305,38 @@ Money: 30 Gold, 30 Silver, 40 Copper
 [Note for later: Military Affiliations: husband joined the King’s provincial troops; teenage son wants to enlist in the 7th Regiment (Webb).]
 
 
+:: George's Decision {"position":"3200,1450","size":"100,100"}
+<<if $readingLvl is "HL">>
+  <<if $player.pressureGeorge is 1>>
+      1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+  <<elseif $player.pressureGeorge is 0>>
+      2) You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+  <<endif>>   
+  <<button "Click here to continue">>
+
+  <</button>>
+
+<<elseif $readingLvl is "LL">>
+  <<if $player.pressureGeorge is 1>>
+      1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+  <<elseif $player.pressureGeorge is 0>>
+      2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+  <<endif>>
+  <<button "Click here to continue">>
+
+  <</button>>
+<<endif>>
+
+
 :: Greetings {"position":"1500,1800","size":"100,100"}
 <h1>The Beginnings of your Journey</h1>
 Welcome, $player.name!<br>
 Your current player class is $player.job.<br>
 That means you start with $player.totalCoins coins. $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. 
 
-It’s Thursday evening, April 20, 1775, and a breathless postal express rider has appeared in New London with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Massachusetts Committee of Safety, about a battle that took place in Lexington on April 19th. The rider stopped his horse in “Green’s Alley” at the shop of the printer, Timothy Green. Green emerged from his shop and greeted the rider, who handed him a copy of Palmer’s “Lexington Alarm.”. A crowd began to gather around to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4 ]
+It is Thursday evening, April 20, 1775, and a breathless post rider appears in New London, Connecticut, with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Committee of Safety, about a battle that took place in Lexington, Massachusetts, on April 19. The rider stops his horse near Timothy Green’s printer's shop, Timothy Green. Green emerges from his shop and greets the rider, who hands him a copy of Palmer’s “Lexington Alarm.” A crowd gathers to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4 ]
 
-<img @src="setup.ImagePath+'IsaacBissell.png'" height="400">
+<img @src="setup.ImagePath+'New London Concord Alarm/Messenger riding to New London News of Lexington.jpg'" height="400">
 
 [A woodcut alleged to be Isaac Bissell riding to CT. Bissell seems not to have been an actual emissary to New London.]
 
@@ -235,7 +369,7 @@ It’s Thursday evening, April 20, 1775, and a breathless postal express rider h
 
 
 :: Laundress {"position":"700,900","size":"100,100"}
-<img @src="setup.ImagePath+'Laundress.png'" height="400">
+<img @src="setup.ImagePath+'The Laundress/Laundress.png'" height="400">
 
 Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
 
@@ -294,6 +428,8 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Soldier {"position":"850,900","size":"100,100"}
+<img @src="setup.ImagePath+'The Soldier Photos/The Soldier.jpeg'" height="400">
+
 Your name is Solomon Shantup and your mother is a Tunxis woman and your father is Mohegan. Your older brother and sister studied at Moor's Indian Charity School in Lebanon from 1764 to 1765. In 1773 you were a student at Joseph Johnson’s school in Farmington. Your parents had a large land lot among the Tunxis and were famous for their well-kept orchards and cider production. In addition to attending school and working for your parents, you sometimes worked as a farmhand for Elisha Wampey and Cornelius Indian on their land in Farmington. You belonged to the Congregationalist Church in New Hartford, where your mother and her sisters also worshipped. While visiting your relatives on the Mohegan reservation, you enlisted in New London with the 6th Regiment, 3rd Company under Colonel Samuel Holden Parsons. 
 Lives at: Tunxis lands in Farmington
 Money: 30 Gold, 30 Silver, 40 Copper
@@ -301,36 +437,27 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 :: Son's Dialogue {"position":"2400,1450","size":"100,100"}
 <<if $readingLvl is "HL">>
-<<if $player.tellSon is 1>>
-	<p> 1)	You talk to your son and tell him that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) Now you have $player.silverCoins silver coins. </p>
-    
-            
-<<elseif $player.tellwait is 1>>
-	<p> 2)	You decide to wait for your husband to return. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.)
-You now have $player.copperCoins copper coins.</p>
-<<endif>>   
-<<button "Click here to continue">>
-     <<goto "Bunker Hill">>
-<</button>>
+  <<if $player.tellSon is 1>>
+      1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.     
+  <<elseif $player.tellWait is 1>>
+      2) You decide to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
+  <<endif>>   
+  <<button "Click here to continue">>
+       <<goto "Bunker Hill Farm Wife">>
+  <</button>>
 
+<<elseif $readingLvl is "LL">>
+  <<if $player.tellSon is 1>>
+      1) You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+  <<elseif $player.tellWait is 1>>
+      2) You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
+  <<endif>>
+  <<button "Click here to continue">>
+         <<goto "Bunker Hill Farm Wife">>
+  <</button>>
 <<endif>>
 
-[[|Bunker Hill]]
-
-<<if $readingLvl is "LL">>
-<<if $player.tellSon is 1>>
-	<p> 1)	You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. He tells you to remember your place. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) Now you have $player.silverCoins silver coins. </p>
-    
-            
-<<elseif $player.tellwait is 1>>
-	<p> 2)	You decide to wait for your husband to return. You don’t like giving any opinions about what happened at Lexington. (Lose a copper coin.) 
-You now have $player.copperCoins copper coins.</p>
-<<button "Click here to continue">>
-       <<goto "Bunker Hill">>
-<</button>>
-<<endif>>
-<<endif>>
-[[|Bunker Hill]]
+[[|Bunker Hill Farm Wife]]
 
 
 :: Spy {"position":"600,775","size":"100,100"}
@@ -356,9 +483,11 @@ Choose your reading level!
 
 
 :: StoryCaption {"position":"100,0","size":"100,100"}
-<img @src="setup.ImagePath+'1979.124.8.obv.noscale gold.jpeg'" height="15"> 30
-<img @src="setup.ImagePath+'SilverConn4610VGo.jpg'" height="15"> 30
-<img @src="setup.ImagePath+'1785-CT-HalfPenny-GVG-obv.jpg'" height="15"> 40
+<<if $player and $player.goldCoins and $player.silverCoins and $player.copperCoins>>
+<img @src="setup.ImagePath+'Coins/1979.124.8.obv.noscale gold.jpeg'" height="15"> $player.goldCoins 
+<img @src="setup.ImagePath+'Coins/SilverConn4610VGo.jpg'" height="15"> $player.silverCoins
+<img @src="setup.ImagePath+'Coins/1785-CT-HalfPenny-GVG-obv.jpg'" height="15"> $player.copperCoins
+<</if>>
 
 
 :: StoryInit {"position":"0,0","size":"100,100"}
@@ -367,31 +496,33 @@ Choose your reading level!
 
 :: Tavern Owner Dialogue {"position":"2400,700","size":"100,100"}
 <<if $player.tellTavernOwner is 0>>
-	<p> You do not tell the owner. He hires you for one month (get paid one silver coin). Now you have $player.silverCoins silver coins. </p>
-    Decision: 1) Should you just pay someone to take care of the children 
-	or 2) should you take them home to the Eastern Pequot reservation?
+  You do not tell the owner. He hires you for one month (get paid one silver coin). Now you have $player.silverCoins silver coins.
 
-            <<button "pay someone">>
-                <<set $player.ChildrenDecision to 0>>
-                <<set $player.silverCoins -= 1>>
-                <<goto "children Dilemma">>
-            <</button>>
 
-            <<button "take them home">>
-                <<set $player.ChildrenDecision to 1>>
-                <<set $player.copperCoins -= 1>>
-                <<goto "children Dilemma">>
-            <</button>>
+	Decision: 1) Should you just pay someone to take care of the children or 2) should you take them home to the Eastern Pequot reservation?
+
+  <<button "Pay someone">>
+    <<set $player.ChildrenDecision to 0>>
+    <<set $player.silverCoins -= 1>>
+    <<goto "children Dilemma">>
+  <</button>>
+
+  <<button "Take them home">>
+    <<set $player.ChildrenDecision to 1>>
+    <<set $player.copperCoins -= 1>>
+    <<goto "children Dilemma">>
+  <</button>>
 
 <<elseif $player.tellTavernOwner is 1>>
-	<p> You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid one gold coin). You now have $player.goldCoins gold coins.</p>
-   <<button "Click here to continue">>
-                <<goto "Bunker Hill">>
-     <</button>>
+  You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid one gold coin). You now have $player.goldCoins gold coins.
+  
+  	<<button "Click here to continue">>
+  		<<goto "Bunker Hill">>
+  	<</button>>
 <<endif>>
 
 [[|children Dilemma]]
-[[|Bunker Hill]]
+[[|Bunker Hill Laundress]]
 
 
 :: Title Page {"position":"100,200","size":"100,100"}
@@ -401,8 +532,7 @@ Choose your reading level!
 </head>
 <body>
 <h1>THE SPIRIT OF REVOLUTION!</h1>
-<p>The goal of this game is to guide your chosen character through the years of the Revolutionary War, following the soldiers from Connecticut in the Continental Army. You will begin the game in New London, Connecticut, in 1775. Your character may travel with the Connecticut soldiers; may meet soldiers, officers, government officials, and others as they travel through your town; or may have a family member serving in the American or British army. Your goal is to help your character make choices to safely live through the war, no matter what his or her role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made very important decisions for the future of your character. That completes Part I of the game.
-</p>
+<p>The goal of this game is to guide your chosen character through the years of the Revolutionary War, following the soldiers from Connecticut in the Continental Army. You will begin the game in New London, Connecticut, in 1775. Your character may travel with the Connecticut soldiers; may meet soldiers, officers, government officials, and others as they travel through your town; or may have a family member serving in the American or British army. Your goal is to help your character make choices to safely live through the war, no matter what his or her role is. By the Battle of Trenton on the morning of December 26, 1776, you will have made very important decisions for the future of your character. That completes Part I of the game.</p>
 </body>
 </html>
 <<button "Click here to play the Beta">>
@@ -434,6 +564,31 @@ Choose your reading level!
 [[|partners]]
 [[|donors]] 
 [[|Curriculum]]
+
+
+:: Travel Decision {"position":"2800,1450","size":"100,100"}
+<<if $readingLvl is "HL">>
+  <<if $player.takeShip is 1>>
+      1) You go by ship to Boston. (Lose two gold coins.) You now have $player.goldCoins gold coins.
+  <<elseif $player.takeShip is 0>>
+      2) You go by coach to Boston. (Lose one gold coin.) You now have $player.goldCoins gold coins.
+  <<endif>>   
+  <<button "Click here to continue">>
+       <<goto "Boston Farm Wife">>
+  <</button>>
+
+<<elseif $readingLvl is "LL">>
+  <<if $player.takeShip is 1>>
+      1) You travel by ship to Boston. It takes a day. (Lose one gold coins.) You now have $player.goldCoins gold coins.
+  <<elseif $player.takeShip is 0>>
+      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose one gold and five copper coins.) You now have $player.goldCoins gold coins and $player.copperCoins copper coins.
+  <<endif>>
+  <<button "Click here to continue">>
+         <<goto "Boston Farm Wife">>
+  <</button>>
+<<endif>>
+
+[[|Boston Farm Wife]]
 
 
 :: charCreate {"position":"750,400","size":"200,200"}
@@ -589,14 +744,17 @@ function blurFunction_f(id, initial) {
 
 :: children Dilemma {"position":"2400,900","size":"100,100"}
 <<if $player.ChildrenDecision == 0>>
-	<p> You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.</p>
+	You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.
+
 <<elseif $player.ChildrenDecision == 1>>
-     <p> You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.</p>
+	You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.
 <<endif>>
+
 <<button "Click here to continue">>
-       <<goto "Bunker Hill">>
+	<<goto "Bunker Hill">>
 <</button>>
-[[|Bunker Hill]]
+
+[[|Bunker Hill Laundress]]
 
 
 :: creators {"position":"0,400","size":"100,100"}
@@ -764,9 +922,20 @@ Time in this simulation is represented by the seasons of the year. This is to re
 }*/
 setup.Path = "../Stories/"; //remove when publishing to browser and uncomment above code
 setup.ImagePath = setup.Path + "images/";
+setup.AudioPath = setup.Path + "audio/";
+
+//music
+$(document).on(':passagerender', function () {
+    if (!window.backgroundAudio) {
+        window.backgroundAudio = new Audio(setup.AudioPath + "American Patriotic Songs and Marches.mp3");
+        window.backgroundAudio.loop = true;
+        window.backgroundAudio.volume = 0.2;
+        window.backgroundAudio.play();
+    }
+});
 
 :: StoryStylesheet [stylesheet]
 body {
 	/*color: #eee;*/
-	background-color: dodgerblue;
+	background-color: #1c1c1c;
 }
