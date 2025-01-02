@@ -129,6 +129,8 @@ Welcome to Boston!
 <<if $readingLvl is "HL">>
 	You have arrived in Boston after your journey. Getting into the city proved difficult. Following the conflict at Lexington and Concord, the city was under siege from the royal army. You have rented a bed at the Green Dragon. You have heard that taverns like this are hotspots for militia meetings, so you wait patiently at night hoping your son shows up.
     
+<img @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
+    
     On your fourth night in Boston, a familiar voice is heard walking into the tavern. George walks in, with a small group of boys about his age. After he sits down, you walk up to him and tell him you wish to speak with him.
     
     Pulled away from the noise of the tavern, you tell George that his father has decided to stay in New York to join the king’s army. You pull out the letter and show him, urging him to pull away from these militiamen.
@@ -150,6 +152,8 @@ Welcome to Boston!
         
 <<elseif $readingLvl is "LL">>
 	After your tough trip to Boston, getting into the city was even tougher. British soldiers stand at every street corner, on every dock, in the faces of all the people of Boston. You learn things have been like this since the fights up north at Lexington and Concord. You have rented a bed at the Green Dragon tavern, in hopes that George will walk in one night. This tavern is often busy with other militiamen.
+    
+<img @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
     
     On your fourth night, a familiar voice rings in your ear as the door opens. George walks in with a group of boys all similar in age to him. After he sits down, you approach him and tell him you want to talk to him.
     
@@ -457,7 +461,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
   <<if $player.tellSon is 1>>
       1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.     
   <<elseif $player.tellWait is 1>>
-      2) You decide to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
+      2) You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Bunker Hill Farm Wife">>
