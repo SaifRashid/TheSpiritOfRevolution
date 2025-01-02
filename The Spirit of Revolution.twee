@@ -262,6 +262,21 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 [[|Drop kids off]]
 
 
+:: Children Dilemma {"position":"2400,900","size":"100,100"}
+<<if $player.ChildrenDecision == 0>>
+	You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.
+
+<<elseif $player.ChildrenDecision == 1>>
+	You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.
+<<endif>>
+
+<<button "Click here to continue">>
+	<<goto "Bunker Hill Laundress">>
+<</button>>
+
+[[|Bunker Hill Laundress]]
+
+
 :: Curriculum {"position":"300,400","size":"100,100"}
 <h1> Curriculum Resources </h1>
 
@@ -334,7 +349,9 @@ Welcome, $player.name!<br>
 Your current player class is $player.job.<br>
 That means you start with $player.totalCoins coins. $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. 
 
-It is Thursday evening, April 20, 1775, and a breathless post rider appears in New London, Connecticut, with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Committee of Safety, about a battle that took place in Lexington, Massachusetts, on April 19. The rider stops his horse near Timothy Green’s printer's shop, Timothy Green. Green emerges from his shop and greets the rider, who hands him a copy of Palmer’s “Lexington Alarm.” A crowd gathers to hear the news. [A copy of the Alarm is here: https://digitalcollections.nypl.org/items/bb4ebb8a-0c69-c85e-e040-e00a18063bc4 ]
+It is Thursday evening, April 20, 1775, and a breathless post rider appears in New London, Connecticut, with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Committee of Safety, about a battle that took place in Lexington, Massachusetts, on April 19. The rider stops his horse near Timothy Green’s printer's shop. Green emerges from his shop and greets the rider, who hands him a copy of Palmer’s “Lexington Alarm.” A crowd gathers to hear the news.
+
+<img @src="setup.ImagePath+'the alarm.jpg'" height="600">
 
 <img @src="setup.ImagePath+'New London Concord Alarm/Messenger riding to New London News of Lexington.jpg'" height="400">
 
@@ -504,24 +521,24 @@ Choose your reading level!
   <<button "Pay someone">>
     <<set $player.ChildrenDecision to 0>>
     <<set $player.silverCoins -= 1>>
-    <<goto "children Dilemma">>
+    <<goto "Children Dilemma">>
   <</button>>
 
   <<button "Take them home">>
     <<set $player.ChildrenDecision to 1>>
     <<set $player.copperCoins -= 1>>
-    <<goto "children Dilemma">>
+    <<goto "Children Dilemma">>
   <</button>>
 
 <<elseif $player.tellTavernOwner is 1>>
   You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid one gold coin). You now have $player.goldCoins gold coins.
   
   	<<button "Click here to continue">>
-  		<<goto "Bunker Hill">>
+  		<<goto "Bunker Hill Laundress">>
   	<</button>>
 <<endif>>
 
-[[|children Dilemma]]
+[[|Children Dilemma]]
 [[|Bunker Hill Laundress]]
 
 
@@ -740,21 +757,6 @@ function blurFunction_f(id, initial) {
 </table>
 </div>
 <</nobr>>
-
-
-:: children Dilemma {"position":"2400,900","size":"100,100"}
-<<if $player.ChildrenDecision == 0>>
-	You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.
-
-<<elseif $player.ChildrenDecision == 1>>
-	You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.
-<<endif>>
-
-<<button "Click here to continue">>
-	<<goto "Bunker Hill">>
-<</button>>
-
-[[|Bunker Hill Laundress]]
 
 
 :: creators {"position":"0,400","size":"100,100"}
