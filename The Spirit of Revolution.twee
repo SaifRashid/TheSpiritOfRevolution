@@ -355,7 +355,12 @@ That means you start with $player.totalCoins coins. $player.goldCoins gold coins
 
 It is Thursday evening, April 20, 1775, and a breathless post rider appears in New London, Connecticut, with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Committee of Safety, about a battle that took place in Lexington, Massachusetts, on April 19. The rider stops his horse near Timothy Green’s printer's shop. Green emerges from his shop and greets the rider, who hands him a copy of Palmer’s “Lexington Alarm.” A crowd gathers to hear the news.
 
-<img @src="setup.ImagePath+'the alarm.jpg'" height="600">
+<div class="alarm">
+    <img @src="setup.ImagePath+'New London Concord Alarm/the alarm.jpg'" height="600">
+
+    [Transcribe Alarm Here]
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam, massa ac imperdiet tempor, elit est tempor elit, ut vehicula orci ante at augue. Ut tincidunt commodo nisi vel hendrerit. Integer sed gravida mi. Donec vitae rutrum eros. Aenean fermentum quam sem. Nunc lorem elit, tincidunt ut pretium a, pulvinar eu quam. Nunc mattis pharetra leo eu interdum. 
+</div>
 
 <img @src="setup.ImagePath+'New London Concord Alarm/Messenger riding to New London News of Lexington.jpg'" height="400">
 
@@ -436,9 +441,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Shopkeeper {"position":"500,650","size":"100,100"}
-Name: Your name is Dinah Johnson. 
+<img @src="setup.ImagePath+'The Shopkeeper/The Shopkeeper.jpg'" height="400">
 
-Your mother's parents came from West Africa, from a village near Juffure in Senegambia. Your maternal grandparents were taken from their homes and sold to white men who put them on a ship called The Speedwell that went across the ocean. This is called the Middle Passage. They disembarked in New London in 1761. Your mother was purchased and enslaved by a Quaker family that later freed her, because their faith was against slavery. 
+Your name is Dinah Johnson. Your mother's parents came from West Africa, from a village near Juffure in Senegambia. Your maternal grandparents were taken from their homes and sold to white men who put them on a ship called The Speedwell that went across the ocean. This is called the Middle Passage. They disembarked in New London in 1761. Your mother was purchased and enslaved by a Quaker family that later freed her, because their faith was against slavery. 
 
 Your father's parents came from Jamaica. A long time ago his grandparents had also come from Africa, and were taken first to the Cabbage Tree Plantation in Antigua, owned by two Hartford men named Samuel Wyllys and Richard Lord. Then your grandparents were sold to a white family in Port Royal in Jamaica. Your father got a job on a Connecticut ship in Port Royal and came to New London when he was 14. He was a carter and when he married your mother, she opened a little shop in the house they shared. When she passed away, you took over her shop. Your parents were very successful in their businesses, and they taught you how to read and write so you could keep your account books.
 
@@ -505,9 +510,9 @@ Choose your reading level!
 
 :: StoryCaption {"position":"100,0","size":"100,100"}
 <<if $player and $player.goldCoins and $player.silverCoins and $player.copperCoins>>
-<img @src="setup.ImagePath+'Coins/1979.124.8.obv.noscale gold.jpeg'" height="15"> $player.goldCoins 
-<img @src="setup.ImagePath+'Coins/SilverConn4610VGo.jpg'" height="15"> $player.silverCoins
-<img @src="setup.ImagePath+'Coins/1785-CT-HalfPenny-GVG-obv.jpg'" height="15"> $player.copperCoins
+<img @src="setup.ImagePath+'Coins/1979.124.8.obv.noscale_gold-removebg-preview.png'" height="15"> $player.goldCoins 
+<img @src="setup.ImagePath+'Coins/SilverConn4610VGo-removebg-preview.png'" height="15"> $player.silverCoins
+<img @src="setup.ImagePath+'Coins/1785-CT-HalfPenny-GVG-obv-removebg-preview.png'" height="15"> $player.copperCoins
 <</if>>
 
 
@@ -945,3 +950,10 @@ body {
 	/*color: #eee;*/
 	background-color: #1c1c1c;
 }
+
+.alarm {
+  display: flex;
+  align-items: flex-start; /* Align tops */
+  gap: 20px;
+}
+  
