@@ -37,7 +37,7 @@ THE SPIRIT OF REVOLUTION
   <</button>>
 
   <<button "No, wait for his father to return from the West Indies">>
-      <<set $player.tellWait to 1>>
+      <<set $player.tellSon to 0>>
       <<set $player.copperCoins -= 1>>
       <<goto "Son's Dialogue">>
   <</button>>
@@ -59,7 +59,7 @@ THE SPIRIT OF REVOLUTION
   <</button>>
 
   <<button "No, wait for his father to return from the West Indies.">>
-      <<set $player.tellWait to 1>>
+      <<set $player.tellSon to 0>>
       <<set $player.copperCoins -= 1>>
       <<goto "Son's Dialogue">>
   <</button>>
@@ -121,7 +121,7 @@ THE SPIRIT OF REVOLUTION
 
 
 
-:: Boston {"position":"2800,700","size":"100,100"}
+:: Boston {"position":"3000,850","size":"100,100"}
 Welcome to Boston!
 
 
@@ -224,20 +224,20 @@ Welcome to Boston!
 [[|Travel Decision]] 
 
 
-:: Bunker Hill Laundress {"position":"2600,700","size":"100,100"}
+:: Bunker Hill Laundress {"position":"2600,800","size":"100,100"}
 <<if $readingLvl is "HL">>
 	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
 
 	Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
 
 <<button "Eastern Pequot Reservation">>
-    <<set $player.childDecision2 to 0>>
+    <<set $player.childrenDecision2 to 0>>
     <<set $player.copperCoins -= 1>>
 	<<goto "Drop kids off">>
 <</button>>
 
 <<button "Leave them in New London">>
-    <<set $player.childDecision2 to 1>>
+    <<set $player.childrenDecision2 to 1>>
     <<set $player.goldCoins -= 1>>
 	<<goto "Drop kids off">>
 <</button>>
@@ -249,13 +249,13 @@ You have finished working for the tavern owner in New London. You are going to f
 Decision: You can take them to the Eastern Pequot Reservation in North Stonington or you leave them in New London with your Pequot friends.
 
 <<button "Eastern Pequot Reservation">>
-    <<set $player.childDecision2 to 0>>
+    <<set $player.childrenDecision2 to 0>>
     <<set $player.copperCoins -= 1>>
 	<<goto "Drop kids off">>
 <</button>>
 
 <<button "Leave them in New London">>
-    <<set $player.childDecision2 to 1>>
+    <<set $player.childrenDecision2 to 1>>
     <<set $player.goldCoins -= 1>>
 	<<goto "Drop kids off">>
 <</button>>
@@ -266,11 +266,11 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 [[|Drop kids off]]
 
 
-:: Children Dilemma {"position":"2400,900","size":"100,100"}
-<<if $player.ChildrenDecision == 0>>
+:: Children Dilemma {"position":"2600,1000","size":"100,100"}
+<<if $player.childrenDecision == 0>>
 	You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.
 
-<<elseif $player.ChildrenDecision == 1>>
+<<elseif $player.childrenDecision == 1>>
 	You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.
 <<endif>>
 
@@ -299,10 +299,10 @@ During the revolutionary war you served in the 8th Regiment under Colonel Jededi
 Money: 30 Gold, 30 Silver, 40 Copper
 
 
-:: Drop kids off {"position":"2600,900","size":"100,100"}
-<<if $player.childDecision2 is 0>>
+:: Drop kids off {"position":"2800,850","size":"100,100"}
+<<if $player.childrenDecision2 is 0>>
 	You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose a copper coin). You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
-<<elseif $player.childDecision2 is 0>>
+<<elseif $player.childrenDecision2 is 1>>
 	You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
 <<endif>>
 <<button "Click here to continue">>
@@ -425,9 +425,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<set $player.copperCoins to 40>>
 
 /%----------- Player Simulation Choices -----------%/
-<<set $player.tellTavernOwner to 0>>
-<<set $player.ChildrenDecision to 0>>
-<<set $player.childDecision2 to 0>>
+
 
 
 
@@ -465,7 +463,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<if $readingLvl is "HL">>
   <<if $player.tellSon is 1>>
       1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.     
-  <<elseif $player.tellWait is 1>>
+  <<elseif $player.tellSon is 0>>
       2) You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>   
   <<button "Click here to continue">>
@@ -475,7 +473,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<elseif $readingLvl is "LL">>
   <<if $player.tellSon is 1>>
       1) You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.
-  <<elseif $player.tellWait is 1>>
+  <<elseif $player.tellSon is 0>>
       2) You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>
   <<button "Click here to continue">>
@@ -510,9 +508,9 @@ Choose your reading level!
 
 :: StoryCaption {"position":"100,0","size":"100,100"}
 <<if $player and $player.goldCoins and $player.silverCoins and $player.copperCoins>>
-<img @src="setup.ImagePath+'Coins/1979.124.8.obv.noscale_gold-removebg-preview.png'" height="15"> $player.goldCoins 
-<img @src="setup.ImagePath+'Coins/SilverConn4610VGo-removebg-preview.png'" height="15"> $player.silverCoins
-<img @src="setup.ImagePath+'Coins/1785-CT-HalfPenny-GVG-obv-removebg-preview.png'" height="15"> $player.copperCoins
+    <img @src="setup.ImagePath+'Coins/Gold Coin.png'" height="15"> $player.goldCoins 
+    <img @src="setup.ImagePath+'Coins/Silver Coin.png'" height="15"> $player.silverCoins
+    <img @src="setup.ImagePath+'Coins/Copper Coin.png'" height="15"> $player.copperCoins
 <</if>>
 
 
@@ -520,21 +518,21 @@ Choose your reading level!
 
 
 
-:: Tavern Owner Dialogue {"position":"2400,700","size":"100,100"}
+:: Tavern Owner Dialogue {"position":"2400,850","size":"100,100"}
 <<if $player.tellTavernOwner is 0>>
-  You do not tell the owner. He hires you for one month (get paid one silver coin). Now you have $player.silverCoins silver coins.
+  You do not tell the owner. He hires you for one month (get paid one silver coin). You now have $player.silverCoins silver coins.
 
 
 	Decision: 1) Should you just pay someone to take care of the children or 2) should you take them home to the Eastern Pequot reservation?
 
   <<button "Pay someone">>
-    <<set $player.ChildrenDecision to 0>>
+    <<set $player.childrenDecision to 0>>
     <<set $player.silverCoins -= 1>>
     <<goto "Children Dilemma">>
   <</button>>
 
   <<button "Take them home">>
-    <<set $player.ChildrenDecision to 1>>
+    <<set $player.childrenDecision to 1>>
     <<set $player.copperCoins -= 1>>
     <<goto "Children Dilemma">>
   <</button>>
