@@ -52,17 +52,17 @@ THE SPIRIT OF REVOLUTION
 
 	Decision: Do you 1) talk to your son about his plans right away, or 2) wait to talk to him until his father returns from the West Indies? 
 
-  <<button "Yes, you talk to your son now about his plans.">>
+	<<button "Yes, you talk to your son now about his plans.">>
       <<set $player.tellSon to 1>>
       <<set $player.silverCoins += 1>>
       <<goto "Son's Dialogue">>
-  <</button>>
+  	<</button>>
 
-  <<button "No, wait for his father to return from the West Indies.">>
+  	<<button "No, wait for his father to return from the West Indies.">>
       <<set $player.tellSon to 0>>
       <<set $player.copperCoins -= 1>>
       <<goto "Son's Dialogue">>
-  <</button>>
+  	<</button>>
 <<endif>>
 
 [[|Son's Dialogue]]
@@ -118,11 +118,118 @@ THE SPIRIT OF REVOLUTION
 
 
 :: Begin Spy Journey {"position":"2100,2000","size":"200,200"}
+<<if $readingLvl is "HL">>
+	You enter the tavern as the crowd stampedes in. The shouts of aggression and calls to action fill your head until the outside world means little, until a familiar voice greets you. An old classmate ushers you over to his table covered in mugs of ale and empty dishes. It’s clear they have been here for a while. The break from the noise is welcome and your friend offers you a chunk of bread and some butter.  
+
+	Your journey to New London on horseback took the entire day, urged on by a letter from a friend, Benjamin Tallmadge, regarding what to do in these times of growing conflict.  
+
+	As the noise in the tavern builds up again, Tallmadge looks at you. He tells you that he believes that the British have gone too far, sending troops into the countryside and firing on British subjects. He knows that you will be going to Boston soon, and asks you to be wary of loyalists there and to consider aiding the Militia. 
 
 
+	Decision: Do you 1) say that you would prefer to keep your head down, or 2) tell him that you want to stand up to the British?
 
-:: Boston {"position":"3000,850","size":"100,100"}
-Welcome to Boston!
+	<<button "Say that you would prefer to keep your head down">>
+    	<<set $player.keepHeadDown to 1>>
+    	<<set $player.copperCoins -= 3>>
+      	<<goto "Tavern Decision">>
+	<</button>>
+
+	<<button "Tell him that you want to stand up to the British">>
+    	<<set $player.keepHeadDown to 0>>
+      	<<set $player.silverCoins += 1>>
+      	<<goto "Tavern Decision">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+	You enter the tavern with a large group of people, all shouting loudly. The noise is so loud that it makes your head hurt. An old friend from school, Benjamin Tallmadge, grabs your shoulder. Before you know it, he’s bringing you over to his table, with plates of peas and asparagus. After offering you a drink and a bite to eat, you’re given a minute to enjoy your meal. 
+
+	The brief minute of peace reminds you why you came all this way in the first place. It was a day-long ride from Ashford to New London! Your hand slips into your pocket to feel the letter from Benjamin, asking you to come and meet him. 
+
+	Before beginning his talk, Benjamin looks around at the men at the table, whom you all recognize as former classmates. He says that something needs to be done about the British and their treatment of American colonists, and that you should see if you can help when you go to Boston. 
+
+
+	Decision: Do you 1) tell him that you don’t want to get involved, or 2) agree to help the Rebels in Boston? 
+
+	<<button "Tell him that you don’t want to get involved">>
+    	<<set $player.keepHeadDown to 1>>
+    	<<set $player.copperCoins -= 3>>
+      	<<goto "Tavern Decision">>
+	<</button>>
+
+  	<<button "Agree to help the Rebels in Boston">>
+    	<<set $player.keepHeadDown to 0>>
+      	<<set $player.silverCoins += 1>>
+      	<<goto "Tavern Decision">>
+  	<</button>>
+<<endif>>
+
+[[|Tavern Decision]]
+
+
+:: Boston Entrance {"position":"3000,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	After another two days of riding over poor and muddy roads, you have made it to Boston to find that it has been besieged by the rebel militia, and that the king’s troops are digging fortifications on the narrow neck that connects Boston to the rest of the land. As you approach the neck, you spot a group of three militiamen blocking the road.  
+
+ 
+	Decision: do you 1) attempt to sneak around the militiamen, or 2) convince them to let you through?
+    
+    <<button "Attempt to sneak around the militiamen">>
+    	<<set $player.sneakAround to 1>>
+        <<set $player.silverCoins += 1>>
+        <<goto "Boston Entrance Decision">>
+	<</button>>
+    
+    <<button "Convince them to let you through">>
+    	<<set $player.sneakAround to 0>>
+        <<set $player.silverCoins -= 3>>
+        <<goto "Boston Entrance Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	You continue riding for several days until you finally reach Boston. You find that the rebel militias have surrounded the city, and that the redcoats are getting ready to defend it, where they are trapped. As you approach the narrow strip of land which is the only way into the city, you see a group of militiamen on the road in front of you.  
+
+
+	Decision: do you 1) attempt to sneak around the militiamen, or 2) convince them to let you through? 
+    
+    <<button "Attempt to sneak around the militiamen">>
+    	<<set $player.sneakAround to 1>>
+        <<set $player.silverCoins += 1>>
+        <<goto "Boston Entrance Decision">>
+	<</button>>
+    
+    <<button "Convince them to let you through">>
+    	<<set $player.sneakAround to 0>>
+        <<set $player.silverCoins -= 3>>
+        <<goto "Boston Entrance Decision">>
+	<</button>>
+<<endif>>
+
+[[|Boston Entrance Decision]] 
+
+
+:: Boston Entrance Decision {"position":"3200,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.sneakAround is 1>>
+		1) You duck into some tall grass and slip past them while they talk, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.sneakAround is 0>>
+      	2) You approach the militiamen, who seem to be very young, and speak to them of your support for their cause. After making you pay a fee for passage, they let you through. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
+  	<<endif>>   
+  	<<button "Click here to continue">>
+	<<goto "Boston Spy">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.sneakAround is 1>>
+      	1) You sneak by them by hiding in tall grass as they talk to each other, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.sneakAround is 0>>
+      	2) You approach the militiamen, and tell them that you support their fight against the king. They let you through, but only after making you pay to pass. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
+  	<<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Boston Spy">>
+  	<</button>>
+<<endif>>
+
+[[|Boston Spy]] 
 
 
 :: Boston Farm Wife {"position":"3000,1450","size":"100,100"}
@@ -176,6 +283,23 @@ Welcome to Boston!
 <<endif>>
 
 [[|George's Decision]] 
+
+
+:: Boston Laundress {"position":"3000,850","size":"100,100"}
+Welcome to Boston!
+
+
+:: Boston Spy {"position":"3400,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You reach the neck of Boston to find many people fleeing the city. The presence of so many soldiers makes you nervous, but after searching you for weapons the redcoats let you into the city. You have arrived safely in Boston, but the presence of the King’s Army is much greater than you had anticipated!
+<<elseif $readingLvl is "LL">>
+  	When You reach the road into Boston, you find many people leaving the city, as redcoats build barriers on the road and dig trenches. They search you for weapons, but let you in. There seems to be more soldiers than people in Boston!
+<<endif>>
+<<button "Click here to continue">>
+
+<</button>>
+
+
 
 
 :: Bunker Hill Farm Wife {"position":"2600,1450","size":"100,100"}
@@ -306,10 +430,10 @@ Money: 30 Gold, 30 Silver, 40 Copper
 	You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
 <<endif>>
 <<button "Click here to continue">>
-       <<goto "Boston">>
+       <<goto "Boston Laundress">>
 <</button>>
 
-[[|Boston]]
+[[|Boston Laundress]]
 
 
 :: Farm Wife {"position":"950,775","size":"100,100"}
@@ -326,24 +450,24 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 :: George's Decision {"position":"3200,1450","size":"100,100"}
 <<if $readingLvl is "HL">>
-  <<if $player.pressureGeorge is 1>>
-      1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose one silver coin.) You now have $player.silverCoins silver coins.
-  <<elseif $player.pressureGeorge is 0>>
-      2) You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
-  <<endif>>   
-  <<button "Click here to continue">>
+	<<if $player.pressureGeorge is 1>>
+		1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.pressureGeorge is 0>>
+      	2) You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+  	<<endif>>   
+  	<<button "Click here to continue">>
 
-  <</button>>
+  	<</button>>
 
 <<elseif $readingLvl is "LL">>
-  <<if $player.pressureGeorge is 1>>
-      1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose one silver coin.) You now have $player.silverCoins silver coins.
-  <<elseif $player.pressureGeorge is 0>>
-      2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
-  <<endif>>
-  <<button "Click here to continue">>
+  	<<if $player.pressureGeorge is 1>>
+      	1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.pressureGeorge is 0>>
+      	2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+  	<<endif>>
+  	<<button "Click here to continue">>
 
-  <</button>>
+  	<</button>>
 <<endif>>
 
 
@@ -400,6 +524,32 @@ It is Thursday evening, April 20, 1775, and a breathless post rider appears in N
 Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
 
 Money: 30 Gold, 30 Silver, 40 Copper
+
+
+:: Meal Decision {"position":"2800,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.befriendMen is 1>>
+    	1) You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain three silver coins.) You now have $player.silverCoins silver coins.
+	<<elseif $player.befriendMen is 0>>
+     	2) You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your fathers age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+  	<<endif>>   
+  	<<button "Click here to continue">>
+       	<<goto "Boston Entrance">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.befriendMen is 1>>
+      	1) You sit down with them, and while they look suspicious of you at first, once you discuss your distaste for the King you have made quick friends. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.befriendMen is 0>>
+      	2) You walk away, choosing to eat with a group of older people. They are not happy with what the young men have to say. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+  	<<endif>>
+  	<<button "Click here to continue">>
+    	<<goto "Boston Entrance">>
+  	<</button>>
+<<endif>>
+
+[[|Boston Entrance]]
+
 
 
 :: Play the Beta {"position":"500,200","size":"100,100"}
@@ -485,6 +635,8 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Spy {"position":"600,775","size":"100,100"}
+<img @src="setup.ImagePath+'The Spy/Spy 2.jpg'" height="400">
+
 Your name is Samuel Tomlinson and you are of English descent. Your great-grandfather was a graduate of Harvard College, but your father is a graduate of Yale College and you followed in his footsteps. You were raised in Ashford, Connecticut, on a large farm, but your father was a gentleman who employed other people to oversee the day-to-day farmwork. You can't decide if you want to study or go into the Congregational ministry, so for now you have taken a position as a school teacher. During the war you serve with the 3rd Regiment under General Israel Putnam. 
 
 Money: 30 Gold, 30 Silver, 40 Copper
@@ -516,6 +668,31 @@ Choose your reading level!
 
 :: StoryInit {"position":"0,0","size":"100,100"}
 
+
+
+:: Tavern Decision {"position":"2400,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.keepHeadDown is 1>>
+      	1) You tell Benjamin that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+	<<elseif $player.keepHeadDown is 0>>
+      	2) You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+	<<endif>>
+	<<button "Click here to continue">>
+    	<<goto "Travel To Boston">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.keepHeadDown is 1>>
+      	1)  You tell Benjamin that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+  	<<elseif $player.keepHeadDown is 0>>
+      	2) You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+  	<<endif>>
+  	<<button "Click here to continue">>
+    	<<goto "Travel To Boston">>
+  	<</button>>
+<<endif>>
+
+[[|Travel To Boston]]
 
 
 :: Tavern Owner Dialogue {"position":"2400,850","size":"100,100"}
@@ -613,6 +790,57 @@ Choose your reading level!
 <<endif>>
 
 [[|Boston Farm Wife]]
+
+
+:: Travel To Boston {"position":"2600,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	In the coming days you finish gathering your things for your move to Boston. You’ve recently acquired a new job as a clerk in a law firm in the city. It would be faster to take a ship to Boston, but the port is closed by the royal navy. As you prepare your horse to leave, your father calls you over to speak. 
+
+	He tells you that, while he knows you are now a grown man capable of making your own decisions, you must be cautious as to where those decisions lead. He says that in these times of unrest you must remember to have loyalty to God and the King. He proudly mentions his time serving the King during the French and Indian War, and wishes you a safe trip to Boston. 
+
+	You say farewell to your family and set off before dawn. Your trip to Boston has officially begun. You ride with speed north for the day, and stop at an inn at night. There, you notice a group of young men younger than you huddled away in a corner who seem to be close friends. As you slowly get closer you hear them discussing joining “the fight” in Boston. The last information you heard was that Massachusetts militiamen had chased the redcoats back to Boston and besieged the city. These men seem quite serious about their commitment to rebellion.  
+
+ 
+	Decision: Should you 1) join in the rabble and befriend these men or 2) keep your distance and wait it out? 
+    
+    <<button "Join in the rabble and befriend these men">>
+    	<<set $player.befriendMen to 1>>
+        <<set $player.silverCoins += 3>>
+        <<goto "Meal Decision">>
+	<</button>>
+    
+    <<button "Keep your distance and wait it out">>
+    	<<set $player.befriendMen to 0>>
+        <<set $player.silverCoins += 1>>
+        <<goto "Meal Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	After your night at the tavern, you spend the next few days gathering things for your trip to Boston. Your new job there expects you to be there before June 1st. A ship would be faster, but British warships have closed the port, so you must make the journey on horseback. 
+
+	Your father pulls you aside, wishing to give you some advice before you leave. He tells you simply that he wants you to be careful. Boston is uneasy now, and people may push you to act out against the King. Your father reminds you of his past as a soldier in the French and Indian war, and of your duty to be loyal to King George. 
+
+	You give your final goodbyes as you mount your horse and start down the road. Your journey to Boston has started! 
+
+	You ride through the day across muddy roads. At night, you stop at an inn to rest. There, You notice a group of young people talking loudly about wanting to join the fight at Boston. You hear from them that the rebel militia have surrounded Boston, trapping the British army in the city! 
+
+
+	Decision: Should you a) join in their talk or b) find somewhere else to sit?
+    
+    <<button "Join in their talk">>
+    	<<set $player.befriendMen to 1>>
+        <<set $player.silverCoins += 3>>
+        <<goto "Meal Decision">>
+	<</button>>
+    
+    <<button "Find somewhere else to sit">>
+    	<<set $player.befriendMen to 0>>
+        <<set $player.silverCoins += 1>>
+        <<goto "Meal Decision">>
+	<</button>>
+<<endif>>    
+
+[[|Meal Decision]] 
 
 
 :: charCreate {"position":"750,400","size":"200,200"}
