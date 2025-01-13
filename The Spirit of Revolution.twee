@@ -392,10 +392,10 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 
 :: Children Dilemma {"position":"2600,1000","size":"100,100"}
 <<if $player.childrenDecision == 0>>
-	You just pay someone to take care of the children (lose one silver coin). You now have $player.silverCoins silver coins.
+	You just pay someone to take care of the children (lose 1 silver coin.) You now have $player.silverCoins silver coins.
 
 <<elseif $player.childrenDecision == 1>>
-	You take them home to the Eastern Pequot reservation (lose one copper coin). You now have $player.copperCoins copper coins.
+	You take them home to the Eastern Pequot reservation (lose 1 copper coin.) You now have $player.copperCoins copper coins.
 <<endif>>
 
 <<button "Click here to continue">>
@@ -425,9 +425,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 :: Drop kids off {"position":"2800,850","size":"100,100"}
 <<if $player.childrenDecision2 is 0>>
-	You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose a copper coin). You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
+	You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose 1 copper coin.) You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
 <<elseif $player.childrenDecision2 is 1>>
-	You leave them in New London with your Pequot friends (lose a gold coin). You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
+	You leave them in New London with your Pequot friends (lose 1 gold coin.) You now have $player.goldCoins gold coins. Then, you make the trip to Boston with your brother.
 <<endif>>
 <<button "Click here to continue">>
        <<goto "Boston Laundress">>
@@ -451,7 +451,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 :: George's Decision {"position":"3200,1450","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.pressureGeorge is 1>>
-		1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+		1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.pressureGeorge is 0>>
       	2) You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>   
@@ -461,9 +461,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.pressureGeorge is 1>>
-      	1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose one silver coin.) You now have $player.silverCoins silver coins.
+      	1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.pressureGeorge is 0>>
-      	2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+      	2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
 
@@ -529,7 +529,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 :: Meal Decision {"position":"2800,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.befriendMen is 1>>
-    	1) You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain three silver coins.) You now have $player.silverCoins silver coins.
+    	1) You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
 	<<elseif $player.befriendMen is 0>>
      	2) You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your fathers age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>   
@@ -612,9 +612,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 :: Son's Dialogue {"position":"2400,1450","size":"100,100"}
 <<if $readingLvl is "HL">>
   <<if $player.tellSon is 1>>
-      1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.     
+      1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.     
   <<elseif $player.tellSon is 0>>
-      2) You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
+      2) You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Bunker Hill Farm Wife">>
@@ -622,9 +622,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 <<elseif $readingLvl is "LL">>
   <<if $player.tellSon is 1>>
-      1) You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+      1) You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   <<elseif $player.tellSon is 0>>
-      2) You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose a copper coin.) You now have $player.copperCoins copper coins.
+      2) You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Bunker Hill Farm Wife">>
@@ -675,7 +675,7 @@ Choose your reading level!
 	<<if $player.keepHeadDown is 1>>
       	1) You tell Benjamin that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
 	<<elseif $player.keepHeadDown is 0>>
-      	2) You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+      	2) You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
 	<<endif>>
 	<<button "Click here to continue">>
     	<<goto "Travel To Boston">>
@@ -685,7 +685,7 @@ Choose your reading level!
   	<<if $player.keepHeadDown is 1>>
       	1)  You tell Benjamin that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
   	<<elseif $player.keepHeadDown is 0>>
-      	2) You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain a silver coin.) You now have $player.silverCoins silver coins.
+      	2) You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
     	<<goto "Travel To Boston">>
@@ -697,7 +697,7 @@ Choose your reading level!
 
 :: Tavern Owner Dialogue {"position":"2400,850","size":"100,100"}
 <<if $player.tellTavernOwner is 0>>
-  You do not tell the owner. He hires you for one month (get paid one silver coin). You now have $player.silverCoins silver coins.
+  You do not tell the owner. He hires you for one month (get paid 1 silver coin.) You now have $player.silverCoins silver coins.
 
 
 	Decision: 1) Should you just pay someone to take care of the children or 2) should you take them home to the Eastern Pequot reservation?
@@ -715,7 +715,7 @@ Choose your reading level!
   <</button>>
 
 <<elseif $player.tellTavernOwner is 1>>
-  You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid one gold coin). You now have $player.goldCoins gold coins.
+  You tell the tavern owner. He says he can hire you for a month and he says he can hire the children to work in the stables too (get paid 1 gold coin.) You now have $player.goldCoins gold coins.
   
   	<<button "Click here to continue">>
   		<<goto "Bunker Hill Laundress">>
@@ -770,9 +770,9 @@ Choose your reading level!
 :: Travel Decision {"position":"2800,1450","size":"100,100"}
 <<if $readingLvl is "HL">>
   <<if $player.takeShip is 1>>
-      1) You go by ship to Boston. (Lose two gold coins.) You now have $player.goldCoins gold coins.
+      1) You go by ship to Boston. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
   <<elseif $player.takeShip is 0>>
-      2) You go by coach to Boston. (Lose one gold coin.) You now have $player.goldCoins gold coins.
+      2) You go by coach to Boston. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Boston Farm Wife">>
@@ -780,9 +780,9 @@ Choose your reading level!
 
 <<elseif $readingLvl is "LL">>
   <<if $player.takeShip is 1>>
-      1) You travel by ship to Boston. It takes a day. (Lose one gold coins.) You now have $player.goldCoins gold coins.
+      1) You travel by ship to Boston. It takes a day. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
   <<elseif $player.takeShip is 0>>
-      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose one gold and five copper coins.) You now have $player.goldCoins gold coins and $player.copperCoins copper coins.
+      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold and 5 copper coins.) You now have $player.goldCoins gold coins and $player.copperCoins copper coins.
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Boston Farm Wife">>
