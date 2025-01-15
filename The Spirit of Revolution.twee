@@ -204,7 +204,7 @@ THE SPIRIT OF REVOLUTION
 	<</button>>
 <<endif>>
 
-[[|Boston Entrance Decision]] 
+[[|Boston Entrance Decision]]
 
 
 :: Boston Entrance Decision {"position":"3200,2050","size":"100,100"}
@@ -229,13 +229,14 @@ THE SPIRIT OF REVOLUTION
   	<</button>>
 <<endif>>
 
-[[|Boston Spy]] 
+[[|Boston Spy]]
 
 
 :: Boston Farm Wife {"position":"3000,1450","size":"100,100"}
+<div class='border' @style="'border-image: url(\'' + setup.ImagePath + 'Lexington/Alphabet and pictorial-type sampler 1770 Mattatuck.png' + '\');'">
 <<if $readingLvl is "HL">>
 	You have arrived in Boston after your journey. Getting into the city proved difficult. Following the conflict at Lexington and Concord, the city was under siege from the royal army. You have rented a bed at the Green Dragon. You have heard that taverns like this are hotspots for militia meetings, so you wait patiently at night hoping your son shows up.
-    
+
 <img @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
     
     On your fourth night in Boston, a familiar voice is heard walking into the tavern. George walks in, with a small group of boys about his age. After he sits down, you walk up to him and tell him you wish to speak with him.
@@ -282,7 +283,9 @@ THE SPIRIT OF REVOLUTION
 	<</button>>
 <<endif>>
 
-[[|George's Decision]] 
+[[|George's Decision]]
+
+</div>
 
 
 :: Boston Laundress {"position":"3000,850","size":"100,100"}
@@ -298,8 +301,6 @@ Welcome to Boston!
 <<button "Click here to continue">>
 
 <</button>>
-
-
 
 
 :: Bunker Hill Farm Wife {"position":"2600,1450","size":"100,100"}
@@ -345,7 +346,7 @@ Welcome to Boston!
 	<</button>>
 <<endif>>    
 
-[[|Travel Decision]] 
+[[|Travel Decision]]
 
 
 :: Bunker Hill Laundress {"position":"2600,800","size":"100,100"}
@@ -549,7 +550,6 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<endif>>
 
 [[|Boston Entrance]]
-
 
 
 :: Play the Beta {"position":"500,200","size":"100,100"}
@@ -840,7 +840,7 @@ Choose your reading level!
 	<</button>>
 <<endif>>    
 
-[[|Meal Decision]] 
+[[|Meal Decision]]
 
 
 :: charCreate {"position":"750,400","size":"200,200"}
@@ -1182,4 +1182,7 @@ body {
   align-items: flex-start; /* Align tops */
   gap: 20px;
 }
-  
+
+.border {
+	border: solid red;
+}
