@@ -20,6 +20,7 @@ THE SPIRIT OF REVOLUTION
 
 
 :: Begin Farm Wife Journey {"position":"2100,1400","size":"200,200"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal, which consists of a salted shad, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal.
 
@@ -64,11 +65,13 @@ THE SPIRIT OF REVOLUTION
       <<goto "Son's Dialogue">>
   	<</button>>
 <<endif>>
+</div>
 
 [[|Son's Dialogue]]
 
 
 :: Begin Laundress Journey {"position":"2100,800","size":"200,200"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	You are in New London with her brother, a medicine man of the Eastern Pequot. You are selling splint baskets made of ash and decorated with designs she brushed on.   You are also looking for work. You have come to the tavern to see if the owner needs help in the kitchen or laundry. You have two children ages 5 and 7. You’re afraid if the tavern owner knows you have children he won’t hire you, but if you aren’t allowed to have them with you, you will have to leave them someplace. 
 
@@ -105,6 +108,7 @@ THE SPIRIT OF REVOLUTION
       <<goto "Tavern Owner Dialogue">>
   <</button>>
 <<endif>>
+</div>
 
 [[|Tavern Owner Dialogue]]
 
@@ -233,11 +237,11 @@ THE SPIRIT OF REVOLUTION
 
 
 :: Boston Farm Wife {"position":"3000,1450","size":"100,100"}
-<div class='border' @style="'border-image: url(\'' + setup.ImagePath + 'Lexington/Alphabet and pictorial-type sampler 1770 Mattatuck.png' + '\');'">
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	You have arrived in Boston after your journey. Getting into the city proved difficult. Following the conflict at Lexington and Concord, the city was under siege from the royal army. You have rented a bed at the Green Dragon. You have heard that taverns like this are hotspots for militia meetings, so you wait patiently at night hoping your son shows up.
 
-<img @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
+<img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
     
     On your fourth night in Boston, a familiar voice is heard walking into the tavern. George walks in, with a small group of boys about his age. After he sits down, you walk up to him and tell him you wish to speak with him.
     
@@ -282,14 +286,15 @@ THE SPIRIT OF REVOLUTION
         <<goto "George's Decision">>
 	<</button>>
 <<endif>>
+</div>
 
 [[|George's Decision]]
 
-</div>
-
 
 :: Boston Laundress {"position":"3000,850","size":"100,100"}
+<div class='borderWoman'>
 Welcome to Boston!
+</div>
 
 
 :: Boston Spy {"position":"3400,2050","size":"100,100"}
@@ -304,6 +309,7 @@ Welcome to Boston!
 
 
 :: Bunker Hill Farm Wife {"position":"2600,1450","size":"100,100"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	George has left New London and gone to Massachusetts to support the militia against the British redcoats. You remain in New London until April 20 , when you get word that your husband is returning to New York and then going to Ridgefield. You go by coach to New Haven to see your sister. When you arrive, she tells you a letter from your husband has been delivered. The letter says he is remaining in New York to join the king’s troops there.
     
@@ -334,22 +340,23 @@ Welcome to Boston!
     
     <<button "Take a ship to Boston">>
     	<<set $player.takeShip to 1>>
-        <<set $player.goldCoins -= 1>>
+        <<set $player.goldCoins -= 2>>
         <<goto "Travel Decision">>
 	<</button>>
     
     <<button "Travel by coach to Boston">>
     	<<set $player.takeShip to 0>>
         <<set $player.goldCoins -= 1>>
-        <<set $player.copperCoins -= 5>>
         <<goto "Travel Decision">>
 	<</button>>
-<<endif>>    
+<<endif>>
+</div>
 
 [[|Travel Decision]]
 
 
 :: Bunker Hill Laundress {"position":"2600,800","size":"100,100"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	You have finished working for the tavern owner in New London, and you decide to follow fellow Pequot and Mohegan soldiers to Boston for what all the men say will be a battle. You hope to make money there as a laundress, seamstress, or cook. You still have to figure out what to do with your children. One of your concerns is that if you leave them too long, they might be kidnapped and sold into slavery. Your late husband, Tobie, was from Senegambia, and your children look like him. They will be safe from wrongful enslavement on the Eastern Pequot reservation with your elderly grandmother because you are a free person. Still, your grandmother is very frail, and the children are rambunctious. You could leave them with your Pequot friends in New London, but they have to work and cannot always watch the children. You don’t want to take the children to Boston.
 
@@ -387,11 +394,13 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 
 
 <<endif>>
+</div>
 
 [[|Drop kids off]]
 
 
 :: Children Dilemma {"position":"2600,1000","size":"100,100"}
+<div class='borderWoman'>
 <<if $player.childrenDecision == 0>>
 	You just pay someone to take care of the children (lose 1 silver coin.) You now have $player.silverCoins silver coins.
 
@@ -402,6 +411,7 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 <<button "Click here to continue">>
 	<<goto "Bunker Hill Laundress">>
 <</button>>
+</div>
 
 [[|Bunker Hill Laundress]]
 
@@ -425,6 +435,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Drop kids off {"position":"2800,850","size":"100,100"}
+<div class='borderWoman'>
 <<if $player.childrenDecision2 is 0>>
 	You take them to the Eastern Pequot Reservation in North Stonington to live with your grandmother (lose 1 copper coin.) You now have $player.copperCoins copper coins. Then, you make the trip to Boston with your brother.
 <<elseif $player.childrenDecision2 is 1>>
@@ -433,6 +444,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<button "Click here to continue">>
        <<goto "Boston Laundress">>
 <</button>>
+</div>
 
 [[|Boston Laundress]]
 
@@ -450,6 +462,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: George's Decision {"position":"3200,1450","size":"100,100"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	<<if $player.pressureGeorge is 1>>
 		1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
@@ -470,6 +483,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
   	<</button>>
 <<endif>>
+</div>
 
 
 :: Greetings {"position":"1500,1800","size":"100,100"}
@@ -610,6 +624,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 
 :: Son's Dialogue {"position":"2400,1450","size":"100,100"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
   <<if $player.tellSon is 1>>
       1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.     
@@ -630,12 +645,13 @@ Money: 30 Gold, 30 Silver, 40 Copper
          <<goto "Bunker Hill Farm Wife">>
   <</button>>
 <<endif>>
+</div>
 
 [[|Bunker Hill Farm Wife]]
 
 
 :: Spy {"position":"600,775","size":"100,100"}
-<img @src="setup.ImagePath+'The Spy/Spy 2.jpg'" height="400">
+<img @src="setup.ImagePath+'The Spy/Spy 3.jpg'" height="400">
 
 Your name is Samuel Tomlinson and you are of English descent. Your great-grandfather was a graduate of Harvard College, but your father is a graduate of Yale College and you followed in his footsteps. You were raised in Ashford, Connecticut, on a large farm, but your father was a gentleman who employed other people to oversee the day-to-day farmwork. You can't decide if you want to study or go into the Congregational ministry, so for now you have taken a position as a school teacher. During the war you serve with the 3rd Regiment under General Israel Putnam. 
 
@@ -696,6 +712,7 @@ Choose your reading level!
 
 
 :: Tavern Owner Dialogue {"position":"2400,850","size":"100,100"}
+<div class='borderWoman'>
 <<if $player.tellTavernOwner is 0>>
   You do not tell the owner. He hires you for one month (get paid 1 silver coin.) You now have $player.silverCoins silver coins.
 
@@ -721,6 +738,7 @@ Choose your reading level!
   		<<goto "Bunker Hill Laundress">>
   	<</button>>
 <<endif>>
+</div>
 
 [[|Children Dilemma]]
 [[|Bunker Hill Laundress]]
@@ -768,6 +786,7 @@ Choose your reading level!
 
 
 :: Travel Decision {"position":"2800,1450","size":"100,100"}
+<div class='borderWoman'>
 <<if $readingLvl is "HL">>
   <<if $player.takeShip is 1>>
       1) You go by ship to Boston. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
@@ -780,14 +799,15 @@ Choose your reading level!
 
 <<elseif $readingLvl is "LL">>
   <<if $player.takeShip is 1>>
-      1) You travel by ship to Boston. It takes a day. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      1) You travel by ship to Boston. It takes a day. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
   <<elseif $player.takeShip is 0>>
-      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold and 5 copper coins.) You now have $player.goldCoins gold coins and $player.copperCoins copper coins.
+      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Boston Farm Wife">>
   <</button>>
 <<endif>>
+</div>
 
 [[|Boston Farm Wife]]
 
@@ -1177,12 +1197,21 @@ body {
 	background-color: #1c1c1c;
 }
 
-.alarm {
-  display: flex;
-  align-items: flex-start; /* Align tops */
-  gap: 20px;
+.imgEmbedded {
+  	max-width: 100%;
+  	height: auto;
 }
 
-.border {
+.alarm {
+ 	display: flex;
+  	align-items: flex-start; /* Align tops */
+  	gap: 20px;
+}
+
+.borderWoman {
 	border: solid red;
+  	border-image: url('../Stories/images/Lexington/Alphabet and pictorial-type sampler 1770 Mattatuck.png') 300 round;
+  	border-width: 50px;
+  	padding: 100px;
+  	margin: -50px;
 }
