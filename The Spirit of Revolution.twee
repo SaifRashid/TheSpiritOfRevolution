@@ -566,7 +566,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<if $readingLvl is "HL">>
 	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 2.png'">
     
-	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadephia. 
+	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadelphia. 
 
 Your letter explains your feelings about the news from Lexington and Concord. It says:  
 
@@ -594,7 +594,7 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 <<elseif $readingLvl is "LL">>
 	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 2.png'">
     
-	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadephia. 
+	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadelphia. 
 
 Your letter explains your feelings about the news from Lexington and Concord. It says:  
 
@@ -627,7 +627,28 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 
 
 :: Letter Decision {"position":"2600,2650","size":"100,100"}
+<div class='borderWoman'>
+<<if $readingLvl is "HL">>
+	<<if $player.sendLetter is 1>>
+     	You decided to send the letter. Since this is a momentous time, it is even more important to share ideas, especially with others who share your faith and your circumstances. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+	<<elseif $player.sendLetter is 0>>
+     	You decide to tear up the letter. Maybe someday you will write to her, but you’ve decided it’s too soon. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
+	<<endif>>
+	<<button "Click here to continue">>
+    	<<goto "Travel To Boston">>
+  	<</button>>
 
+<<elseif $readingLvl is "LL">>
+  	<<if $player.sendLetter is 1>>
+     	You decided to send the letter. Since this is a momentous time, it is even more important to share ideas, especially with others who share your faith and your circumstances. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.  
+	<<elseif $player.sendLetter is 0>>
+     	You decide to tear up the letter. Maybe someday you will write to her, but you’ve decided it’s too soon. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
+	<<endif>>
+  	<<button "Click here to continue">>
+    	<<goto "Travel To Boston">>
+  	<</button>>
+<<endif>>
+</div>
 
 
 :: Meal Decision {"position":"2800,2050","size":"100,100"}
