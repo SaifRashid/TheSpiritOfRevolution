@@ -114,7 +114,27 @@ THE SPIRIT OF REVOLUTION
 
 
 :: Begin Shopkeeper Journey {"position":"2100,2600","size":"200,200"}
+<div class='borderWoman'>
+<<if $readingLvl is "HL">>
+	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 1.jpg'">
+    
+	You run from your shop near the courthouse to the printer’s shop to get your new advertisements in the newspaper. The deadline is tonight. On the way you hear other people yelling that there is news from Lexington. You see the gathering crowd and make your way as close to the print shop as possible. You have misgivings about the ad for the regiment plans, because you don’t believe in fighting, but you need the business in your shop. Timothy Green reads Palmer’s letter and you absorb the news: Patriot spies got wind of Governor Thomas Gage’s plan to order the seizure of weapons and powder being stored in Concord, Massachusetts, 20 miles northwest of Boston. On the evening of April 18, riders raised the alarm that British regulars were on their way to Concord. Minute Men and militias rushed to confront them early on April 19. No one knew who fired the first shot. But the Patriots had held their own against the Redcoats. You can hardly believe what you are hearing. You can hardly believe what you are hearing. You hand your ads to Green’s servant and return to your own shop.
 
+  	<<button "Click here to continue">>
+       	<<goto "Letter">>
+  	<</button>>
+<<elseif $readingLvl is "LL">>
+	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 1.jpg'">
+    
+	You run from your shop near the courthouse to the printer’s shop to get your new advertisements in the newspaper. The deadline is tonight. On the way you hear other people yelling that there is news from Lexington. You see the crowd and make your way as close to the print shop to get as close as possible. Timothy Green reads Palmer’s letter and you take in the news: Patriot spies got wind of Governor Thomas Gage’s plan to take the colonists’ guns and powder being stored in Concord, Massachusetts, 20 miles northwest of Boston. On the evening of April 18, riders raised the alarm that British regulars were on their way to Concord. Minute Men and militias rushed to confront them early on April 19. No one knew who fired the first shot. But the Patriots had held their own against the Redcoats. You can hardly believe what you are hearing. You hand your ads to Green’s servant and return to your own shop.
+    
+    <<button "Click here to continue">>
+       	<<goto "Letter">>
+  	<</button>>
+<<endif>>
+</div>
+
+[[|Letter]]
 
 
 :: Begin Soldier Journey {"position":"2100,3200","size":"200,200"}
@@ -241,7 +261,7 @@ THE SPIRIT OF REVOLUTION
 <<if $readingLvl is "HL">>
 	You have arrived in Boston after your journey. Getting into the city proved difficult. Following the conflict at Lexington and Concord, the city was under siege from the royal army. You have rented a bed at the Green Dragon. You have heard that taverns like this are hotspots for militia meetings, so you wait patiently at night hoping your son shows up.
 
-<img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
+	<img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'">
     
     On your fourth night in Boston, a familiar voice is heard walking into the tavern. George walks in, with a small group of boys about his age. After he sits down, you walk up to him and tell him you wish to speak with him.
     
@@ -265,7 +285,7 @@ THE SPIRIT OF REVOLUTION
 <<elseif $readingLvl is "LL">>
 	After your tough trip to Boston, getting into the city was even tougher. British soldiers stand at every street corner, on every dock, in the faces of all the people of Boston. You learn things have been like this since the fights up north at Lexington and Concord. You have rented a bed at the Green Dragon tavern, in hopes that George will walk in one night. This tavern is often busy with other militiamen.
     
-<img @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'" height="600">
+	<img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Green Dragon Tavern _Where we met to Plan the Consignment of a few Shiploads of Tea, Dec 16, 1773_.png'">
     
     On your fourth night, a familiar voice rings in your ear as the door opens. George walks in with a group of boys all similar in age to him. After he sits down, you approach him and tell him you want to talk to him.
     
@@ -539,6 +559,75 @@ It is Thursday evening, April 20, 1775, and a breathless post rider appears in N
 Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
 
 Money: 30 Gold, 30 Silver, 40 Copper
+
+
+:: Letter {"position":"2400,2650","size":"100,100"}
+<div class='borderWoman'>
+<<if $readingLvl is "HL">>
+	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 2.png'">
+    
+	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadephia. 
+
+Your letter explains your feelings about the news from Lexington and Concord. It says:  
+
+My dear friend, Miss Morey,  
+
+By the time you receive this letter, you will surely have heard of the fighting at Lexington and Concord. We have just heard the news here in Connecticut as I write. I have always abhorred violence, but I also detest tyranny! We have yet to see how events will unfold, but I pray there is no coming war. You and I must be especially concerned. Your mother’s people, the Delaware Indians, and my people, the Africans, may find this struggle more difficult than our English brethren. I hope we may meet again as we did formerly when I was in Philadelphia with my father.  
+
+Yours in truth, Miss Dinah Johnson, New London, Conn.  
+
+
+	Decision: Do you send this letter? On the one hand, you want someone to share ideas. You feel like this is a moment of great change. On the other hand, maybe it is best if you keep your ideas to yourself, because you don’t know what your neighbors will do in the future. What if one of your neighbors found out what you think and didn’t like it? You and your parents have mostly gotten along with your English neighbors. They come to your store and you need their business. As a pacifist, you don’t just want peace between nations. You also want peace between you and your neighbors.
+
+	<<button "Keep your thoughts private and avoid potential conflict">>
+    	<<set $player.sendLetter to 1>>
+    	<<set $player.silverCoins += 1>>
+      	<<goto "Letter Decision">>
+	<</button>>
+
+	<<button "Express your beliefs and take a stand against the British">>
+    	<<set $player.sendLetter to 0>>
+      	<<set $player.silverCoins -= 1>>
+      	<<goto "Letter Decision">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 2.png'">
+    
+	Back at your shop, you light a new candle and you sit down to write a letter to your friend Elizabeth Morey, an Indian Quaker girl who worked for Nicholas and Sarah Waln in Philadephia. 
+
+Your letter explains your feelings about the news from Lexington and Concord. It says:  
+
+My dear friend, Miss Morey,  
+
+By the time you get this letter, you will probably have heard of the fighting at Lexington and Concord. We have just heard the news here in Connecticut as I write. I have always strongly disliked violence, but I also dislike unfair rulers!  
+
+You and I need to be extra careful. Your mother’s people, the Delaware Indians, and my people, the Africans, may find this fight harder than our English brothers and sisters. I hope we meet again like we did when I was in Philadelphia with my father.  
+
+Yours in truth, Miss Dinah Johnson, New London, Conn.
+
+
+	Decision: Do you send this letter? On the one hand, you want someone to share ideas. You feel like this is a moment of great change. On the other hand, maybe it is best if you keep your ideas to yourself, because you don’t know what your neighbors will do in the future. What if one of your neighbors found out what you think and didn’t like it? You and your parents have mostly gotten along with your English neighbors. They come to your store and you need their business. As a pacifist, you don’t just want peace between nations. You also want peace between you and your neighbors.
+
+	<<button "Keep your thoughts private and avoid potential conflict">>
+    	<<set $player.sendLetter to 1>>
+    	<<set $player.silverCoins += 1>>
+      	<<goto "Letter Decision">>
+	<</button>>
+
+	<<button "Express your beliefs and take a stand against the British">>
+    	<<set $player.sendLetter to 0>>
+      	<<set $player.silverCoins -= 1>>
+      	<<goto "Letter Decision">>
+  	<</button>>
+<<endif>>
+</div>
+
+[[|Letter Decision]]
+
+
+:: Letter Decision {"position":"2600,2650","size":"100,100"}
+
 
 
 :: Meal Decision {"position":"2800,2050","size":"100,100"}
