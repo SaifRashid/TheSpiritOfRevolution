@@ -29,7 +29,7 @@ THE SPIRIT OF REVOLUTION
 	A crowd enters the tavern. Everyone is talking excitedly about a confrontation between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to several of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. You are appalled that he would be disloyal to the king!
 
 
-	Decision: Do you 1) talk to your son about his plans immediately, or 2) wait to confront him until his father returns from the West Indies? 
+	Decision: Do you talk to your son about his plans immediately, or wait to confront him until his father returns from the West Indies? 
 
   <<button "Yes, you talk to your son now about his plans">>
       <<set $player.tellSon to 1>>
@@ -51,7 +51,7 @@ THE SPIRIT OF REVOLUTION
     A crowd comes into the tavern. Everyone is talking excitedly about a fight between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to a few of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. (A militia is a group of armed citizens.) You are shocked that he would be against the king!
 
 
-	Decision: Do you 1) talk to your son about his plans right away, or 2) wait to talk to him until his father returns from the West Indies? 
+	Decision: Do you talk to your son about his plans right away, or wait to talk to him until his father returns from the West Indies? 
 
 	<<button "Yes, you talk to your son now about his plans.">>
       <<set $player.tellSon to 1>>
@@ -118,7 +118,7 @@ THE SPIRIT OF REVOLUTION
 <<if $readingLvl is "HL">>
 	<img class=imgEmbedded @src="setup.ImagePath+'The Shopkeeper/Dinah Johnson ad 1.jpg'">
     
-	You run from your shop near the courthouse to the printer’s shop to get your new advertisements in the newspaper. The deadline is tonight. On the way you hear other people yelling that there is news from Lexington. You see the gathering crowd and make your way as close to the print shop as possible. You have misgivings about the ad for the regiment plans, because you don’t believe in fighting, but you need the business in your shop. Timothy Green reads Palmer’s letter and you absorb the news: Patriot spies got wind of Governor Thomas Gage’s plan to order the seizure of weapons and powder being stored in Concord, Massachusetts, 20 miles northwest of Boston. On the evening of April 18, riders raised the alarm that British regulars were on their way to Concord. Minute Men and militias rushed to confront them early on April 19. No one knew who fired the first shot. But the Patriots had held their own against the Redcoats. You can hardly believe what you are hearing. You can hardly believe what you are hearing. You hand your ads to Green’s servant and return to your own shop.
+	You run from your shop near the courthouse to the printer’s shop to get your new advertisements in the newspaper. The deadline is tonight. On the way you hear other people yelling that there is news from Lexington. You see the gathering crowd and make your way as close to the print shop as possible. You have misgivings about the ad for the regiment plans, because you don’t believe in fighting, but you need the business in your shop. Timothy Green reads Palmer’s letter and you absorb the news: Patriot spies got wind of Governor Thomas Gage’s plan to order the seizure of weapons and powder being stored in Concord, Massachusetts, 20 miles northwest of Boston. On the evening of April 18, riders raised the alarm that British regulars were on their way to Concord. Minute Men and militias rushed to confront them early on April 19. No one knew who fired the first shot. But the Patriots had held their own against the Redcoats. You can hardly believe what you are hearing. You hand your ads to Green’s servant and return to your own shop.
 
   	<<button "Click here to continue">>
        	<<goto "Letter">>
@@ -150,7 +150,7 @@ THE SPIRIT OF REVOLUTION
 	As the noise in the tavern builds up again, Tallmadge looks at you. He tells you that he believes that the British have gone too far, sending troops into the countryside and firing on British subjects. He knows that you will be going to Boston soon, and asks you to be wary of loyalists there and to consider aiding the Militia. 
 
 
-	Decision: Do you 1) say that you would prefer to keep your head down, or 2) tell him that you want to stand up to the British?
+	Decision: Do you say that you would prefer to keep your head down, or tell him that you want to stand up to the British?
 
 	<<button "Say that you would prefer to keep your head down">>
     	<<set $player.keepHeadDown to 1>>
@@ -172,7 +172,7 @@ THE SPIRIT OF REVOLUTION
 	Before beginning his talk, Benjamin looks around at the men at the table, whom you all recognize as former classmates. He says that something needs to be done about the British and their treatment of American colonists, and that you should see if you can help when you go to Boston. 
 
 
-	Decision: Do you 1) tell him that you don’t want to get involved, or 2) agree to help the Rebels in Boston? 
+	Decision: Do you tell him that you don’t want to get involved, or agree to help the Rebels in Boston? 
 
 	<<button "Tell him that you don’t want to get involved">>
     	<<set $player.keepHeadDown to 1>>
@@ -195,7 +195,7 @@ THE SPIRIT OF REVOLUTION
 	After another two days of riding over poor and muddy roads, you have made it to Boston to find that it has been besieged by the rebel militia, and that the king’s troops are digging fortifications on the narrow neck that connects Boston to the rest of the land. As you approach the neck, you spot a group of three militiamen blocking the road.  
 
  
-	Decision: do you 1) attempt to sneak around the militiamen, or 2) convince them to let you through?
+	Decision: do you attempt to sneak around the militiamen, or convince them to let you through?
     
     <<button "Attempt to sneak around the militiamen">>
     	<<set $player.sneakAround to 1>>
@@ -213,7 +213,7 @@ THE SPIRIT OF REVOLUTION
 	You continue riding for several days until you finally reach Boston. You find that the rebel militias have surrounded the city, and that the redcoats are getting ready to defend it, where they are trapped. As you approach the narrow strip of land which is the only way into the city, you see a group of militiamen on the road in front of you.  
 
 
-	Decision: do you 1) attempt to sneak around the militiamen, or 2) convince them to let you through? 
+	Decision: do you attempt to sneak around the militiamen, or convince them to let you through? 
     
     <<button "Attempt to sneak around the militiamen">>
     	<<set $player.sneakAround to 1>>
@@ -234,9 +234,9 @@ THE SPIRIT OF REVOLUTION
 :: Boston Entrance Decision {"position":"3200,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.sneakAround is 1>>
-		1) You duck into some tall grass and slip past them while they talk, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+		You duck into some tall grass and slip past them while they talk, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.sneakAround is 0>>
-      	2) You approach the militiamen, who seem to be very young, and speak to them of your support for their cause. After making you pay a fee for passage, they let you through. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
+      	You approach the militiamen, who seem to be very young, and speak to them of your support for their cause. After making you pay a fee for passage, they let you through. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
   	<<endif>>   
   	<<button "Click here to continue">>
 	<<goto "Boston Spy">>
@@ -244,9 +244,9 @@ THE SPIRIT OF REVOLUTION
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.sneakAround is 1>>
-      	1) You sneak by them by hiding in tall grass as they talk to each other, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      	You sneak by them by hiding in tall grass as they talk to each other, clearly very bored and tired. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.sneakAround is 0>>
-      	2) You approach the militiamen, and tell them that you support their fight against the king. They let you through, but only after making you pay to pass. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
+      	You approach the militiamen, and tell them that you support their fight against the king. They let you through, but only after making you pay to pass. (Lose 3 silver coins.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
 	<<goto "Boston Spy">>
@@ -268,7 +268,7 @@ THE SPIRIT OF REVOLUTION
     Pulled away from the noise of the tavern, you tell George that his father has decided to stay in New York to join the king’s army. You pull out the letter and show him, urging him to pull away from these militiamen.
     
     
-    Decision: Will you 1) continue to pressure George to come home with you and stay out of this fight or 2) will you ask him to try and help convince your husband to leave the army? You can only imagine it’s a matter of time before more troops are needed in Boston.
+    Decision: Will you continue to pressure George to come home with you and stay out of this fight or will you ask him to try and help convince your husband to leave the army? You can only imagine it’s a matter of time before more troops are needed in Boston.
     
     <<button "Pressure George to come home">>
     	<<set $player.pressureGeorge to 1>>
@@ -292,7 +292,7 @@ THE SPIRIT OF REVOLUTION
     He follows you to a quiet spot, and you take out the letter from your husband about him staying to join the king’s army and show it to George. He looks up at you, waiting.
     
     
-    Decision: Should you 1) beg George to leave the militia and come back home or 2) ask him to join you in finding his father to get him to leave the army?
+    Decision: Should you beg George to leave the militia and come back home or ask him to join you in finding his father to get him to leave the army?
     
     <<button "Beg George to leave and come home">>
     	<<set $player.pressureGeorge to 1>>
@@ -336,7 +336,7 @@ Welcome to Boston!
     You need to find George to tell him that his father is joining the king’s troops and urge him to support the king. You aren’t exactly sure where he is in Massachusetts. You are worried about how much money you have left. 
     
     
-    Decision: Do you 1) take a ship from New Haven to Boston to get there more quickly but pay higher prices in Boston for lodging, or 2) do you go by coach and stay at inns along the way to save money?
+    Decision: Do you take a ship from New Haven to Boston to get there more quickly but pay higher prices in Boston for lodging, or do you go by coach and stay at inns along the way to save money?
     
     <<button "Take a ship to Boston">>
     	<<set $player.takeShip to 1>>
@@ -356,7 +356,7 @@ Welcome to Boston!
     You must find George and tell him his father is going to join the king’s army. You have to convince him to support the king! But you have never been to Boston and do not even know where it is! Travel will require a lot of money, and you are worried you won’t have enough.
     
     
-    Decision: Should you 1) take a ship from New Haven to Boston, which will get you there faster but costs more money and means you’ll need to pay more to stay in Boston, or 2) travel by coach, staying at inns along the way, which takes much longer but will save you money?
+    Decision: Should you take a ship from New Haven to Boston, which will get you there faster but costs more money and means you’ll need to pay more to stay in Boston, or travel by coach, staying at inns along the way, which takes much longer but will save you money?
     
     <<button "Take a ship to Boston">>
     	<<set $player.takeShip to 1>>
@@ -485,9 +485,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	<<if $player.pressureGeorge is 1>>
-		1) You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
+		You grab George’s arms, pleading with him to leave the militia and come home with you. Saying that you can find his father together. He pushes you off, reminding you that he is a man. And his own man at that. He walks back to his friends, without looking back. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.pressureGeorge is 0>>
-      	2) You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
+      	You tell George that maybe the both of you could convince his father to leave the king’s army together. He tells you he cannot just abandon his brothers in arms and that he will stay to fight, then maybe after he will go find his father. He tells you he hopes to see you again soon and walks back to his friends. (Gain one silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>   
   	<<button "Click here to continue">>
 
@@ -495,9 +495,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.pressureGeorge is 1>>
-      	1) You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
+      	You grab onto George’s arm and beg him to come back home to Ridgefield. He pushes you off and tells you that he can make his own choices. He walks away and does not look back at you. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<elseif $player.pressureGeorge is 0>>
-      	2) He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      	He tells you that he cannot leave his new brothers in their time of need, but that he would join you in a few weeks. He tells you he wishes you see you again and returns to the table of his friends. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
 
@@ -654,9 +654,9 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 :: Meal Decision {"position":"2800,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.befriendMen is 1>>
-    	1) You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
+    	You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
 	<<elseif $player.befriendMen is 0>>
-     	2) You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your fathers age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+     	You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your fathers age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>   
   	<<button "Click here to continue">>
        	<<goto "Boston Entrance">>
@@ -664,9 +664,9 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.befriendMen is 1>>
-      	1) You sit down with them, and while they look suspicious of you at first, once you discuss your distaste for the King you have made quick friends. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
+      	You sit down with them, and while they look suspicious of you at first, once you discuss your distaste for the King you have made quick friends. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
   	<<elseif $player.befriendMen is 0>>
-      	2) You walk away, choosing to eat with a group of older people. They are not happy with what the young men have to say. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      	You walk away, choosing to eat with a group of older people. They are not happy with what the young men have to say. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
     	<<goto "Boston Entrance">>
@@ -737,9 +737,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <div class='borderWoman'>
 <<if $readingLvl is "HL">>
   <<if $player.tellSon is 1>>
-      1) You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.     
+      You tell your son that you are against his joining any militia, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You remind him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.     
   <<elseif $player.tellSon is 0>>
-      2) You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
+      You decide to wait to confront George until your husband returns. You are also uncomfortable revealing any opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Bunker Hill Farm Wife">>
@@ -747,9 +747,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 
 <<elseif $readingLvl is "LL">>
   <<if $player.tellSon is 1>>
-      1) You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      You talk to your son and tell him that you are against his joining any group of armed citizens, especially before his father returns from the West Indies. George gets angry and tells you it is not the place of women to make decisions for men. You tell him that while his father is away, you are the head of the household. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   <<elseif $player.tellSon is 0>>
-      2) You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
+      You decide to wait to talk to George until your husband returns. You don’t share your opinions about what happened at Lexington. (Lose 1 copper coin.) You now have $player.copperCoins copper coins.
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Bunker Hill Farm Wife">>
@@ -799,9 +799,9 @@ Choose your reading level!
 :: Tavern Decision {"position":"2400,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.keepHeadDown is 1>>
-      	1) You tell Benjamin that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+      	You tell Benjamin that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
 	<<elseif $player.keepHeadDown is 0>>
-      	2) You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      	You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
 	<<endif>>
 	<<button "Click here to continue">>
     	<<goto "Travel To Boston">>
@@ -809,9 +809,9 @@ Choose your reading level!
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.keepHeadDown is 1>>
-      	1)  You tell Benjamin that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+      	You tell Benjamin that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
   	<<elseif $player.keepHeadDown is 0>>
-      	2) You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+      	You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
   	<<button "Click here to continue">>
     	<<goto "Travel To Boston">>
@@ -827,7 +827,7 @@ Choose your reading level!
   You do not tell the owner. He hires you for one month (get paid 1 silver coin.) You now have $player.silverCoins silver coins.
 
 
-	Decision: 1) Should you just pay someone to take care of the children or 2) should you take them home to the Eastern Pequot reservation?
+	Decision: Should you just pay someone to take care of the children or should you take them home to the Eastern Pequot reservation?
 
   <<button "Pay someone">>
     <<set $player.childrenDecision to 0>>
@@ -899,9 +899,9 @@ Choose your reading level!
 <div class='borderWoman'>
 <<if $readingLvl is "HL">>
   <<if $player.takeShip is 1>>
-      1) You go by ship to Boston. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
+      You go by ship to Boston. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
   <<elseif $player.takeShip is 0>>
-      2) You go by coach to Boston. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      You go by coach to Boston. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Boston Farm Wife">>
@@ -909,9 +909,9 @@ Choose your reading level!
 
 <<elseif $readingLvl is "LL">>
   <<if $player.takeShip is 1>>
-      1) You travel by ship to Boston. It takes a day. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
+      You travel by ship to Boston. It takes a day. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
   <<elseif $player.takeShip is 0>>
-      2) You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Boston Farm Wife">>
@@ -931,7 +931,7 @@ Choose your reading level!
 	You say farewell to your family and set off before dawn. Your trip to Boston has officially begun. You ride with speed north for the day, and stop at an inn at night. There, you notice a group of young men younger than you huddled away in a corner who seem to be close friends. As you slowly get closer you hear them discussing joining “the fight” in Boston. The last information you heard was that Massachusetts militiamen had chased the redcoats back to Boston and besieged the city. These men seem quite serious about their commitment to rebellion.  
 
  
-	Decision: Should you 1) join in the rabble and befriend these men or 2) keep your distance and wait it out? 
+	Decision: Should you join in the rabble and befriend these men or keep your distance and wait it out? 
     
     <<button "Join in the rabble and befriend these men">>
     	<<set $player.befriendMen to 1>>
