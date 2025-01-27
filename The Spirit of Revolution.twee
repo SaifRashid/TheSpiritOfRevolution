@@ -22,9 +22,13 @@ THE SPIRIT OF REVOLUTION
 :: Begin Farm Wife Journey {"position":"2100,1400","size":"200,200"}
 <div class='borderWoman'>
 <<if $readingLvl is "HL">>
-	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal, which consists of a salted shad, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal.
+	You enter the tavern with some trepidation. You aren’t used to going into such places alone. You see your eldest son, George, seated at a table. He waves his hand and beckons you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal, which consists of a salted shad, ham, pudding, a dish of peas, and a dish of asparagus with butter. You’re grateful for the meal.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/Colonial tavern meal.jpg'" title="Foodways at colonial New London">
 
-	You came by boat, and though Long Island Sound was rougher than you had anticipated, it was better than the five days it would have taken had you come overland. Your husband sailed on the sloop Martha in February to oversee the delivery of some livestock to the West Indies, and you hope you can find out some news about his return.
+	You came by boat, and though Long Island Sound was rougher than you had anticipated, it was better than the four days it would have taken had you come overland. Your husband sailed on the sloop //Martha// in February to oversee the delivery of some livestock to the West Indies, and you hope you can find out some news about his return.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/Nellie-1.jpg'" title="A sloop at Mystic Seaport">
 
 	A crowd enters the tavern. Everyone is talking excitedly about a confrontation between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to several of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. You are appalled that he would be disloyal to the king!
 
@@ -143,7 +147,9 @@ THE SPIRIT OF REVOLUTION
 
 :: Begin Spy Journey {"position":"2100,2000","size":"200,200"}
 <<if $readingLvl is "HL">>
-	You enter the tavern as the crowd stampedes in. The shouts of aggression and calls to action fill your head until the outside world means little, until a familiar voice greets you. An old classmate ushers you over to his table covered in mugs of ale and empty dishes. It’s clear they have been here for a while. The break from the noise is welcome and your friend offers you a chunk of bread and some butter.  
+	You enter the tavern as the crowd stampedes in. The shouts of aggression and calls to action fill your head until the outside world means little, until a familiar voice greets you. An old classmate ushers you over to his table covered in mugs of ale and empty dishes. It’s clear they have been here for a while. The break from the noise is welcome and your friend offers you a chunk of bread and some butter.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'New London Concord Alarm/Settling the Affairs of the Nation.jpg'">
 
 	Your journey to New London on horseback took the entire day, urged on by a letter from a friend, Benjamin Tallmadge, regarding what to do in these times of growing conflict.  
 
@@ -152,13 +158,13 @@ THE SPIRIT OF REVOLUTION
 
 	Decision: Do you say that you would prefer to keep your head down, or tell him that you want to stand up to the British?
 
-	<<button "Say that you would prefer to keep your head down">>
+	<<button "Tell Talmadge you would prefer to keep your head down">>
     	<<set $player.keepHeadDown to 1>>
     	<<set $player.copperCoins -= 3>>
       	<<goto "Tavern Decision">>
 	<</button>>
 
-	<<button "Tell him that you want to stand up to the British">>
+	<<button "Tell Talmadge that you want to stand up to the British">>
     	<<set $player.keepHeadDown to 0>>
       	<<set $player.silverCoins += 1>>
       	<<goto "Tavern Decision">>
@@ -192,7 +198,9 @@ THE SPIRIT OF REVOLUTION
 
 :: Boston Entrance {"position":"3000,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
-	After another two days of riding over poor and muddy roads, you have made it to Boston to find that it has been besieged by the rebel militia, and that the king’s troops are digging fortifications on the narrow neck that connects Boston to the rest of the land. As you approach the neck, you spot a group of three militiamen blocking the road.  
+	After another two days of riding over poor and muddy roads, you have made it to Boston to find that it has been besieged by the rebel militia, and that the king’s troops are digging fortifications on the narrow neck that connects Boston to the rest of the land. As you approach the neck, you spot a group of three militiamen blocking the road.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Robert Sayer and John Bennett (Firm). _Plan of the battle, on Bunker's Hill _ fought on the 17th of June 1775._ Map. London_ R. Sayer and J. Bennett, 1775. Digital Commonwealth.jpg'">
 
  
 	Decision: do you attempt to sneak around the militiamen, or convince them to let you through?
@@ -332,6 +340,8 @@ Welcome to Boston!
 <div class='borderWoman'>
 <<if $readingLvl is "HL">>
 	George has left New London and gone to Massachusetts to support the militia against the British redcoats. You remain in New London until April 20 , when you get word that your husband is returning to New York and then going to Ridgefield. You go by coach to New Haven to see your sister. When you arrive, she tells you a letter from your husband has been delivered. The letter says he is remaining in New York to join the king’s troops there.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/231coach-removebg-preview.png'" title="18th-century coach in the East Granby Historical Society museum">
     
     You need to find George to tell him that his father is joining the king’s troops and urge him to support the king. You aren’t exactly sure where he is in Massachusetts. You are worried about how much money you have left. 
     
@@ -510,7 +520,7 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <h1>The Beginnings of your Journey</h1>
 Welcome, $player.name!<br>
 Your current player class is $player.job.<br>
-That means you start with $player.totalCoins coins. $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. 
+You have inherited $player.totalCoins coins: $player.goldCoins gold coins, $player.silverCoins silver coins, and $player.copperCoins copper coins. Spend them wisely. You can also add coins and build your bank account.
 
 It is Thursday evening, April 20, 1775, and a breathless post rider appears in New London, Connecticut, with a copy of a dispatch from Joseph Palmer, a member of the Cambridge Committee of Safety, about a battle that took place in Lexington, Massachusetts, on April 19. The rider stops his horse near Timothy Green’s printer's shop. Green emerges from his shop and greets the rider, who hands him a copy of Palmer’s “Lexington Alarm.” A crowd gathers to hear the news.
 
@@ -521,9 +531,7 @@ It is Thursday evening, April 20, 1775, and a breathless post rider appears in N
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquam, massa ac imperdiet tempor, elit est tempor elit, ut vehicula orci ante at augue. Ut tincidunt commodo nisi vel hendrerit. Integer sed gravida mi. Donec vitae rutrum eros. Aenean fermentum quam sem. Nunc lorem elit, tincidunt ut pretium a, pulvinar eu quam. Nunc mattis pharetra leo eu interdum. 
 </div>
 
-<img @src="setup.ImagePath+'New London Concord Alarm/Messenger riding to New London News of Lexington.jpg'" height="400">
-
-[A woodcut alleged to be Isaac Bissell riding to CT. Bissell seems not to have been an actual emissary to New London.]
+<img @src="setup.ImagePath+'New London Concord Alarm/Messenger riding to New London News of Lexington.jpg'" height="400" title="A woodcut alleged to be Isaac Bissell riding to CT. Bissell seems not to have been an actual emissary to New London.">
 
 <<button "Begin your Journey">>
 	<<if $player.job is "Laundress">>
@@ -656,7 +664,7 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 	<<if $player.befriendMen is 1>>
     	You walk over to the men with your meal in hand. While at first they look at you suspiciously, you talk about wanting to resist the King’s Rule. You have made quick friends with these men. (Gain 3 silver coins.) You now have $player.silverCoins silver coins.
 	<<elseif $player.befriendMen is 0>>
-     	You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your fathers age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
+     	You choose to have your meal elsewhere. The men do not notice you listening in on them and continue in their discussion. Eating with men closer to your father's age you hear them scoff at the words of the young men. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>   
   	<<button "Click here to continue">>
        	<<goto "Boston Entrance">>
@@ -799,7 +807,7 @@ Choose your reading level!
 :: Tavern Decision {"position":"2400,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.keepHeadDown is 1>>
-      	You tell Benjamin that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+      	You tell Talmadge that while you agree that the British Government has gone too far, there’s nothing you can do about it. He tells you that there’s more you can do to help fight the British than just taking up arms. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
 	<<elseif $player.keepHeadDown is 0>>
       	You agree with your friend, saying that you will find some small way to aid the militia while in Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
 	<<endif>>
@@ -809,7 +817,7 @@ Choose your reading level!
 
 <<elseif $readingLvl is "LL">>
   	<<if $player.keepHeadDown is 1>>
-      	You tell Benjamin that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
+      	You tell Talmadge that you would rather keep your head down and avoid trouble. He reminds you that picking up a gun isn’t the only way to fight the British, and that you should consider other ways to help the colonists. (Lose 3 copper coins.) You now have $player.copperCoins copper coins.
   	<<elseif $player.keepHeadDown is 0>>
       	You agree with your friend, and promise him that you’ll find some way to help stand up to the British when you go to Boston. (Gain 1 silver coin.) You now have $player.silverCoins silver coins.
   	<<endif>>
@@ -900,8 +908,12 @@ Choose your reading level!
 <<if $readingLvl is "HL">>
   <<if $player.takeShip is 1>>
       You go by ship to Boston. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
+      
+      <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/csm-volume52-p14_13.jpg'" title="drawing of a sloop Massachusetts Historical Society">
   <<elseif $player.takeShip is 0>>
-      You go by coach to Boston. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      You go by coach to Boston but the city is under seige. You are turned away and have to find another way in. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      
+      <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/View of the city of Boston from Breeds Hill in Charlestown _ del. & engraved by S. Hill. .png'">
   <<endif>>   
   <<button "Click here to continue">>
        <<goto "Boston Farm Wife">>
@@ -929,6 +941,8 @@ Choose your reading level!
 	He tells you that, while he knows you are now a grown man capable of making your own decisions, you must be cautious as to where those decisions lead. He says that in these times of unrest you must remember to have loyalty to God and the King. He proudly mentions his time serving the King during the French and Indian War, and wishes you a safe trip to Boston. 
 
 	You say farewell to your family and set off before dawn. Your trip to Boston has officially begun. You ride with speed north for the day, and stop at an inn at night. There, you notice a group of young men younger than you huddled away in a corner who seem to be close friends. As you slowly get closer you hear them discussing joining “the fight” in Boston. The last information you heard was that Massachusetts militiamen had chased the redcoats back to Boston and besieged the city. These men seem quite serious about their commitment to rebellion.  
+
+<img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/patriotsday_minutemen.jpg__1000x668_q85_crop_subsampling-2_upscale.jpg'" title="Minutemen, Concord Museum">
 
  
 	Decision: Should you join in the rabble and befriend these men or keep your distance and wait it out? 
