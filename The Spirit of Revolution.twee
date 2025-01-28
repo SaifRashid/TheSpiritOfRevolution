@@ -48,9 +48,13 @@ THE SPIRIT OF REVOLUTION
   <</button>>
 
 <<elseif $readingLvl is "LL">>
-	You nervously enter the tavern. You aren’t used to going into such places alone. You see your oldest son, George, seated at a table. He waves his hand and invites you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal. You eat fish, peas, and vegetables with butter. You’re thankful for the meal.
+	You nervously enter the tavern. You aren’t used to going into such places alone. You see your oldest son, George, seated at a table. He waves his hand and invites you over. He has brought a large wagon overland with dairy, flax, and wool products from your farm to sell in New London. You and he sit down to a meal. You eat fish, ham, peas, and vegetables with butter. You’re thankful for the meal.
     
-    You came by boat, and though Long Island Sound was rougher than you had expected, it was better than the five days it would have taken had you come overland. Your husband sailed on the ship Martha in February to deliver some farm animals to the West Indies, and you hope you can find out some news about his return.
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/Colonial tavern meal.jpg'" title="Foodways at colonial New London">
+    
+    You came by boat, and though Long Island Sound was rougher than you had expected, it was better than the five days it would have taken had you come overland. Your husband sailed on the ship //Martha// in February to deliver some farm animals to the West Indies, and you hope you can find out some news about his return.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/Nellie-1.jpg'" title="A sloop at Mystic Seaport">
     
     A crowd comes into the tavern. Everyone is talking excitedly about a fight between British soldiers and colonists on Lexington Green two days ago. George joins the crowd and talks to a few of the men. When he returns to the table, he tells you he is thinking of joining one of the colonial militias. (A militia is a group of armed citizens.) You are shocked that he would be against the king!
 
@@ -172,21 +176,23 @@ THE SPIRIT OF REVOLUTION
 
 <<elseif $readingLvl is "LL">>
 	You enter the tavern with a large group of people, all shouting loudly. The noise is so loud that it makes your head hurt. An old friend from school, Benjamin Tallmadge, grabs your shoulder. Before you know it, he’s bringing you over to his table, with plates of peas and asparagus. After offering you a drink and a bite to eat, you’re given a minute to enjoy your meal. 
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'New London Concord Alarm/Settling the Affairs of the Nation.jpg'">
 
 	The brief minute of peace reminds you why you came all this way in the first place. It was a day-long ride from Ashford to New London! Your hand slips into your pocket to feel the letter from Benjamin, asking you to come and meet him. 
 
 	Before beginning his talk, Benjamin looks around at the men at the table, whom you all recognize as former classmates. He says that something needs to be done about the British and their treatment of American colonists, and that you should see if you can help when you go to Boston. 
 
 
-	Decision: Do you tell him that you don’t want to get involved, or agree to help the Rebels in Boston? 
+	Decision: Do you tell Talmadge that you don’t want to get involved, or agree to help the Rebels in Boston? 
 
-	<<button "Tell him that you don’t want to get involved">>
+	<<button "Tell Talmadge that you don’t want to get involved">>
     	<<set $player.keepHeadDown to 1>>
     	<<set $player.copperCoins -= 3>>
       	<<goto "Tavern Decision">>
 	<</button>>
 
-  	<<button "Agree to help the Rebels in Boston">>
+  	<<button "Tell Talmadge that you want to help the Rebels in Boston">>
     	<<set $player.keepHeadDown to 0>>
       	<<set $player.silverCoins += 1>>
       	<<goto "Tavern Decision">>
@@ -200,7 +206,7 @@ THE SPIRIT OF REVOLUTION
 <<if $readingLvl is "HL">>
 	After another two days of riding over poor and muddy roads, you have made it to Boston to find that it has been besieged by the rebel militia, and that the king’s troops are digging fortifications on the narrow neck that connects Boston to the rest of the land. As you approach the neck, you spot a group of three militiamen blocking the road.
     
-    <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/Robert Sayer and John Bennett (Firm). _Plan of the battle, on Bunker's Hill _ fought on the 17th of June 1775._ Map. London_ R. Sayer and J. Bennett, 1775. Digital Commonwealth.jpg'">
+    <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/A Plan of the Battle of Bunker Hill.jpg'">
 
  
 	Decision: do you attempt to sneak around the militiamen, or convince them to let you through?
@@ -219,6 +225,8 @@ THE SPIRIT OF REVOLUTION
         
 <<elseif $readingLvl is "LL">>
 	You continue riding for several days until you finally reach Boston. You find that the rebel militias have surrounded the city, and that the redcoats are getting ready to defend it, where they are trapped. As you approach the narrow strip of land which is the only way into the city, you see a group of militiamen on the road in front of you.  
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/A Plan of the Battle of Bunker Hill.jpg'">
 
 
 	Decision: do you attempt to sneak around the militiamen, or convince them to let you through? 
@@ -362,6 +370,8 @@ Welcome to Boston!
         
 <<elseif $readingLvl is "LL">>
 	George has left for Massachusetts while you stay in New London until April 20 , waiting for news of your husband’s return to New York. In the meantime, you go to New Haven by coach to see your sister. While there, you get word from your husband that he will not return to Ridgefield but will stay in New York to join the king’s troops.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/231coach-removebg-preview.png'" title="18th-century coach in the East Granby Historical Society museum">
     
     You must find George and tell him his father is going to join the king’s army. You have to convince him to support the king! But you have never been to Boston and do not even know where it is! Travel will require a lot of money, and you are worried you won’t have enough.
     
@@ -922,8 +932,12 @@ Choose your reading level!
 <<elseif $readingLvl is "LL">>
   <<if $player.takeShip is 1>>
       You travel by ship to Boston. It takes a day. (Lose 2 gold coins.) You now have $player.goldCoins gold coins.
+      
+      <img class=imgEmbedded @src="setup.ImagePath+'The Farm Wife/csm-volume52-p14_13.jpg'" title="drawing of a sloop Massachusetts Historical Society">
   <<elseif $player.takeShip is 0>>
-      You travel by coach to Boston. Because of the poor conditions of the roads, bad weather, and having to stop at inns along the way, it takes you a week. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      You go by coach to Boston but the city is under seige. You are turned away and have to find another way in. (Lose 1 gold coin.) You now have $player.goldCoins gold coins.
+      
+      <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/View of the city of Boston from Breeds Hill in Charlestown _ del. & engraved by S. Hill. .png'">
   <<endif>>
   <<button "Click here to continue">>
          <<goto "Boston Farm Wife">>
@@ -967,6 +981,8 @@ Choose your reading level!
 	You give your final goodbyes as you mount your horse and start down the road. Your journey to Boston has started! 
 
 	You ride through the day across muddy roads. At night, you stop at an inn to rest. There, You notice a group of young people talking loudly about wanting to join the fight at Boston. You hear from them that the rebel militia have surrounded Boston, trapping the British army in the city! 
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/patriotsday_minutemen.jpg__1000x668_q85_crop_subsampling-2_upscale.jpg'" title="Minutemen, Concord Museum">
 
 
 	Decision: Should you a) join in their talk or b) find somewhere else to sit?
