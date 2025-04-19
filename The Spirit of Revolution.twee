@@ -15,6 +15,15 @@ THE SPIRIT OF REVOLUTION
 }
 
 
+:: Battle Dialogue {"position":"5200,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	Several days later, you awaken to the sound of cannon fire. Getting out of bed, you walk to Copp’s Hill in the northern part of the city, where you find several British cannons firing across the bay. Peering through the smoke, you watch in awe as Charlestown burns, and behind, you see long lines of British regulars advancing up a large hill, defended by the militia. The British charge up the hill repeatedly, and the militia forces them back each time. You are astonished to see that the militia not only stand up to the king’s troops but seem to be winning. As the British cannons on the hill continue firing, you watch for hours until you finally see British flags flying atop the hill. They seem to have won the battle, but as your eyes wander over the field of dead and wounded, you can’t help but notice how many lives it cost to take one hill.
+<<elseif $readingLvl is "LL">>
+  	Several days later, you wake to the sound of cannon fire. Getting out of bed, you walk to Copp’s Hill in the north of the city, where several British cannons are firing across the bay. Looking through the smoke, you watch in shock as you see Charlestown across the bay burning, and behind it, you see hundreds of British soldiers charging up a large hill, defended by the militia. The British go up the hill again and again, and each time they are forced back down by the militia. You are surprised to see that the militia stand up to the king’s troops and seem to be winning. As the British cannons on the hill continue firing, you watch for hours until you finally see British flags flying atop the hill. They appear to have won the battle, but as your eyes wander over the field filled with British dead and injured, you cannot help but notice how much it cost them to take that one hill.
+<<endif>>
+
+
+
 :: Begin Doctor Journey {"position":"2100,200","size":"200,200"}
 
 
@@ -209,7 +218,7 @@ THE SPIRIT OF REVOLUTION
     <img class=imgEmbedded @src="setup.ImagePath+'Bunker Hill/A Plan of the Battle of Bunker Hill.jpg'">
 
  
-	Decision: do you attempt to sneak around the militiamen, or convince them to let you through?
+	Decision: Do you attempt to sneak around the militiamen, or convince them to let you through?
     
     <<button "Attempt to sneak around the militiamen">>
     	<<set $player.sneakAround to 1>>
@@ -340,8 +349,10 @@ Welcome to Boston!
   	When You reach the road into Boston, you find many people leaving the city, as redcoats build barriers on the road and dig trenches. They search you for weapons, but let you in. There seems to be more soldiers than people in Boston!
 <<endif>>
 <<button "Click here to continue">>
-
+<<goto "Law Office Leonard">>
 <</button>>
+
+[[|Law Office Leonard]]
 
 
 :: Bunker Hill Farm Wife {"position":"2600,1450","size":"100,100"}
@@ -456,6 +467,27 @@ Decision: You can take them to the Eastern Pequot Reservation in North Stoningto
 [[|Bunker Hill Laundress]]
 
 
+:: Cross By Water {"position":"4800,1900","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.crossWater is 1>>
+		It’s not cheap, but the local fisherman you hire knows the waters and the British patrol patterns well, allowing him to silently and safely ferry you across the water without being stopped. (Lose 10 copper coins.) You now have $player.copperCoins copper coins.
+    <<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Water Dialogue">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.crossWater is 1>>
+      	It isn’t cheap, but the local fisherman you hire knows the waters and can quietly and safely bring you across the water without trouble. (Lose 10 copper coins.)
+    <<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Water Dialogue">>
+  	<</button>>
+<<endif>>
+
+[[|Water Dialogue]]
+
+
 :: Curriculum {"position":"300,400","size":"100,100"}
 <h1> Curriculum Resources </h1>
 
@@ -526,6 +558,27 @@ Money: 30 Gold, 30 Silver, 40 Copper
 </div>
 
 
+:: Go By Land {"position":"4800,2200","size":"100,100"}
+<<if $readingLvl is "HL">>
+  	<<if $player.crossWater is 0>>
+      	You walk across “the neck,” pleasantly surprised that the British troops seem unbothered.
+  	<<endif>>   
+  	<<button "Click here to continue">>
+	<<goto "Land Dialogue">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.crossWater is 0>>
+      	You walk across “the neck,” pleasantly surprised that the British troops seem unbothered.
+  	<<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Land Dialogue">>
+  	<</button>>
+<<endif>>
+
+[[|Land Dialogue]]
+
+
 :: Greetings {"position":"1500,1800","size":"100,100"}
 <h1>The Beginnings of your Journey</h1>
 Welcome, $player.name!<br>
@@ -571,12 +624,129 @@ It is Thursday evening, April 20, 1775, and a breathless post rider appears in N
 <</button>>
 
 
+:: Land Dialogue {"position":"5000,2200","size":"100,100"}
+<<if $readingLvl is "HL">>
+	“Halt!” you hear behind you. You stop and wheel around to find two red-coated men walking toward you.
+“Where are you going at this hour?” they ask.
+Thinking quickly, you make up a story: “My mother lives in Roxbury and is deathly ill. Please, sir, let me go to her,” you say. The soldiers seem to believe you and decide to let you pass.
+	
+    Once on the other side, you make your way to Cambridge, where the militia are encamped. What you find there surprises you: the camp is a disaster, unorganized, and filthy, and you see many men lying ill. After looking around for a while, you encounter someone you believe to be an officer by their clean, smart-looking uniform.
+	
+    “Excuse me, sir, I must speak with you urgently!” you call out.
+“Who are you and what do you want? I’m too busy for—”
+“I have urgent news from Boston: the British are planning an attack,” you interrupt him.
+“Is that so? How did you come by this information?” he asks.
+“I work in the city, sir, and I heard it directly from a British major. I’ve risked my life bringing it to you,” you reply.
+“I’d like to believe you, lad, but I don’t know you, and I can’t risk the lives of my men on the words of a stranger who could well be a British agent.”
+	
+    You struggle to find the words to convince him when a familiar figure grabs your shoulder. It’s your friend, Benjamin Tallmadge. He tells you that he came to Boston to observe the siege and confirms your character and loyalty to the officer, whom he introduces to you as General Putnam of Brooklyn, Connecticut.
+	
+    “If what you say is true, we’ll have to fortify Bunker Hill immediately. I’ll speak to the Committee of Safety about this. Thank you, lad; you’ve done a great service to our cause.” With your duty done, you wish Tallmadge well and head back to Boston.
+<<elseif $readingLvl is "LL">>
+	“Halt!” you hear from behind.
+You stop and turn around to find two redcoats walking toward you.
+“Where are you going this late at night?” they ask. Thinking quickly, you make up a story.
+“My mother lives in Roxbury and is very sick. Please, let me go to her,” you say. The soldiers seem to believe you, and let you go.
+	
+    Once on the other side, you head to Cambridge and quickly find the militia camp. You’re surprised the camp is a mess and many men are sick. After looking around for a bit, you find an officer who seems to be in charge.
+	
+    “Excuse me, sir, I must speak with you!” you call out.
+“Who are you and what do you want? I’m too busy for—”
+“I have news from Boston; the British are planning an attack,” you interrupt him.
+“Really? How did you find this out?” he asks.
+“I work in the city, and I heard it directly from a British major, and I risked my life to tell you,” you say.
+“I want to believe you, lad, but I don’t know you, and I can’t risk my men on the words of a stranger,” he says.
+	
+    You try to find the words to convince him, and just when you’re about to give up, a familiar face approaches from behind you. You’re surprised to see your friend, Benjamin Tallmadge. He tells you he came to Boston to see what’s happening and informs the officer, who you realize is General Israel Putnam from Brooklyn, Connecticut, that you can be trusted.
+	
+    “If you’re telling the truth, we must move our troops to Bunker Hill immediately. Thank you, lad; you’ve done a great service for our cause,” General Putnam says.
+Happy that you’ve fulfilled your duty, you bid farewell to Tallmadge and head back to Boston
+<<endif>>
+<<button "Click here to continue">>
+<<goto "Battle Dialogue">>
+<</button>>
+
+[[|Battle Dialogue]]
+
+
+
 :: Laundress {"position":"700,900","size":"100,100"}
 <img @src="setup.ImagePath+'The Laundress/Laundress.png'" height="400">
 
 Your name is Sarah Nonesuch and your are Eastern Pequot. Your home is on the tribal lands in North Stonington. Like your mother you are a skilled basketmaker, but you often have to work as a domestic servant to support yourself. You do not belong to the Congregational church or any of the other Christian churches, and you follow traditional, Indigenous religious practices, but you sometimes wonder if it would be better to be a Christian. Once the revolutionary war begins, you become a camp follower with the 2nd Regiment under General Joseph Spencer, who comes from East Haddam. You are an excellent laundress and your services become much in demand among the soldiers and officers. You have two children with a man who is of African descent. He is a free person and a mariner, so he is often away at sea.
 
 Money: 30 Gold, 30 Silver, 40 Copper
+
+
+:: Law Office Leonard {"position":"3600,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You’ve been in Boston for a few weeks now, working as a clerk in the law offices of Daniel Leonard, a prominent lawyer and supporter of British rule. One Thursday morning, you are out buying groceries when you notice a new ship in the harbor. Though smaller than the other familiar warships, you realize its significance when it docks at the wharf, and three men in bright red coats step off. Fitting, you think, as you read the ship’s name, Cerberus, recalling the Greek myth of Cerberus, the three-headed dog of the god Hades.
+
+	When you return to the office, you are immediately greeted by Mr. Leonard. “Have you heard? Generals Sir Henry Clinton, William Howe, and John Burgoyne have just arrived from England! They’ll soon have the rebels on the run, and Massachusetts will finally be back under the king’s rule.”
+
+ 
+	Decision: Do you speak up and tell him you support the rebels or stay silent?
+    
+    <<button "Speak up and tell him you support the rebels">>
+    	<<set $player.supportRebels to 1>>
+        <<set $player.silverCoins += 2>>
+        <<goto "Law Office Leonard Decision">>
+	<</button>>
+    
+    <<button "Stay silent">>
+    	<<set $player.supportRebels to 0>>
+        <<set $player.silverCoins += 5>>
+        <<goto "Law Office Leonard Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	You’ve been working at your new job in Boston for several weeks for a lawyer named Daniel Leonard, who is well-known to many people for his support of the British government. One Thursday morning, you are shopping near the docks when you notice an unfamiliar ship arrive in the harbor. It pulls alongside a dock, and three men in bright red coats step off. As you read the ship’s name, Cerberus, you recall the ancient Greek myth of Cerberus, the three-headed dog.
+Later at work, Mr. Leonard comes to talk to you.
+
+	“Have you heard? The three great generals—Henry Clinton, William Howe, and John Burgoyne—just arrived in Boston! Now the rebels are doomed!”
+
+
+	Decision: Do you speak up and tell him you support the rebels or stay silent?
+    
+    <<button "Speak up and tell him you support the rebels">>
+    	<<set $player.supportRebels to 1>>
+        <<set $player.silverCoins += 2>>
+        <<goto "Law Office Leonard Decision">>
+	<</button>>
+    
+    <<button "Stay silent">>
+    	<<set $player.supportRebels to 0>>
+        <<set $player.silverCoins += 5>>
+        <<goto "Law Office Leonard Decision">>
+	<</button>>
+<<endif>>
+
+[[|Law Office Leonard Decision]]
+
+
+:: Law Office Leonard Decision {"position":"3800,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.supportRebels is 1>>
+		You tell Leonard that the rebels have serious grievances against the British government and that you would rather see them victorious. Your boss gives you a foul look before sharply telling you to get back to work. You wonder if it would have been better to keep it to yourself. (Gain 2 silver coins.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.supportRebels is 0>>
+      	You smile, nod, and feign agreement with him. In his good mood, he remembers to give you your wages for the week.  (Gain 5 silver coins.) You now have $player.silverCoins silver coins.
+  	<<endif>>   
+  	<<button "Click here to continue">>
+	<<goto "Listening In">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.supportRebels is 1>>
+      	You tell your boss that you hope the rebels win against the British. He glares at you, angrily telling you to get back to work. You think that maybe you should have kept that to yourself. (Gain 2 silver coins.) You now have $player.silverCoins silver coins.
+  	<<elseif $player.supportRebels is 0>>
+      	You smile and nod, pretending that you agree with him. He seems pleased and hands you your payment for the week’s work. Sometimes, you realize, it is smarter to keep your thoughts to yourself. (Gain 5 silver coins.) You now have $player.silverCoins silver coins.
+  	<<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Listening In">>
+  	<</button>>
+<<endif>>
+
+[[|Listening In]]
 
 
 :: Letter {"position":"2400,2650","size":"100,100"}
@@ -669,6 +839,72 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 </div>
 
 
+:: Listening In {"position":"4000,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	One day, while you’re copying documents, a British officer in a scarlet coat enters the office, and Mr. Leonard introduces him to you as Major Henry Bassett, of the 10th Regiment of Foot. They proceed into his office. After some conversation, you can’t help but wonder what they’re saying. You feel compelled to get closer to listen in. The door is shut, but his office has an open window.
+    
+ 
+	Decision: Do you go to the keyhole to listen or go outside and crouch below the open window?
+    
+    <<button "Go to the key hole">>
+    	<<set $player.keyHole to 1>>
+        <<goto "Listening In Decision">>
+	<</button>>
+    
+    <<button "Go outside and crouch below the open window">>
+    	<<set $player.keyHole to 0>>
+        <<goto "Listening In Decision">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	One day, while you are working, A British officer in a bright red coat enters the office, and your boss introduces him to you as Major Henry Bassett of the British army. The two of them go into your boss’s office. After a while, you wonder what they’re saying to each other, and you want to listen to their conversation. The door is shut, but there is an open window outside that you could listen from.  
+
+
+	Decision: Do you go to the door and listen through the keyhole or go outside and listen from the open window? 
+    
+    <<button "Go to the key hole">>
+    	<<set $player.keyHole to 1>>
+        <<goto "Listening In Decision">>
+	<</button>>
+    
+    <<button "Go outside and crouch below the open window">>
+    	<<set $player.keyHole to 0>>
+        <<goto "Listening In Decision">>
+	<</button>>
+<<endif>>
+
+[[|Listening In Decision]]
+
+
+:: Listening In Decision {"position":"4200,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	<<if $player.keyHole is 1>>
+		You carefully creep up to the door and put your ear to the keyhole, avoiding the creaky floorboards. Your heart sinks as you hear Major Bassett telling Mr. Leonard that the British are planning an attack.
+        
+		“Yes, the key points are Bunker Hill and Dorchester Heights. Once we take those, the rebels will have no choice but to disperse and this rebellion will finally be over,” he says confidently.
+  	<<elseif $player.keyHole is 0>>
+      	You quietly slip outside and crouch beneath the window, out of sight. Your heart sinks as you hear Major Bassett telling Mr. Leonard that the British are planning an attack.
+        
+		“Yes, the key points are Bunker Hill and Dorchester Heights. Once we take those, the rebels will have no choice but to disperse and this rebellion will finally be over,” he says confidently.
+  	<<endif>>   
+  	<<button "Click here to continue">>
+	<<goto "Remember Benjamin">>
+  	<</button>>
+
+<<elseif $readingLvl is "LL">>
+  	<<if $player.keyHole is 1>>
+      	You sneak up to the door and put your ear to the keyhole, avoiding the creaky parts of the floor. You hear Major Bassett confidently telling your boss, “Yes, if we attack Bunker Hill and Dorchester Heights, we can easily force the rebels to turn and run, and we will finally win.”
+  	<<elseif $player.keyHole is 0>>
+      	You sneak outside and duck below the window. You hear Major Bassett confidently telling your boss, “Yes, if we attack Bunker Hill and Dorchester Heights, we can easily force the rebels to turn and run, and we will finally win.”
+  	<<endif>>
+  	<<button "Click here to continue">>
+	<<goto "Remember Benjamin">>
+  	<</button>>
+<<endif>>
+
+[[|Remember Benjamin]]
+
+
 :: Meal Decision {"position":"2800,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	<<if $player.befriendMen is 1>>
@@ -703,6 +939,19 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 <h4>If this is your first time playing, you can read the instructions [[here|instructions]]</h4>
 
 [[|Start the simulation]]
+
+
+:: Remember Benjamin {"position":"4400,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You remember what your friend Benjamin Tallmadge told you about helping the Patriot cause, and you realize that if the rebels are going to win, somebody has to tell them about the British plans, and you might be the only one who can. The question is, how?
+<<elseif $readingLvl is "LL">>
+  	You remember what your friend Benjamin Tallmadge told you about how you should find a way to help the rebel cause, and you realize that somebody has to warn them about the British plans, and that you might be the only person who can. The question is, how?
+<<endif>>
+<<button "Click here to continue">>
+<<goto "Tell Militia">>
+<</button>>
+
+[[|Tell Militia]]
 
 
 :: Set Player Variable {"position":"1150,500","size":"100,100"}
@@ -872,6 +1121,46 @@ Choose your reading level!
 [[|Bunker Hill Laundress]]
 
 
+:: Tell Militia {"position":"4600,2050","size":"100,100"}
+<<if $readingLvl is "HL">>
+	You are determined to tell the militia about the British plans. The main problem is how to get out of the city. The only way out by land is the neck, the narrow strip of land with the only road out of Boston, but the British have fortified it heavily and you might be questioned or stopped. Alternatively, you know somebody who has a boat that could take you to Cambridge, but he won’t take you for free, and if you are caught crossing, you could be imprisoned, or even killed.
+    
+ 
+	Decision: Do you pay to cross by water or go across the neck?
+    
+    <<button "Pay to cross by water">>
+    	<<set $player.crossWater to 1>>
+        <<set $player.copperCoins -= 10>>
+        <<goto "Cross By Water">>
+	<</button>>
+    
+    <<button "Go across the neck">>
+    	<<set $player.crossWater to 0>>
+        <<goto "Go By Land">>
+	<</button>>
+        
+<<elseif $readingLvl is "LL">>
+	You must tell the militia about the British plans. The only problem is how to get out of the city. The only way out by land is the neck, the narrow strip of land with the only road out of Boston, but British troops control it and might stop and question you. You also know somebody who has a boat that could take you across the water to Cambridge, but he won’t do it for free, and if the British catch you they might imprison you.
+    
+
+	Decision: Do you pay to cross the water or go by land?
+    
+    <<button "Pay to cross by water">>
+    	<<set $player.crossWater to 1>>
+        <<set $player.copperCoins -= 10>>
+        <<goto "Cross By Water">>
+	<</button>>
+    
+    <<button "Go across the neck">>
+    	<<set $player.crossWater to 0>>
+        <<goto "Go By Land">>
+	<</button>>
+<<endif>>
+
+[[|Cross By Water]]
+[[|Go By Land]]
+
+
 :: Title Page {"position":"100,200","size":"100,100"}
 <html>
 <head>
@@ -1001,6 +1290,46 @@ Choose your reading level!
 <<endif>>    
 
 [[|Meal Decision]]
+
+
+:: Water Dialogue {"position":"5000,1900","size":"100,100"}
+<<if $readingLvl is "HL">>
+	Once on the other side, you make your way to Cambridge, where the militia is camped. What you find there surprises you: the camp is a disaster, disorganized and filthy, and you see many men lying ill. After looking around for a bit, you find someone you think is an officer by their clean and sharp-looking uniform.
+    
+	“Excuse me, sir, I must speak with you urgently!” you call out.
+“Who are you and what do you want? I’m too busy for—”
+“I have urgent news from Boston; the British are planning an attack,” you interrupt him.
+“Is that so? How did you come by this information?” he asks.
+“I work in the city, sir, and I heard it directly from a British major. I have risked my life bringing it to you,” you reply.
+“I’d like to believe you, lad, but I don’t know you, and I can’t risk the lives of my men on the words of a stranger who could well be a British agent.”
+	
+    You struggle to find the words to convince him when a familiar figure grabs your shoulder. You are shocked to see your friend, Benjamin Tallmadge. He tells you that he came to Boston to observe the siege and confirms your character and loyalty to the officer, who he introduces as General Putnam of Brooklyn, Connecticut.
+	
+    “If what you say is true, we’ll have to fortify Bunker Hill immediately. I’ll speak to the Committee of Safety about this. Thank you, lad; you’ve done a great service to our cause,” General Putnam says.
+	
+    With your duty done, you wish Tallmadge well and head back to the boat. The fisherman takes you back to Boston, and you lie in bed, wondering what will happen next.
+<<elseif $readingLvl is "LL">>
+  	Once you land in Cambridge, you quickly find the militia camp. You’re surprised that the camp is a mess, and many men are sick. After looking around for a bit, you spot an officer who appears to be in charge.
+	
+    “Excuse me, sir, I need to speak with you!” you call out.
+“Who are you, and what do you want? I’m too busy for-”
+“I have news from Boston; the British are planning an attack,” you interrupt him.
+“Really? How did you find this out?” he asks.
+“I work in the city and heard it directly from a British major, and I risked my life to tell you,” you say.
+“I want to believe you, lad, but I don’t know you, and I can’t risk my men on the words of a stranger,” he says.
+	
+    You try to find the right words to convince him, and just as you’re about to give up, a familiar face appears behind you. You’re surprised to see it’s your friend, Benjamin Tallmadge. He explains that he came to Boston to see what’s happening, and tells the officer, who you learn is General Israel Putnam from Brooklyn, Connecticut, that you can be trusted.
+	
+    “If you’re telling the truth, we must move our troops to Bunker Hill immediately. Thank you, lad; you’ve done a great service for our cause,” General Putnam says.
+	
+    Happy that you’ve done your duty, you say goodbye to Tallmadge and return to the boat. The fisherman takes you back to Boston, and you lie in bed, wondering what will happen next.
+<<endif>>
+<<button "Click here to continue">>
+<<goto "Battle Dialogue">>
+<</button>>
+
+[[|Battle Dialogue]]
+
 
 
 :: charCreate {"position":"750,400","size":"200,200"}
