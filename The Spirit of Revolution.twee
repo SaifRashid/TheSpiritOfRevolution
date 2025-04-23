@@ -22,6 +22,7 @@ THE SPIRIT OF REVOLUTION
   	Several days later, you wake to the sound of cannon fire. Getting out of bed, you walk to Copp’s Hill in the north of the city, where several British cannons are firing across the bay. Looking through the smoke, you watch in shock as you see Charlestown across the bay burning, and behind it, you see hundreds of British soldiers charging up a large hill, defended by the militia. The British go up the hill again and again, and each time they are forced back down by the militia. You are surprised to see that the militia stand up to the king’s troops and seem to be winning. As the British cannons on the hill continue firing, you watch for hours until you finally see British flags flying atop the hill. They appear to have won the battle, but as your eyes wander over the field filled with British dead and injured, you cannot help but notice how much it cost them to take that one hill.
 <<endif>>
 
+<img class=imgEmbedded @src="setup.ImagePath+'The Spy/Copps Hill Burying Ground.jpg'">
 
 
 :: Begin Doctor Journey {"position":"2100,200","size":"200,200"}
@@ -669,7 +670,6 @@ Happy that you’ve fulfilled your duty, you bid farewell to Tallmadge and head 
 [[|Battle Dialogue]]
 
 
-
 :: Laundress {"position":"700,900","size":"100,100"}
 <img @src="setup.ImagePath+'The Laundress/Laundress.png'" height="400">
 
@@ -681,6 +681,9 @@ Money: 30 Gold, 30 Silver, 40 Copper
 :: Law Office Leonard {"position":"3600,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	You’ve been in Boston for a few weeks now, working as a clerk in the law offices of Daniel Leonard, a prominent lawyer and supporter of British rule. One Thursday morning, you are out buying groceries when you notice a new ship in the harbor. Though smaller than the other familiar warships, you realize its significance when it docks at the wharf, and three men in bright red coats step off. Fitting, you think, as you read the ship’s name, Cerberus, recalling the Greek myth of Cerberus, the three-headed dog of the god Hades.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/hms_active_600.jpg'" title="HMS Italics Cerberus Italics , Frigate (National Oceanic and Atmospheric Administration)">
+
 
 	When you return to the office, you are immediately greeted by Mr. Leonard. “Have you heard? Generals Sir Henry Clinton, William Howe, and John Burgoyne have just arrived from England! They’ll soon have the rebels on the run, and Massachusetts will finally be back under the king’s rule.”
 
@@ -842,6 +845,8 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 :: Listening In {"position":"4000,2050","size":"100,100"}
 <<if $readingLvl is "HL">>
 	One day, while you’re copying documents, a British officer in a scarlet coat enters the office, and Mr. Leonard introduces him to you as Major Henry Bassett, of the 10th Regiment of Foot. They proceed into his office. After some conversation, you can’t help but wonder what they’re saying. You feel compelled to get closer to listen in. The door is shut, but his office has an open window.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Tenth Foot Regiment.png'">
     
  
 	Decision: Do you go to the keyhole to listen or go outside and crouch below the open window?
@@ -1125,7 +1130,10 @@ Choose your reading level!
 <<if $readingLvl is "HL">>
 	You are determined to tell the militia about the British plans. The main problem is how to get out of the city. The only way out by land is the neck, the narrow strip of land with the only road out of Boston, but the British have fortified it heavily and you might be questioned or stopped. Alternatively, you know somebody who has a boat that could take you to Cambridge, but he won’t take you for free, and if you are caught crossing, you could be imprisoned, or even killed.
     
- 
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/British Lines on Boston Neck - Bunker Hill - 1775.png'">
+    Map of the British fortifications at Boston Neck 1775
+    
+    
 	Decision: Do you pay to cross by water or go across the neck?
     
     <<button "Pay to cross by water">>
@@ -1304,6 +1312,8 @@ Choose your reading level!
 “I’d like to believe you, lad, but I don’t know you, and I can’t risk the lives of my men on the words of a stranger who could well be a British agent.”
 	
     You struggle to find the words to convince him when a familiar figure grabs your shoulder. You are shocked to see your friend, Benjamin Tallmadge. He tells you that he came to Boston to observe the siege and confirms your character and loyalty to the officer, who he introduces as General Putnam of Brooklyn, Connecticut.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Putnam.jpg'">
 	
     “If what you say is true, we’ll have to fortify Bunker Hill immediately. I’ll speak to the Committee of Safety about this. Thank you, lad; you’ve done a great service to our cause,” General Putnam says.
 	
@@ -1329,7 +1339,6 @@ Choose your reading level!
 <</button>>
 
 [[|Battle Dialogue]]
-
 
 
 :: charCreate {"position":"750,400","size":"200,200"}
