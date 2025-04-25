@@ -641,6 +641,8 @@ Thinking quickly, you make up a story: “My mother lives in Roxbury and is deat
 “I’d like to believe you, lad, but I don’t know you, and I can’t risk the lives of my men on the words of a stranger who could well be a British agent.”
 	
     You struggle to find the words to convince him when a familiar figure grabs your shoulder. It’s your friend, Benjamin Tallmadge. He tells you that he came to Boston to observe the siege and confirms your character and loyalty to the officer, whom he introduces to you as General Putnam of Brooklyn, Connecticut.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Putnam.jpg'">
 	
     “If what you say is true, we’ll have to fortify Bunker Hill immediately. I’ll speak to the Committee of Safety about this. Thank you, lad; you’ve done a great service to our cause.” With your duty done, you wish Tallmadge well and head back to Boston.
 <<elseif $readingLvl is "LL">>
@@ -659,6 +661,8 @@ You stop and turn around to find two redcoats walking toward you.
 “I want to believe you, lad, but I don’t know you, and I can’t risk my men on the words of a stranger,” he says.
 	
     You try to find the words to convince him, and just when you’re about to give up, a familiar face approaches from behind you. You’re surprised to see your friend, Benjamin Tallmadge. He tells you he came to Boston to see what’s happening and informs the officer, who you realize is General Israel Putnam from Brooklyn, Connecticut, that you can be trusted.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Putnam.jpg'">
 	
     “If you’re telling the truth, we must move our troops to Bunker Hill immediately. Thank you, lad; you’ve done a great service for our cause,” General Putnam says.
 Happy that you’ve fulfilled your duty, you bid farewell to Tallmadge and head back to Boston
@@ -684,7 +688,6 @@ Money: 30 Gold, 30 Silver, 40 Copper
     
     <img class=imgEmbedded @src="setup.ImagePath+'The Spy/hms_active_600.jpg'" title="HMS Italics Cerberus Italics , Frigate (National Oceanic and Atmospheric Administration)">
 
-
 	When you return to the office, you are immediately greeted by Mr. Leonard. “Have you heard? Generals Sir Henry Clinton, William Howe, and John Burgoyne have just arrived from England! They’ll soon have the rebels on the run, and Massachusetts will finally be back under the king’s rule.”
 
  
@@ -705,6 +708,8 @@ Money: 30 Gold, 30 Silver, 40 Copper
 <<elseif $readingLvl is "LL">>
 	You’ve been working at your new job in Boston for several weeks for a lawyer named Daniel Leonard, who is well-known to many people for his support of the British government. One Thursday morning, you are shopping near the docks when you notice an unfamiliar ship arrive in the harbor. It pulls alongside a dock, and three men in bright red coats step off. As you read the ship’s name, Cerberus, you recall the ancient Greek myth of Cerberus, the three-headed dog.
 Later at work, Mr. Leonard comes to talk to you.
+
+	<img class=imgEmbedded @src="setup.ImagePath+'The Spy/hms_active_600.jpg'" title="HMS Italics Cerberus Italics , Frigate (National Oceanic and Atmospheric Administration)">
 
 	“Have you heard? The three great generals—Henry Clinton, William Howe, and John Burgoyne—just arrived in Boston! Now the rebels are doomed!”
 
@@ -826,7 +831,7 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
      	You decide to tear up the letter. Maybe someday you will write to her, but you’ve decided it’s too soon. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
 	<<endif>>
 	<<button "Click here to continue">>
-    	<<goto "Travel To Boston">>
+
   	<</button>>
 
 <<elseif $readingLvl is "LL">>
@@ -836,7 +841,7 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
      	You decide to tear up the letter. Maybe someday you will write to her, but you’ve decided it’s too soon. (Lose 1 silver coin.) You now have $player.silverCoins silver coins.
 	<<endif>>
   	<<button "Click here to continue">>
-    	<<goto "Travel To Boston">>
+
   	<</button>>
 <<endif>>
 </div>
@@ -862,7 +867,9 @@ Yours in truth, Miss Dinah Johnson, New London, Conn.
 	<</button>>
         
 <<elseif $readingLvl is "LL">>
-	One day, while you are working, A British officer in a bright red coat enters the office, and your boss introduces him to you as Major Henry Bassett of the British army. The two of them go into your boss’s office. After a while, you wonder what they’re saying to each other, and you want to listen to their conversation. The door is shut, but there is an open window outside that you could listen from.  
+	One day, while you are working, A British officer in a bright red coat enters the office, and your boss introduces him to you as Major Henry Bassett of the British army. The two of them go into your boss’s office. After a while, you wonder what they’re saying to each other, and you want to listen to their conversation. The door is shut, but there is an open window outside that you could listen from.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Tenth Foot Regiment.png'">
 
 
 	Decision: Do you go to the door and listen through the keyhole or go outside and listen from the open window? 
@@ -1130,8 +1137,7 @@ Choose your reading level!
 <<if $readingLvl is "HL">>
 	You are determined to tell the militia about the British plans. The main problem is how to get out of the city. The only way out by land is the neck, the narrow strip of land with the only road out of Boston, but the British have fortified it heavily and you might be questioned or stopped. Alternatively, you know somebody who has a boat that could take you to Cambridge, but he won’t take you for free, and if you are caught crossing, you could be imprisoned, or even killed.
     
-    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/British Lines on Boston Neck - Bunker Hill - 1775.png'">
-    Map of the British fortifications at Boston Neck 1775
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/British Lines on Boston Neck - Bunker Hill - 1775.png'" title="Map of the British fortifications at Boston Neck 1775">
     
     
 	Decision: Do you pay to cross by water or go across the neck?
@@ -1149,6 +1155,8 @@ Choose your reading level!
         
 <<elseif $readingLvl is "LL">>
 	You must tell the militia about the British plans. The only problem is how to get out of the city. The only way out by land is the neck, the narrow strip of land with the only road out of Boston, but British troops control it and might stop and question you. You also know somebody who has a boat that could take you across the water to Cambridge, but he won’t do it for free, and if the British catch you they might imprison you.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/British Lines on Boston Neck - Bunker Hill - 1775.png'" title="Map of the British fortifications at Boston Neck 1775">
     
 
 	Decision: Do you pay to cross the water or go by land?
@@ -1329,6 +1337,8 @@ Choose your reading level!
 “I want to believe you, lad, but I don’t know you, and I can’t risk my men on the words of a stranger,” he says.
 	
     You try to find the right words to convince him, and just as you’re about to give up, a familiar face appears behind you. You’re surprised to see it’s your friend, Benjamin Tallmadge. He explains that he came to Boston to see what’s happening, and tells the officer, who you learn is General Israel Putnam from Brooklyn, Connecticut, that you can be trusted.
+    
+    <img class=imgEmbedded @src="setup.ImagePath+'The Spy/Putnam.jpg'">
 	
     “If you’re telling the truth, we must move our troops to Bunker Hill immediately. Thank you, lad; you’ve done a great service for our cause,” General Putnam says.
 	
@@ -1659,15 +1669,35 @@ setup.Path = "../Stories/"; //remove when publishing to browser and uncomment ab
 setup.ImagePath = setup.Path + "images/";
 setup.AudioPath = setup.Path + "audio/";
 
-//music
+var musicFiles = [
+    "5 - Slow Scotch_Quick Scotch.mp3",
+    "8 - Short Troop_Prussian Rose.mp3",
+    "14 - Guilderoy_Trip to Ranelagh_Honey Mo(...).mp3",
+  	"16 - Alloa House.mp3",
+  	"17 - Duke of Gloster_s March_White Cocka(...).mp3",
+  	"18 - Lochaber Nae More.mp3",
+  	"19 - General Wolfe.mp3"
+];
+
+var currentTrackIndex = 0;
+
 $(document).on(':passagerender', function () {
     if (!window.backgroundAudio) {
-        window.backgroundAudio = new Audio(setup.AudioPath + "American Patriotic Songs and Marches.mp3");
-        window.backgroundAudio.loop = true;
-        window.backgroundAudio.volume = 0.2;
-        window.backgroundAudio.play();
+        playNextTrack();
     }
 });
+
+function playNextTrack() {
+    var track = musicFiles[currentTrackIndex];
+    window.backgroundAudio = new Audio(setup.AudioPath + track);
+    window.backgroundAudio.volume = 0.2;
+    window.backgroundAudio.play();
+
+    window.backgroundAudio.onended = function () {
+        currentTrackIndex = (currentTrackIndex + 1) % musicFiles.length; // loop through tracks
+        playNextTrack(); // play next
+    };
+}
 
 :: StoryStylesheet [stylesheet]
 body {
